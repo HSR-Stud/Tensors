@@ -88,14 +88,22 @@ Der Integralsatz von  liefert den Zusammenhang zwischen einem
 Volumenintegral über ein Volumen $V$, das von einem Feld $\vec F$ durchsetzt
 ist, und einem Oberflächenintegral über die dieses Volumen umschliessende
 Fläche $S$. Die Orientierung der Fläche sei so festgelegt, daß die Aussenseite
-die positive Seite ist. Neu
+die positive Seite ist.
 
 \begin{align}
 \int_V \operatorname{div} \vec F \; \mathrm d^{(n)}V = \oint_{S} \vec F \cdot
 \vec n\; \mathrm d^{(n-1)}S\,.
 \end{align}
 \subsection{Satz von Stokes}
+Das Kurven- oder Linienintegral eines räumlichen Vektorfeldes $\vec u$ längs
+einer geschlossenen Kurve $\partial F$ ist gleich dem Oberflächenintegral der
+Rotation von $\vec u$ über eine beliebige Fläche $F$, die durch die Kurve
+$\partial F$ berandet wird:
 
+\begin{align}
+ \int_{F} \operatorname{rot} \vec u \cdot d \vec A =
+\oint_{\partial F} \vec u \cdot d \vec r, 
+\end{align}
 \end{document}
 
 
