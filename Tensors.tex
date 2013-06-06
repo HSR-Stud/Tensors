@@ -45,19 +45,35 @@
 
 \section{Juhui Tensoren...}
 
-Gradient eines Skalarfeldes: gibt die Richtung und Stärke des steilsten Anstiegs eines Skalarfeldes an.
+Gradient eines Skalarfeldes: gibt die Richtung und Stärke des steilsten Anstiegs
+eines Skalarfeldes an.
 Skalarfeld => Vektorfeld
 
-Divergenz eines Vektorfeldes (Quellendichte eins Vektorfeldes): Gibt die Tendenz eines Vektorfeldes an, von Punkten wegzufliessen (das gilt für positives Vorzeichen; bei negativem Vorzeichen handelt es sich dementsprechend um die Tendenz zu den Punkten hinzufliessen)
-Vektorfeld => Skalarfeld
+Divergenz eines Vektorfeldes (Quellendichte eins Vektorfeldes): Gibt die Tendenz
+eines Vektorfeldes an, von Punkten wegzufliessen (das gilt für positives
+Vorzeichen; bei negativem Vorzeichen handelt es sich dementsprechend um die
+Tendenz zu den Punkten hinzufliessen) Vektorfeld => Skalarfeld
 
-Rotation eines Vektorfeldes: Gibt die Tendenz eines Vektorfeldes an, um Punkte zu rotieren; die Rotation eines Vektorfeldes ist ein Vektorfeld von Pseudovektoren. Und zwar folgt aus dem Stokes’schen Integralsatz (siehe unten), dass die Rotation die lokale Wirbeldichte eines Vektorfeldes beschreibt.
+Rotation eines Vektorfeldes: Gibt die Tendenz eines Vektorfeldes an, um Punkte
+zu rotieren; die Rotation eines Vektorfeldes ist ein Vektorfeld von
+Pseudovektoren. Und zwar folgt aus dem Stokes’schen Integralsatz (siehe unten),
+dass die Rotation die lokale Wirbeldichte eines Vektorfeldes beschreibt.
 
 Quelle: http://de.wikipedia.org/wiki/Vektoranalysis
 
 \section{Vektoranalysis und Integraltheorem}
 \subsection{Satz von Gauss}
-\subsubsection{Gausscher Integralsatz}
+Der Integralsatz von  liefert den Zusammenhang zwischen einem 
+Volumenintegral über ein Volumen $V$, das von einem Feld $\vec F$ durchsetzt
+ist, und einem Oberflächenintegral über die dieses Volumen umschließende
+Fläche $S$. Die Orientierung der Fläche sei so festgelegt, daß die Außenseite
+die positive Seite ist.
+
+\begin{align}
+\int_V \operatorname{div} \vec F \; \mathrm d^{(n)}V = \oint_{S} \vec F \cdot
+\vec n\; \mathrm d^{(n-1)}S\,.
+\end{align}
+\subsection{Satz von Stokes}
 
 \end{document}
 
