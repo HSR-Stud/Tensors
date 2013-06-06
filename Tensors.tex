@@ -16,18 +16,17 @@
 %\usepackage[T1]{fontenc}
 
 \usepackage[utf8]{inputenc}
-%\usepackage[latin1]{inputenc}  
-%\usepackage[T1]{fontenc}
-%\usepackage{lmodern}          
+         
 \usepackage[a4paper]{geometry}
-\geometry{verbose,tmargin=1.5cm,lmargin=2cm,rmargin=2cm,bmargin=2cm,nohead}
+\geometry{verbose,tmargin=1.5cm,lmargin=2cm,rmargin=2cm,bmargin=3cm,nohead}
 \usepackage[ngerman]{babel}
 
 
 \begin{document}
 \pagestyle{fancy}
-\setlength{\footskip}{10mm}
+%\setlength{\footskip}{5mm}
 \fancyhf{}
+\fancyfoot[C]{\thepage} %Seitennummer
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0.5pt}
 
@@ -100,6 +99,12 @@ $ J = \frac{kg m^2}{s^2} $\\
 
 
 \section{Vektoranalysis und Integraltheorem}
+\subsection{Nabla Operator}
+
+\begin{align}
+\nabla \: \mathrm{oder} \: \vec \nabla = \left (\frac\partial{\partial
+x_1},\ldots, \frac\partial{\partial x_n}\right)
+\end{align}
 \subsection{Gradient}
 Der Gradient ist ein mathematischer Operator, genauer ein Differentialoperator,
 der auf ein Skalarfeld angewandt werden kann und in diesem Fall ein
@@ -126,16 +131,75 @@ gleich Null, so bezeichnet man das Feld als quellenfrei.
 \end{align}
 
 \begin{align}
-\operatorname{div}\vec F =
+\operatorname{div}\vec F = \nabla \cdot \vec F =
 \frac{\partial}{\partial x_1}F_1 + \frac{\partial}{\partial x_2}F_2+ \frac{\partial}{\partial x_3}F_3
 \end{align}
 
+\subsection{Rotation}
+Als Rotation bezeichnet man in der Vektoranalysis, einem Teilgebiet der
+Mathematik, einen bestimmten Differentialoperator, der einem Vektorfeld im
+dreidimensionalen euklidischen Raum mit Hilfe der Differentiation ein neues
+Vektorfeld zuordnet. Handelt es sich beispielsweise um ein Strömungsfeld, so
+gibt die Rotation für jeden Ort das Doppelte der Winkelgeschwindigkeit an, mit
+der ein mitschwimmender Körper rotiert, also wie schnell und um welche Achse er
+sich dreht. Dieser Zusammenhang ist namensgebend.
+
+\begin{align}
+\mathbf{\operatorname{rot}}\,\vec F(x,y,z) = \nabla\times \vec F =
+\begin{pmatrix} \frac{\partial}{\partial x} \\ \frac{\partial}{\partial y} \\
+\frac{\partial}{\partial z} \end{pmatrix} \times \begin{pmatrix} F_x\\ F_y\\ F_z
+\end{pmatrix} = \begin{pmatrix} \frac{\partial F_z}{\partial y} - \frac{\partial
+F_y}{\partial z} \\ \frac{\partial F_x}{\partial z} - \frac{\partial
+F_z}{\partial x} \\ \frac{\partial F_y}{\partial x} - \frac{\partial
+F_x}{\partial y} \end{pmatrix}
+\end{align}
+
+\subsection{Rechenregeln}
+Es seien $\vec F$, $\vec G$ Vektorfelder und $U$, $V$ Skalarfelder.
+
+\begin{align}
+\operatorname{rot}(\operatorname{grad}U)=\nabla \times (\nabla U) = 0
+\end{align}
+
+\begin{align}
+\operatorname{div}(\operatorname{rot}\vec{F}) = \nabla \cdot (\nabla \times
+\vec F) = 0
+\end{align}
+
+\begin{align}
+\operatorname{rot}(\operatorname{rot}\vec{F}) =
+\operatorname{grad}(\operatorname{div}\vec{F}) -\Delta \vec{F}
+\end{align}
+
+\begin{align}
+\operatorname{grad}(UV)=U\operatorname{grad}V+V\operatorname{grad}U
+\end{align}
+
+\begin{align}
+\operatorname{grad}(\vec{F}\cdot \vec{G}) =
+(\operatorname{grad}\vec{F})^{\operatorname t}\vec{G} + (\operatorname{grad}\vec{G})^{\operatorname t}\vec{F}
+\end{align}
+
+\begin{align}
+\operatorname{div}(U\vec{F})=U\operatorname{div}\vec{F}+
+\vec{F}\cdot\operatorname{grad}U
+\end{align}
+
+\begin{align}
+\operatorname{div}(\vec{F}\times \vec{G})= \vec{G} \cdot
+\operatorname{rot}\vec{F} -\vec{F}\cdot\operatorname{rot}\vec{G}
+\end{align}
+
+\begin{align}
+\operatorname{rot}(U\vec{F})= U\operatorname{rot}\vec{F}
+-\vec{F}\times\operatorname{grad}U\
+\end{align}
 \subsection{Satz von Gauss}
-Der Integralsatz von  liefert den Zusammenhang zwischen einem 
-Volumenintegral über ein Volumen $V$, das von einem Feld $\vec F$ durchsetzt
-ist, und einem Oberflächenintegral über die dieses Volumen umschliessende
-Fläche $A$. Die Orientierung der Fläche sei so festgelegt, daß die Aussenseite
-die positive Seite ist.
+Der Integralsatz von  liefert den Zusammenhang zwischen einem Volumenintegral
+über ein Volumen $V$, das von einem Feld $\vec F$ durchsetzt ist, und einem
+Oberflächenintegral über die dieses Volumen umschliessende Fläche $A$. Die
+Orientierung der Fläche sei so festgelegt, daß die Aussenseite die positive
+Seite ist.
 
 \begin{align}
 \int_V \operatorname{div} \vec u \; \mathrm d^{(n)}V = \oint_{S} \vec u \cdot
