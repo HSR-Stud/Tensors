@@ -66,13 +66,16 @@ Quelle: http://de.wikipedia.org/wiki/Vektoranalysis
 \section{Description of Physical Phenomena}
 \subsection{Einheiten}
 
-$ [\rho]=\frac{kg}{m^3} $\\
+$ [\rho]=\frac{kg}{m^3} (Dichte)$\\
 $ [c_p]=\frac{J}{kgK} $\\
-$ [m]=kg $\\
-$ [T]=K $\\
-$ [j_w]=\frac{W}{m^2} $\\
+$ [m]=kg (Masse)$\\
+$ [T]=K (Temperatur)$\\
+$ [j_w]=\frac{W}{m^2} (Energieflussdichte)$\\
 $ [\lambda]=\frac{W}{mK} $\\
 $ [\nabla]=\frac{1}{m} $\\
+$ [Q]=As (el. Ladung)$\\
+$ [F]=N (Kraft)$\\
+$ [W]=W (thermische Energie)$\\
 $ [w]=\frac{kg}{ms^2} nochmals kontrollieren!!! $\\
 
 \subsection{SI-Einheiten}
@@ -90,9 +93,21 @@ $ J = \frac{kg m^2}{s^2} $\\
 \begin{tabular}{|c|c|c|c|c|}
 \hline  & Stoffliche Grösse & Potential & Balance Equation uniform & Balance Equation distributed \\ 
 \hline Charge Transport & Charge Q & el. Potential ??? & $\frac{dQ}{dt}=I_Q$ & $ \frac{\parallel p_Q}{\partial t}=-\nabla\cdot j_Q$ \\ 
-\hline Heat Transport &  &  &  &  \\ 
-\hline Particle Transport &  &  &  & $\frac{dp}{dt}=-\nabla \cdot j_W +q_W$ \\ 
-\hline Mechanics (Momentum Transport) & Momentum p & Velocity v  &  & ?? \\ 
+\hline Heat Transport & thermal Energy W & Temperatur T & $\frac{\parallel W}{\partial t}= I_W+Q_W$ & $\frac{\parallel w}{\partial t}= -\nabla \cdot j_W+q_W$  \\ 
+\hline Particle Transport & Partical number N & Particle density c & $\frac{dN}{dt}=I_N+Q_N$ & $\frac{dp}{dt}=-\nabla \cdot j_W +q_W$ \\ 
+\hline Mechanics (Momentum Transport) & Momentum p & Velocity v  & $\frac{\partial p}{\partial t}=F$ & ?? \\ 
+\hline 
+\end{tabular} 
+
+\section{Constitutive Laws}
+
+\begin{tabular}{|c|c|c|c|}
+\hline  & Storage Laws & Constitutive Laws & Source Rates and Sourcerate Densities \\
+\hline Charge Transport & $j_Q=-\sigma \cdot \nabla ??? = \sigma \cdot E$ & & \\
+ 
+\hline Heat Transport & $w=c_p \rho T$ & $j_W=-\lambda \cdot \nabla T$ &  \\ 
+\hline Particle Transport (Diffusion) & c=c & $j_N=- D \cdot \nabla c_N$ &  \\ 
+\hline Mechanics & $p=mv$ & $F_hook = - k \Delta u$ (Hook's Law) $F_visc=-C \eta \cdot v$ (Viscous Drag) &  \\ 
 \hline 
 \end{tabular} 
 
