@@ -83,16 +83,46 @@ $ J = \frac{XXX}{XXX} $\\
 
 
 \section{Vektoranalysis und Integraltheorem}
+\subsection{Gradient}
+Der Gradient ist ein mathematischer Operator, genauer ein Differentialoperator,
+der auf ein Skalarfeld angewandt werden kann und in diesem Fall ein
+Gradientenfeld genanntes Vektorfeld liefert, das die Änderungsrate d Richtung
+der größten Änderung des Skalarfeldes angibt.
+
+\begin{align}
+\operatorname{grad}(f(x,y,z)) = \nabla f = \frac{{\partial f}}{{\partial x}} +
+\frac{{\partial f}}{{\partial y}} + \frac{{\partial f}}{{\partial z}} 
+\end{align}
+\subsection{Divergenz}
+In der Mathematik ist die Divergenz ein Differentialoperator, der einem
+Vektorfeld ein Skalarfeld zuordnet. Während bei einem Vektorfeld jedem Punkt ein
+Vektor zugeordnet wird, wird bei einem Skalarfeld jedem Punkt ein Skalar, also
+eine Zahl, zugeordnet. Interpretiert man das Vektorfeld als Strömungsfeld, so
+gibt die Divergenz für jeden Raumpunkt an, wie viel mehr aus einer Umgebung
+dieses Punkts hinausfließt als in sie hineinfließt. Mithilfe der Divergenz lässt
+sich also herausfinden, ob und wo das Vektorfeld Quellen (Divergenz größer als
+Null) oder Senken (Divergenz kleiner als Null) hat. Ist die Divergenz überall
+gleich Null, so bezeichnet man das Feld als quellenfrei.
+
+\begin{align}
+\vec F = \begin{pmatrix} F_1 \\ F_2 \\ F_3 \end{pmatrix}
+\end{align}
+
+\begin{align}
+\operatorname{div}\vec F =
+\frac{\partial}{\partial x_1}F_1 + \frac{\partial}{\partial x_2}F_2+ \frac{\partial}{\partial x_3}F_3
+\end{align}
+
 \subsection{Satz von Gauss}
 Der Integralsatz von  liefert den Zusammenhang zwischen einem 
 Volumenintegral über ein Volumen $V$, das von einem Feld $\vec F$ durchsetzt
 ist, und einem Oberflächenintegral über die dieses Volumen umschliessende
-Fläche $S$. Die Orientierung der Fläche sei so festgelegt, daß die Aussenseite
+Fläche $A$. Die Orientierung der Fläche sei so festgelegt, daß die Aussenseite
 die positive Seite ist.
 
 \begin{align}
-\int_V \operatorname{div} \vec F \; \mathrm d^{(n)}V = \oint_{S} \vec F \cdot
-\vec n\; \mathrm d^{(n-1)}S\,.
+\int_V \operatorname{div} \vec u \; \mathrm d^{(n)}V = \oint_{S} \vec u \cdot
+\vec n\; \mathrm d^{(n-1)}A\,.
 \end{align}
 \subsection{Satz von Stokes}
 Das Kurven- oder Linienintegral eines räumlichen Vektorfeldes $\vec u$ längs
@@ -102,7 +132,7 @@ $\partial F$ berandet wird:
 
 \begin{align}
  \int_{F} \operatorname{rot} \vec u \cdot d \vec A =
-\oint_{\partial F} \vec u \cdot d \vec r, 
+\oint_{\partial F} \vec u \cdot d \vec r
 \end{align}
 \end{document}
 
