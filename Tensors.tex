@@ -13,6 +13,7 @@
 \usepackage[pdftex]{graphicx}
 \usepackage{fancyhdr}
 \usepackage{color}
+\usepackage{hyperref}
 
 
 %\usepackage[ansinew]{inputenc}
@@ -218,7 +219,9 @@ Gradient ist einfach gesagt die Ableitung in einer Richtung, wird dieser in mehr
 \operatorname{grad}\,(u\, v) = u\ \operatorname{grad}\,v + v\ \operatorname{grad}\,u
 \end{align}
 
+
 \begin{align}
+\label{eqn:ProduktregelEinesGradientMitPotenzen}
 \operatorname{grad}\,(u^n) = n\, u^{n-1}\ \operatorname{grad}\,u \text{ für } n\neq 0
 \end{align}
 
@@ -468,7 +471,16 @@ Skriptzusammenfassung...
 
 Gradient von $ (\frac{1}{r}) $  with $ r=\sqrt{x^2+y^2+z^2} $
 
-$ \nabla(\frac{1}{r}) $
+Anwenden von der Produktregel eines Gradient, siehe Formel \ref{eqn:ProduktregelEinesGradientMitPotenzen} auf Seite \pageref{eqn:ProduktregelEinesGradientMitPotenzen}
+
+$ \nabla(\frac{1}{r}) = -\frac{\vec{r}}{r^3}$
+\\
+$ \nabla(\frac{1}{r^2}) = -2\frac{\vec{r}}{r^4}$
+\\
+$ \nabla(\frac{1}{r^3}) = -3\frac{\vec{r}}{r^5}$
+
+\subsubsection{The electrical field}
+blabla
 
 
 \section{Wellen}
