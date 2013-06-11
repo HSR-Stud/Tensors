@@ -509,6 +509,55 @@ j_i=\lambda_{ij}\frac{\partial T}{\partial x_j}
 Dieser Tensor ist gemäss Skript symmetrisch. Es gilt also
 $\lambda_{ij}=\lambda_{ji}$
 
+Dieser Tensor erfüllt folgende Quadrik:
+
+\begin{align}
+\lambda_1 x_1^2+\lambda_2 x_2^2+\lambda_3 x_3^2=1
+\end{align}
+
+Wobei $\lambda=\frac{1}{\rho}$ auch der Kehrwert des thermischen Widerstand ist.
+
+\textbf{Special Case: Heat Flow across a flow plate} \\
+Der Temperaturgradient ist parallel zur $x_1$ Richtung. $\frac{\partial
+T}{\partial x_2}=0$ $\frac{\partial T}{\partial x_3}=0$
+
+Demzufolge besteht der Tensor aus einem Eintrag:
+
+\begin{align}
+\lambda_{11}=\frac{j_1}{\partial T/ \partial x_1}
+\end{align}
+
+\textbf{Heat flow down a long rod}
+Bei der Geometrie dieses Problems ist es besser mit dem thermischen Widerstand
+zu arbeiten. Diesmal ist das Problem dreidimensional und durch folgende
+Temperaturgradienten bestimmt.
+
+\begin{align}
+\frac{\partial T}{\partial x_1}=\rho_{11}j_1; \frac{\partial T}{\partial
+x_2}=\rho_{12}j_1; \frac{\partial T}{\partial x_3}=\rho_{13}j_1
+\end{align}
+
+\subsubsection{Electrical Conduction}
+Die fundamentale Gleichung ist das ohmsche Gesetz:
+
+\begin{align}
+j_i=-\sigma_{ij}\frac{\partial \phi}{\partial x_j}=\sigma_{ij}E_j
+\end{align}
+
+$j_i$ ist die Stromdichte, $\sigma_{ij}$ der elektrische Leitungstensor und
+$E_j$ das elektrische Feld.
+
+\subsubsection{Diffusion}
+Bei der Diffusion gibt es ebenfalls eine Tensorvariante. Fick's law wird damit
+verallgemeinert:
+
+\begin{align}
+j_i=-D_{ij}\frac{\partial c}{\partial x_j}
+\end{align}
+
+\subsection{Aufgaben}
+asd
+
 \section{Electrodynamics}
 
 Skriptzusammenfassung...
