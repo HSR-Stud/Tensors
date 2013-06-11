@@ -12,6 +12,7 @@
 \usepackage{paralist}
 \usepackage[pdftex]{graphicx}
 \usepackage{fancyhdr}
+\usepackage{color}
 
 
 %\usepackage[ansinew]{inputenc}
@@ -24,11 +25,11 @@
 \usepackage[ngerman]{babel}
 \setlength{\parindent}{0cm}
 \newcommand{\qed}{\begin{flushright}
-$\blacksquare$ \end{flushright}}
+$\blacksquare \dagger$ \end{flushright}}
 \begin{document}
 \pagestyle{fancy}
 %\setlength{\footskip}{5mm}
-\fancyhf{}
+\fancyhf{} 
 \fancyfoot[C]{\thepage} %Seitennummer
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0.5pt}
@@ -362,12 +363,22 @@ $\mathbf{A}=\left(\mathbf{A}_1^{sym}-\mathbf{A}_1^{sym}\right)=\left(\mathbf{A}_
 \\
 $0=\left(\mathbf{A}_1^{sym}-\mathbf{A}_2^{sym}\right)+\left(\mathbf{A}_1^{asym}-\mathbf{A}_2^{asym}\right)$
 
+\\
+$0=\mathbf{C}^{sym}+\mathbf{C}^{asym}$ $\Rightarrow$
+$\mathbf{A}_1^{sym}=\mathbf{A}_2^{sym}$ $\Rightarrow$
+$\mathbf{A}_1^{asym}=\mathbf{A}_2^{asym}$ \qed
+
+
+Ein Einheitstensor 4 Stufe hat folgende Eigenschaften $\mathbb{I}:\textbf{A}=\textbf{A}$
+f) \colorbox{red}{Kucksch du selber!, nicht realistisch!}
+
+
+
+
 \subsection{Exercises of Chapter 3c)}
 
 \subsubsection{4th Rank Tensor Manipulation}
 
-
-Ein Einheitstensor 4 Stufe hat folgende Eigenschaften $\mathbb{I}:\textbf{A}=\textbf{A}$
 
 $I_{ijkl}A_{kl}=\frac{1}{2}(\delta_{ik}\delta_{kl}+\delta_{il}\delta_{jk})A_{kl}=\frac{1}{2}(A_{ij}+A_{ji})=A_{ij}$
 \\
