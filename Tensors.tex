@@ -21,7 +21,8 @@
 \geometry{verbose,tmargin=1.5cm,lmargin=2cm,rmargin=2cm,bmargin=3cm,nohead}
 \usepackage[ngerman]{babel}
 \setlength{\parindent}{0cm}
-
+\newcommand{\qed}{\begin{flushright}
+$\blacksquare$ \end{flushright}}
 \begin{document}
 \pagestyle{fancy}
 %\setlength{\footskip}{5mm}
@@ -331,24 +332,26 @@ a) $\mathbf{C}=\mathbf{AB}$ $\Rightarrow$ $C_{ij}=A_{ik}B_{kj}$
 
 Matrixmulitplikation weil die Dimension des resultierenden Tensors aus der
 Anzahl Spalten des linken Tensors und der Anzahl Zeilen des Rechten Tensors
-besteht. \begin{flushright} $\blacksquare$ \end{flushright}
+besteht. \qed
 
 b) General heat conduction law $j_{th,k}=-\kappa_{kl}\frac{\partial
 T}{\partial x_l}$ Prove that the isotropic law is recovered by using the
 specific 2nd Rank Tensor $\kappa_{kl}=\kappa \delta_{kl}$
 
 $K_{kl}$ Einsetzen. In diesem Fall ist das Korneckerdelta eine $1$. Deshalb
-ergibt sich $-\kappa \frac{\partial T}{\partial x_k}$ \begin{flushright}
-$\blacksquare$ \end{flushright}
+ergibt sich $-\kappa \frac{\partial T}{\partial x_k}$ \qed
 
 c) Show that the 2nd Rank Unit Tensor $\mathbf{I}$ has the same form in each
 coordinate system.$\Rightarrow$ Orthogonal
 
 Transformation eines Einheitstensors: $\mathbf{I}'=R\mathbf{I}R'\Rightarrow$.
-$I_{il}'=R_{ij}\delta_{jk}R_{kl}^T = R_{ij}R_{jl}^T=\delta_{il}=I_{il}$ \begin{flushright}
-$\blacksquare$ \end{flushright}
+$I_{il}'=R_{ij}\delta_{jk}R_{kl}^T = R_{ij}R_{jl}^T=\delta_{il}=I_{il}$ \qed
+
 
 d) Prove tr $\mathbf{E}=\mathbf{E : I}$
+Component $\Rightarrow$ $E_{ij}\delta_{ij}=E_{ii}$ \qed
+
+e) Prove every 2nd Rank
 
 \end{document}
 
