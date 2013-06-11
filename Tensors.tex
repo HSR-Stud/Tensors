@@ -361,6 +361,61 @@ $\mathbf{A}=\frac{1}{2}\left(\mathbf{A} + \mathbf{A}^T\right)+
 $\mathbf{A}=\left(\mathbf{A}_1^{sym}-\mathbf{A}_1^{sym}\right)=\left(\mathbf{A}_2^{sym}-\mathbf{A}_2^{sym}\right)$
 \\
 $0=\left(\mathbf{A}_1^{sym}-\mathbf{A}_2^{sym}\right)+\left(\mathbf{A}_1^{asym}-\mathbf{A}_2^{asym}\right)$
+
+\subsection{Exercises of Chapter 3c)}
+
+\subsubsection{4th Rank Tensor Manipulation}
+
+
+Ein Einheitstensor 4 Stufe hat folgende Eigenschaften $\mathbb{I}:\textbf{A}=\textbf{A}$
+
+$I_{ijkl}A_{kl}=\frac{1}{2}(\delta_{ik}\delta_{kl}+\delta_{il}\delta_{jk})A_{kl}=\frac{1}{2}(A_{ij}+A_{ji})=A_{ij}$
+\\
+\\
+$ \mathbb{I} $ und $ \mathbb{E} $ sind unabhänig vom Koordinatensystem wenn diese isotrop sind
+
+$ I'_{mnpq}=R_{mi}R_{nj}R_{pk}R_{ql}I_{ijkl} = \frac{1}{2}(R_{mi}\delta_{ik}R_{pk}R_{nj}\delta_{jl}R_{ql} + R_{mi}\delta_{il}R_{ql}R_{nj}\delta_{jk}R_{pk})= \frac{1}{2}(R_{mi}R^T_{ip}R_{nj}R^T_{jq}+R_{mi}R^T_{iq}R_{nj}R^T_{jp})= \frac{1}{2}(\delta_{mp}\delta_{mq}\delta_{np})=I_{mnpq} $ dasselbe gilt auch für $ E'_{mnpq}=E_{mnpq}$
+
+
+\subsubsection{Engineering Notation}
+\begin{itemize}
+\item Weshalb gibt es den Faktor 2 bei $ \epsilon^{eng}=(\epsilon_{11},\epsilon_{22},\epsilon_{33},2\epsilon_{23},2\epsilon_{13},2\epsilon_{12}) $
+
+???
+
+
+\item Engineering notation von einem Einheitstensor zweiter Stufe
+$ \textbf{I}^{eng}=(1,1,1,0,0,0) $
+
+
+\item Notation von Tensoren 4 Stufe
+$ \mathbb{I}^{eng}=
+\begin{pmatrix}
+1 & 0 & 0 & 0 & 0 & 0 \\ 
+0 & 1 & 0 & 0 & 0 & 0 \\ 
+0 & 0 & 1 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & \frac{1}{2} & 0 & 0 \\ 
+0 & 0 & 0 & 0 & \frac{1}{2} & 0 \\ 
+0 & 0 & 0 & 0 & 0 & \frac{1}{2}
+\end{pmatrix} 
+$
+
+$
+\mathbb{E}^{eng}=
+\begin{pmatrix}
+1 & 1 & 1 & 0 & 0 & 0 \\ 
+1 & 1 & 1 & 0 & 0 & 0 \\ 
+1 & 1 & 1 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0 & 0 & 0
+\end{pmatrix} 
+$
+
+\end{itemize}
+
+
+
 \end{document}
 
 
