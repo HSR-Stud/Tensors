@@ -429,6 +429,7 @@ $ \textbf{I}^{eng}=(1,1,1,0,0,0) $
 
 \item Notation von Tensoren 4 Stufe
 
+\end{itemize}
 $ \mathbb{I}^{eng}=
 \begin{pmatrix}
 1 & 0 & 0 & 0 & 0 & 0 \\ 
@@ -452,8 +453,51 @@ $
 \end{pmatrix} 
 $
 
+\section{Transport Phenomenas}
+In diesem Kapitel werden anisotropische Transportphänomene betrachtet. Der
+Begriff der Quadrik wird eingeführt. Im Fokus stehen thermische Leitfähigkeit,
+elektrische Leitfähigkeit und Diffusion
+\subsection{Theory}
+\subsubsection{Quadrik}
+Jeder symmetrischer Tensor 2-ter Stufe kann als Ellipsoid in drei dimensionalen
+Raum dargestellt werden.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.5]{images/ellipsoid.pdf}
+\caption{Ellipsoid}
+\label{fig:ellipsoid}
+\end{center}
+\end{figure}
+
+Gegeben ist der symmtrische Tensor 2-ter Stufe:
+
+\begin{align}
+\sigma_{ij}=\begin{pmatrix}
+\sigma_1 & 0 & 0 \\
+0 & \sigma_2 & 0 \\
+0 & 0 & \sigma_3 \\
+\end{pmatrix}
+\end{align}
+
+Die quadrische Form kann folgendermassen erfüllt folgende Ellipsoidgleichung:
+
+\begin{align}
+\sigma_1x_1^2+\sigma_2x_2^2+\sigma_3x_3^2=1
+\end{align}
 
 
+Dabei entsprechen die Halbachsen:
+
+\begin{align}
+a=\frac{1}{\sigma_1}; b=\frac{1}{\sigma_2}; c=\frac{1}{\sigma_3}
+\end{align}
+
+\subsubsection{Thermal Conduction}
+In isotropischen Medien ist wird die Wärmeleitung durch Fourier's Gesetz
+\begin{align}
+\mathbf{j}=-\lambda \nabla T
+\end{align}
 
 
 
@@ -487,19 +531,10 @@ blabla
 
 Kommt nicht ist nicht drin das Kapitelangabe stimmt, juppi
 
-\end{itemize}
 
-\section{Transport Phenomenas}
-In diesem Kapitel werden anisotropische Transportphänomene betrachtet. Der
-Begriff der Quadrik wird eingeführt. Im Fokus stehen thermische Leitfähigkeit,
-elektrische Leitfähigkeit und Diffusion
-\subsection{Theory}
-\subsubsection{Quadrik}
 
 
 
 \end{document}
-
-
 
 
