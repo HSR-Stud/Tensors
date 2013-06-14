@@ -692,7 +692,7 @@ d) Ellipsoid
 e) Determine the resistivity $r_{12}$
 
 \begin{align}
-r_{ij}=\begin{pmatrix}
+r_{ij}=\frac{1}{k_{ij}}=\begin{pmatrix}
 \frac{1}{k_{11}} & 0 & 0 \\
 0 & \frac{1}{k_{22}} & 0 \\
 0 & 0 & \frac{1}{k_{33}}
@@ -700,14 +700,17 @@ r_{ij}=\begin{pmatrix}
 \end{align}
 
 \begin{align}
-r_{ij}'=\frac{1}{k_{ij}} = \begin{pmatrix}
+r_{ij}'=Rr_{ij}R^{T} = \begin{pmatrix}
 16 & 6.9 & 0 \\
 6.9 & 8 & 0 \\
 0 & 0 & 4
 \end{pmatrix}
-10^{-3} 
+10^{-3}[\frac{mK}{W}] 
 \end{align}
 \qed
+
+
+
 
 \subsubsection{Eletrical Tin}
 Write down the conductivity Tensor:
