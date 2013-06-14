@@ -96,7 +96,9 @@ $ [D]=\frac{C}{m^2} (electrical Displacement)$\\
 $ [\epsilon_0]= \frac{C^2}{Nm^2}=\frac{As}{Vm} (elektrische Feldkonstante)$\\
 $ [\mu_0] = \frac{Vs}{Am} (magnetische Feldkonstante)$\\
 $ [k] = \frac{Vm}{As} (Coulomb Konstante)$\\
-$ [B]= (magnetisches Feld)$\\
+$ [B]= T (Tesla) = \frac{kg}{As^2} = \frac{N}{Am} = \frac{Vs}{m^2} (magnetisches
+Feld = magnetische Flussdichte)$\\
+$ [H]= \frac{A}{m} (magnetische Feldstaerke)$\\
 $ [U]= V = \frac{Nm}{As} (Spannung) $\\
 $ [q]= C = As (Ladung)$\\
 
@@ -643,6 +645,7 @@ In der Abbildung \ref{fig:E-Feldstaerke} ist ebenfalls ein E-Feld $ \vec{E} $ ab
 
 
 \subsubsection{B-Feld (Magnetfeld)}
+$B = \mu \cdot H$\\
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[scale=0.5]{images/B-Feld.png}
@@ -761,7 +764,11 @@ $ \vec \nabla \times \vec E = - \frac{\partial \vec B}{\partial t} \rightarrow
 \includegraphics[scale=0.5]{images/maxwell_3.pdf}
 \end{center}
 
-\item Magnetisches Feld sind produziert von (nur bei kleinen Frequenzen, kleiner 1 GHz)
+\item Magnetische Felder werden durch Sträme (fliessende Ladungen) verursacht
+(nur bei kleinen Frequenzen gültig, < 1 GHz)\\
+$\vec \nabla \times \vec H = \vec j \rightarrow \oint \vec H \cdot \vec t ds =
+I$\\
+$I=\int \vec j \vec n dA = \sum I_i$
 \begin{center}
 \includegraphics[scale=0.5]{images/maxwell_4.pdf}
 \end{center}
