@@ -91,6 +91,12 @@ $ [w]=\frac{kg}{ms^2} \colorbox{red}{nochmals kontrollieren!!!} $\\
 $ [\vec E]=\frac{V}{m} = \frac{N}{C}$\\
 $ [M]=Nm (Drehmoment)$\\
 $ [\vec p]=Cm (Dipolmoment)$\\
+$ [\rho]=\frac{C}{m^3} Ladungsdichte$\\
+$ [D]=\frac{C}{m^2} (electrical Displacement)$\\
+$ [\epsilon_0]= \frac{C^2}{Nm^2}=\frac{As}{Vm} (elektrische Feldkonstante)$\\
+$ [\mu_0] = \frac{Vs}{Am} (magnetische Feldkonstante)$\\
+$ [k] = \frac{Vm}{As} (Coulomb Konstante)$\\
+$ [B]= (magnetisches Feld)$\\
 
 Mechanik\\
 $ [d]=\frac{N}{m} (Federkonstante)(spring constant)$\\
@@ -727,21 +733,27 @@ P_x \frac{\partial E_z}{\partial x} + P_y \frac{\partial E_z}{\partial y} + P_z
 \subsubsection{Maxwell's equation}
 \begin{itemize}
 
-\item Die Quelle von dem E-Feld sind wechseln die Elektrischer Fluss über deine geschlossene Oberfläche ist gleich einer eingeschlossener Ladung
+\item Die Quelle des E-Feldes ist die Ladung. Der elektrische Fluss über die
+geschlossene Oberfläche entspricht der eingeschlossenen Ladung.\\
+$ \vec \nabla \vec D = \rho \rightarrow \oint_{\partial V} \vec D \cdot \vec n
+dA = Q$\\
+$\vec D = \epsilon_0 \vec E$\\
+
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[scale=0.5]{images/maxwell_1.pdf}
-\caption{Draht zwischen Polen}
-\label{fig:DrahtZwischenPolen}
 \end{center}
 \end{figure}
 
-\item Nicht magnetische Monopole existieren Magnetfeldlinie sind geschlossene Kurven
+\item Es existieren keine magnetische Monopole im Volumen. Magnetische
+Feldlinien sind geschlossene Kurven. Daraus folgt, dass das Integrall über die
+Oberfläche gleich 0 ist.\\
+$ \vec \nabla \vec B = 0 \rightarrow \oint_{\partial V} \vec B \cdot \vec n
+dA = 0$
+
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[scale=0.5]{images/maxwell_2.pdf}
-\caption{Draht zwischen Polen}
-\label{fig:DrahtZwischenPolen}
 \end{center}
 \end{figure}
 
