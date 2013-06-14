@@ -608,8 +608,56 @@ j_i=-D_{ij}\frac{\partial c}{\partial x_j}
 \end{align}
 
 \subsection{Aufgaben}
-asd
+\subsubsection{2D Carbon Plate Thermal Conduction}
 
+a) Conductivity Tensor of the problem
+
+\begin{align}
+k_{ij}=\begin{pmatrix}
+50 & 0 & 0 \\
+0 & 250 & 0 \\
+0 & 0 & 250 
+\end{pmatrix}
+\end{align}
+\qed
+
+b) Transformation $30^\circ$
+\begin{align}
+k_{ij}'=RkR^{T}
+\end{align}
+
+\begin{align}
+\phi=+30^\circ
+\end{align}
+
+\begin{align}
+k_{ij}'=\begin{pmatrix}
+\cos{\phi} & -\sin{\phi} & 0 \\
+\sin{\phi} & \cos{\phi} & 0 \\
+0 & 0 & 1
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+50 & 0 & 0 \\
+0 & 250 & 0 \\
+0 & 0 & 250 
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+\cos{\phi} & \sin{\phi} & 0 \\
+-\sin{\phi} & \cos{\phi} & 0 \\
+0 & 0 & 1
+\end{pmatrix}
+\end{align}
+
+\begin{align}
+k_{ij}'=\begin{pmatrix}
+100 & -86.60 & 0 \\
+-86.60 & 200 & 0 \\
+0 & 0 & 250
+\end{pmatrix}
+\end{align}
+\qed
 \section{Electrodynamics}
 
 \colorbox{red}{Skriptzusammenfassung...}
