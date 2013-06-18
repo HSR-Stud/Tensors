@@ -399,7 +399,7 @@ Gegeben eine Matrix M... mit $det(A-\lambda E)$ die Eigenvektoren bestimmen und 
 
 
 \subsection{Übungen}
-\subsubsection{Transformation 2nd Rank Tensor}
+\subsubsection{Transformation 2nd Rank Tensor (Rotationsmatrix)}
 $E'_{kl}=R_{ki}R_{lj}E_{ij}=R_{ki}E_{ij}R_{jl}^T$\\
 $rotierteMatrix = Rotationsmatrix \cdot UrsprungsMatrix \cdot
 Rotationsmatrix^{-1}$
@@ -938,6 +938,35 @@ Kommt nicht ist nicht drin das Kapitelangabe stimmt, juppi
 			oder $\frac{d f(g(x))}{dx} = f'(g(x)) \cdot g'(x)$\\[0.1cm] Produktregel:	&
 			$f(x)\cdot g(x)$ &$=$ & $f'(x)\cdot g(x) + f(x)\cdot g'(x)$\\[0.1cm] Quotientenregel:& $\frac{f(x)}{g(x)}$ &$=$ & $\frac{f'(x)g(x)-f(x)g'(x)}{g^2(x)}$\\
 		\end{tabular}
+		
+		
+	\subsection{Taylor Polynom}
+		$f(x_0+h)=f(x_0) + f'(x_0)h + \frac{f''(x_0)}{2}h^2 + \frac{f'''(x_0)}{3!}h^3 + \ldots + \frac{f^{(n)}(x_0)}{n!}h^n + R_n(x_0, h)$
+
+	\subsection{Determinanten}
+		$\det\left(
+		\begin{bmatrix}
+			a_{11}&a_{12}\\
+			a_{21}&a_{22}\\
+		\end{bmatrix}\right)=
+		\begin{vmatrix}
+			a_{11}&a_{12}\\
+			a_{21}&a_{22}\\
+		\end{vmatrix}=a_{11}a_{22}-a_{12}a_{21}$
+		
+	\subsection{Spur}
+			$\text{trace}\left(
+		\begin{bmatrix}
+			a_{11}&a_{12}\\
+			a_{21}&a_{22}\\
+		\end{bmatrix}\right)=
+		a_{11} + a_{22}$\\
+		
+		\subsection{todo!!!!!!!!!!!!!!}
+		\colorbox{red}{Ableitungs und Integral table aus PDE copy, welche
+		brauchen wir? stand auf meinem Notizzettel (bischsil)}
+		
+
 
 \end{document}
 
