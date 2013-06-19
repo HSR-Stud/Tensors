@@ -784,6 +784,7 @@ Winkel:
 
 \section{Elasticity}
 \subsection{Elasticity in 1D}
+\subsubsection{Implussfluss}
 Generell folgen Elastizitätsprobleme Hook's Law:
 
 \begin{align}
@@ -793,8 +794,43 @@ Dabei ist $d$ die Federkonstante (materialabhängig) und $\Delta u$ die
 Längenänderung des betrachteten Körpers.
 
 Im mehrdimensionalen Fall bietet sich das Rechnen mit Flüssen an. Im
-Elasitizitätsfall 
+Elastizitätsfall ist dies der Impulsfluss. Über die Definition des Impulses
+nach:
 
+\begin{align}
+p = m \cdot v
+\end{align}
+
+Daraus ergibt sich der Impulsfluss als:
+
+\begin{align}
+[J_p]=\frac{kg \cdot \frac{m}{s}}{s} \equiv N
+\end{align}
+
+also Kraft.
+
+Impuls kann nur von einem Objekt auf ein anderes übertragen werden.
+Gespeicherter Impuls setzt deshalb ein Objekt in Bewegung. (Beispiel
+Tennisball: Ein in Bewegung gesetzter, fliegender Tennisball enthält den Impuls
+$p=m \cdot v$)
+
+Im Fall eines deformierten und an einer Wand befestigten Gummibandes kann man
+sich den Impulsfluss folgendermassen vorstellen: Obwohl sich nichts bewegt,
+fliesst der Impulsfluss nach der obigen Definition durch das Gummiband in die
+Wand hinein (Energieerhaltung). Sobald das Band von der Wand gelöst wird, setzt
+es sich in Bewegung $\Rightarrow$ Der Impuls ist nun im Band gespeichert. 
+
+Es ist möglich an jeder Position des Bandes ($0<x_0<L$) den Impulsfluss zu
+messen. An jedem $x_0$ muss die Kraft F aufgewendet werden um das Band in
+gedehnten Zustand zu halten.
+
+\subsubsection{Mechanical Stress \& Impulsflussdichte}
+Wie jeder Fluss kann dieser als Flussdichte ausgedrückt werden. Defintion der
+Flussdichte ist:
+
+\begin{align}
+\sigma_{11}=- \frac{J_p}{A} \Rightarrow [\sigma_{11}]= \frac{N}{m^2} = Pa
+\end{align}
 \section{Beispiel}
 
 \section{Electrodynamics}
