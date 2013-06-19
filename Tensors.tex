@@ -848,12 +848,31 @@ Integriert man
 \end{minipage}
 \hfill
 \begin{minipage}{14cm}
-Balance equation: $0 = \frac{\partial \sigma_11}{\partial x} + \rho g_1$\\
+Balance equation: $0 = \frac{\partial \sigma_{11}}{\partial x} + \rho g_1$\\
 Material law: $\epsilon_{11} = \frac{\partial u(x)}{\partial x}$ with
 $\sigma_{11} = E \cdot \epsilon_{11}$\\
-Boundary conditions: $\sigma_{11} (L) = \frac{F}{A}$, $u(0)= 0$
+Boundary conditions: $\sigma_{11} (L) = \frac{F}{A}$, $u(0)= 0$\\
 
+DGL aufstellen: $\frac{\partial \sigma (x)}{\partial x} = - \rho g$, $\int dx$\\
+DGL lösen: $\sigma (x) = - \rho g x + \sigma_0$\\
+Boundary Conditions bei L: $\sigma (L) = \frac{F}{A} = \frac{0}{A} = 0$\\
+BC in DGL einsetzen: $\sigma (L) = - \rho g L + \sigma_0 = 0$\\
+Auflösen: $\sigma_0 = \rho g L$\\
+In DGL einsetzen: $\sigma (x) = - \rho g x + \rho g L = \rho g (L-x)$\\
+Material law: $\epsilon (x) = \frac{\rho g}{E} (L-x)$\\
+Aus Material law: $\frac{\partial u(x)}{\partial x} = \epsilon (x) = \frac{\rho
+g}{E} (L-x)$ $\int dx$\\
+Deformation: $u(x) - u(0) = \int\limits_{0}^{x} \epsilon(x) dx =
+\int\limits_{0}^{x} \frac{\rho g}{E} (L-x) dx = \frac{\rho g}{E} (x \cdot L -
+\frac{1}{2} \cdot x^2) = \frac{\rho g}{E} \cdot x(L-\frac{x}{2})$, wobei $u(0) =
+0$
 \end{minipage}
+Maximaler Stress tritt an der Aufhängung an Punkt $x = 0$ auf:\\
+$\sigma(0) = - \rho g (L-x) = \rho g L = \frac{m \cdot g}{A}$\\
+Einheitenkontrolle: $[\rho \cdot g \cdot L] = \frac{kg}{m^3} \cdot
+\frac{m}{s^2} \cdot m = \frac{kg}{m \cdot s^2}$\\
+$[m \cdot g \cdot \frac{1}{A}] = kg \cdot \frac{m}{s^2} \cdot \frac{1}{m^2} =
+\frac{kg}{m \cdot s^2}$
 
 
 
