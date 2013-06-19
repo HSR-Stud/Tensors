@@ -917,7 +917,8 @@ Material law: $\epsilon_{11} = \frac{\partial u(x)}{\partial x}$ with
 $\sigma_{11} = E \cdot \epsilon_{11}$\\
 Boundary conditions: $\sigma_{11} (L) = \frac{F}{A}$, $u(0)= 0$\\
 
-DGL aufstellen: $\frac{\partial \sigma (x)}{\partial x} = - \rho g$, $\int dx$\\
+DGL aufstellen: $\frac{\partial \sigma (x)}{\partial x} = - \rho g$ $\mid$ $\int
+dx$\\
 DGL lösen: $\sigma (x) = - \rho g x + \sigma_0$\\
 Boundary Conditions bei L: $\sigma (L) = \frac{F}{A} = \frac{0}{A} = 0$\\
 BC in DGL einsetzen: $\sigma (L) = - \rho g L + \sigma_0 = 0$\\
@@ -925,7 +926,7 @@ Auflösen: $\sigma_0 = \rho g L$\\
 In DGL einsetzen: $\sigma (x) = - \rho g x + \rho g L = \rho g (L-x)$\\
 Material law: $\epsilon (x) = \frac{\rho g}{E} (L-x)$\\
 Aus Material law: $\frac{\partial u(x)}{\partial x} = \epsilon (x) = \frac{\rho
-g}{E} (L-x)$ $\int dx$\\
+g}{E} (L-x)$ $\mid$ $\int dx$\\
 Deformation: $u(x) - u(0) = \int\limits_{0}^{x} \epsilon(x) dx =
 \int\limits_{0}^{x} \frac{\rho g}{E} (L-x) dx = \frac{\rho g}{E} (x \cdot L -
 \frac{1}{2} \cdot x^2) = \frac{\rho g}{E} \cdot x(L-\frac{x}{2})$, wobei $u(0) =
@@ -933,15 +934,40 @@ Deformation: $u(x) - u(0) = \int\limits_{0}^{x} \epsilon(x) dx =
 \colorbox{red}{Was zum Teufel passiert mit dem
 Integral?????? -> kei Plan}$\int\limits_{0}^{x} x \cdot dx$
 \end{minipage}
-Maximaler Stress tritt an der Aufhängung an Punkt $x = 0$ auf:\\
+\textbf{Maximaler Stress} tritt an der Aufhängung an Punkt $x = 0$ auf:\\
 $\sigma(0) = - \rho g (L-x) = \rho g L = \frac{m \cdot g}{A}$\\
 Einheitenkontrolle: $[\rho \cdot g \cdot L] = \frac{kg}{m^3} \cdot
 \frac{m}{s^2} \cdot m = \frac{kg}{m \cdot s^2}$\\
 $[m \cdot g \cdot \frac{1}{A}] = kg \cdot \frac{m}{s^2} \cdot \frac{1}{m^2} =
-\frac{kg}{m \cdot s^2}$
+\frac{kg}{m \cdot s^2}$\\
+\subsubsection{Nochmals das gleiche mit Gewicht}
+$F \neq 0$ $\to$ $\sigma(L) = \frac{M
+g}{A}$\\
+DGL aufstellen: $\frac{\partial \sigma (x)}{\partial x} = - \rho g$ $\mid$
+$\int dx$\\
+DGL lösen: $\sigma (x) = - \rho g x + \sigma_0$\\
+Boundary Conditions bei L: $\sigma (L) = \frac{F}{A} = \frac{M g}{A}$\\
+BC in DGL einsetzen: $\sigma (L) = - \rho g L + \sigma_0 = \frac{M g}{A}$\\
+Auflösen: $\sigma_0 = \rho g L + \frac{M
+g}{A}$\\
+In DGL einsetzen: $\sigma (x) = - \rho g x + \rho g L + \frac{M g}{A}= \rho g
+(L-x) + \frac{M g}{A}$\\
+Material law: $\epsilon (x) = \frac{\rho g}{E} (L-x) + \frac{M g}{E A}$\\
+Aus Material law: $\frac{\partial u(x)}{\partial x} = \epsilon (x) = \frac{\rho
+g}{E} (L-x) + \frac{M g}{E A} =  \frac{g}{E} (\rho L + \frac{M}{A} - \rho x) $
+$\mid$ $\int dx$\\
+Deformation: $u(x) - u(0) = \int\limits_{0}^{x} \epsilon(x) dx =
+\int\limits_{0}^{x} \frac{g}{E} (\rho L + \frac{M}{A} - \rho x) dx =
+\frac{g}{E} \cdot x \left( \left( L \rho + \frac{M}{A} \right) -
+\frac{x \rho}{2}\right)$, wobei $u(0) = 0$\\
 
-
-
+\subsection{Spring Constant (Federkonstante)}
+Definition Federkonstante: $F = d \cdot \Delta u $\\
+$\sigma = \frac{F}{A}$ $\Rightarrow$ (siehe Übung oben) $u(x) = \frac{F}{A E}
+x$\\
+Für 1D und isotrop über ganzes Gummiband: $x = L$\\
+$\Delta u = \frac{F L}{A E}$\\
+Aus $F = d \cdot \Delta u $ ergibt sich: $d = \frac{A E}{L}$
 
 \section{Electrodynamics}
 
