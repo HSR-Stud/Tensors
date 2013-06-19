@@ -1040,7 +1040,7 @@ s\\
 \textbf{Transform}\\
 Transformation as usual:
 \begin{align}
-E'_{kl}=R_{ki}R_{lj}E_{ij}=R_{ki}E_{ij}R_{jl}^T \\
+\sigma'_{kl}=R_{ki}R_{lj}\sigma_{ij}=R_{ki}\sigma_{ij}R_{jl}^T \\
 R_{kl}=\begin{pmatrix} 
 \cos \alpha & -\sin \alpha & 0 \\
 \sin \alpha &  \cos \alpha & 0 \\            
@@ -1048,8 +1048,24 @@ R_{kl}=\begin{pmatrix}
 \end{pmatrix}
 \end{align}
 
+Resultat:
+
+\begin{align}
+\sigma'_{kl}=\begin{pmatrix}
+0 & s & 0 \\
+s & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}
+\end{align}
+
 \textbf{Trace}\\
 
+\begin{align}
+\operatorname{tr}\sigma_{kl}=0 \\
+\operatorname{tr}\sigma'_{kl}=0 
+\end{align}
+
+$\Rightarrow$ Pure Shear Stress
 \subsubsection{Stress in the Principal Axis System}
 
 \textbf{Transformation}\\
