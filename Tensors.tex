@@ -839,8 +839,72 @@ Das Mechanische Stressfeld ist als negative Impulsflussdichte definiert:
 \sigma_{11}=- \frac{J_p}{A} \Rightarrow [\sigma_{11}]= \frac{N}{m^2} = Pa
 \end{align}
 
-Integriert man
+Integriert man über dieses mechanische Stressfeld:
 
+\begin{align}
+F=\int_A dA \cdot \sigma_{11}
+\end{align}
+so erhält man \flqq Cutting Force\frqq. 
+\subsubsection{1D-Equations}
+
+Um 1-D Elastizitätsprobleme zu lösen, benötigen wir drei Gleichungen:
+
+Balance:
+\begin{align}
+0=\frac{\partial \sigma_{11}}{\partial x}+\rho g_1
+\end{align}
+
+Material law:
+\begin{align}
+\epsilon_{11}=\frac{\partial u(x)}{\partial x} \\
+\sigma_{11}= E \cdot \epsilon_{11}
+\end{align}
+
+Boundary conditions:
+\begin{align}
+\sigma_{11}(L)=\frac{F}{A}, u(0)=0
+\end{align}
+
+$u(x)$ wird als \flqq Displacement Field\frqq{} bezeichnet. Definiert ist diese
+Funktion:
+
+\begin{align}
+u(x)=\Delta u \cdot \frac{x}{L}
+\end{align}
+
+$\Rightarrow$ Siehe Beispiele
+\subsubsection{Elasticity in 3D}
+Generell lässt sich die Gleichung analog zur Ladungsgleichung. Es gibt aber
+Unterschiede: Der Impuls ist eine vektorielle Grösse. Als Konsequenz wird
+$\sigma$ zu einem Tensor zweiter Stufe:
+
+\begin{align}
+\sigma = \begin{pmatrix}
+\sigma_{11} & \sigma_{12} & \sigma_{13} \\
+\sigma_{21} & \sigma_{22} & \sigma_{23} \\
+\sigma_{31} & \sigma_{32} & \sigma_{33} 
+\end{pmatrix}
+\end{align}
+
+Möchte man nun die Impulsbilanz vektoriell in x-Richtung aufstellen ergibt sich
+(1D-vektoriell):
+
+\begin{align}
+0=\frac{\partial \sigma_{1k}}{\partial x_k}
+\end{align}
+
+Weiter verallgmemeinert ergibt sich im 3D Fall:
+
+\begin{align}
+0=\frac{\partial \sigma_{ik}}{\partial x_k}
+\end{align}
+
+Wird zusätzlich das Gravitationsfeld berücksichtigt, ergibt sich noch folgende
+Verallgemeinerung:
+
+\begin{align}
+0=\frac{\partial \sigma_{ik}}{\partial x_k} + \rho g_i
+\end{align}
 \subsection{Beispiel}
 
 \begin{minipage}{3cm}
