@@ -111,8 +111,8 @@ $ [\dot W]=[P]=W=\frac{J}{s} (elektrische Leistung)$\\
 $ [R] = \Omega = \frac{kg m^2}{A^2 s^3} (Widerstand/resistivity) $\\
 $ [G] = S = \frac{1}{\Omega} \text{(elektrische Leitfähigkeit)}$\\
 $ [\rho] = \Omega m (Spezifischer Widerstand)$\\
-$ [\sigma] = \frac{1}{\Omega m} = \frac{S}{m} \text{(spezifische Leitfähigkeit,
-Konduktivität)} $\\
+$ [\sigma] = \frac{1}{\Omega m} = \frac{S}{m} \text{(spezifische Leitfähigkeit,Konduktivität)} $\\
+$ [r] = \Omega m \text{(Wiederstand, resitiviti???)} $\\
 $ [w]=\frac{kg}{ms^2} \colorbox{red}{nochmals kontrollieren!!!} $\\
 $ [\vec E]=\frac{V}{m} = \frac{N}{C}$\\
 $ [M]=Nm (Drehmoment)$\\
@@ -129,6 +129,8 @@ $ [U]= V = \frac{Nm}{As} (Spannung) $\\
 $ [I]= A (Strom) $\\
 $ [q]= C = As (Ladung)$\\
 $ [m]= ??? (magnetic moment)$\\
+$ [j]= \frac{A}{m^2} (Stromdichte, current density)$\\
+
 
 Mechanik\\
 $ [d]=\frac{N}{m} (Federkonstante)(spring constant)$\\
@@ -709,10 +711,12 @@ a = \frac{1}{\sqrt{\sigma_1}} = \frac{1}{\sqrt{50}} \text{ und } b =
 
 \begin{center}
 Ellipse Conductivity Tensor Quadrik:\\
+\colorbox{red}{x2,x3 und senkrechte Striche einfügen}
 \includegraphics[scale=0.8]{images/quadrik_2d_ellipse_uebung.pdf}
 \end{center}
-
-
+Bemerkungen: blauer Kreis zeigt den Widerstand, ist dieser Gross leitet es schlecht, ist der Widerstand klein leitet es gut.
+\\
+\\
 b) Transformation $30^\circ$
 \begin{align}
 k_{ij}'=RkR^{T}
@@ -774,6 +778,7 @@ d) Ellipsoid
 
 \begin{center}
 Gedrehter Tensor (nicht im Hauptachsensystem):\\
+\colorbox{red}{x2,x3 und schräge Striche einfügen}
 \includegraphics[scale=0.8]{images/quadrik_2d_ellipse_uebung_rotation.pdf}
 \end{center}
 
@@ -801,7 +806,8 @@ r_{ij}'=Rr_{ij}R^{T} = \begin{pmatrix}
 
 
 \subsubsection{Eletrical Tin}
-Write down the conductivity Tensor:
+Write down the conductivity Tensor:\\
+(Bemerkung: andere Materialwerte sind im Skript, Kapitel 4 auf der Seite 6 zu finden)
 
 \begin{align}
 \sigma_{ij} = \frac{1}{\rho_{ij}}= \begin{pmatrix}
@@ -812,19 +818,52 @@ Write down the conductivity Tensor:
 10^5 [\frac{S}{m}]
 \end{align}
 
+
+
 a) Calculate the magnitude and the direction of the current density
 
 \begin{align}
 j_i=\sigma_{ij}E_j
 \end{align}
 
-Multiplizieren mit Feld. Danach Vektorbetrag und Winkel berechnen. :-)
+Multiplizieren mit Feld...
+\\... z.B. $ j_i=\sigma_{ij}E_j = \sigma_{ij} = \frac{1}{\rho_{ij}}= \begin{pmatrix}
+101 & 0 & 0 \\
+0 & 101 & 0 \\
+0 & 0 & 69.9 
+\end{pmatrix} 10^5 [\frac{S}{m}] 
+\begin{pmatrix}
+0 \\
+0.5 \\
+0.866 \\
+\end{pmatrix} [\frac{V}{m}] = 
+\begin{pmatrix}
+0 \\
+5.05 \\
+6.05 \\
+\end{pmatrix} 10^5 [\frac{A}{m^2}]$
 
+
+
+Danach Vektorbetrag und Winkel berechnen. :-)\\
+ 
+Vektorbetrag: 
+
+\begin{align}
+j_i=\sqrt{j_x^2+j_y^2+j_z^2}
+\end{align}
+... z.B. $\sqrt{ 0^2+(5.05 \cdot 10^5)^2+(5.05 \cdot 10^5)^2 } = 7.88 [\frac{A}{mm^2}]$ 
+\\
+\\
 Winkel:
 
 \begin{align}
-\tan{\alpha}=\frac{Gegenkathete}{Ankathete}
+\tan{\alpha}=\frac{Gegenkathete}{Ankathete} \Rightarrow \alpha=arctan(\frac{Gegenkathete}{Ankathete})
 \end{align}
+... z.B. $ \alpha=arctan(\frac{Gegenkathete}{Ankathete}) = arctan(\frac{6.05 \cdot 10^5}{5.05 \cdot 10^5}) = 50^\circ $
+
+
+\colorbox{red}{c) und d)noch ergänzen!!!}
 \qed
 
 \section{Elasticity}
