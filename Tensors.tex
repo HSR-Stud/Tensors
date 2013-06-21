@@ -131,17 +131,21 @@ $ J = \frac{kg m^2}{s^2} $\\
 
 \subsection{Begriffe}
 \begin{itemize}
-\item extensive Grösse: wenn sich System verdoppelt verdoppelt sich auch die Eigenschaft z.B. Impuls, Volumen ...
-\item intensive Grösse: wenn sich System verdoppelt verdoppelt sich Eigenschaft nicht z.B. Druck, Temperatur, ...
+\item Grössen
+\subitem extensive Grösse: wenn sich System verdoppelt verdoppelt sich auch die Eigenschaft z.B. Impuls, Volumen ...
+\subitem intensive Grösse: wenn sich System verdoppelt verdoppelt sich Eigenschaft nicht z.B. Druck, Temperatur, ...
+\item Randbedingungen
+\subitem Neumann: feste Temperatur
+\subitem Dirichlet: fester Gradient
 \end{itemize}
 
 
 \subsection{Bilanzgleichungen}
 
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
 \hline  & Stoffliche Grösse & Potential & Balance Equation uniform & Balance Equation distributed \\ 
-\hline Charge Transport & Charge Q & el. Potential ??? & $\frac{dQ}{dt}=I_Q$ & $ \frac{\parallel p_Q}{\partial t}=-\nabla\cdot j_Q$ \\ 
-\hline Heat Transport & thermal Energy W & Temperatur T & $\frac{\parallel W}{\partial t}= I_W+Q_W$ & $\frac{\parallel w}{\partial t}= -\nabla \cdot j_W+q_W$  \\ 
+\hline Charge Transport & Charge Q & el. Potential ??? & $\frac{dQ}{dt}=I_Q$ & $ \frac{\partial p_Q}{\partial t}=-\nabla\cdot j_Q$ \\ 
+\hline Heat Transport & thermal Energy W & Temperatur T & $\frac{\partial W}{\partial t}= I_W+Q_W$ & $\frac{\partial w}{\partial t}= -\nabla \cdot j_W+q_W$  \\ 
 \hline Particle Transport & Partical number N & Particle density c & $\frac{dN}{dt}=I_N+Q_N$ & $\frac{dp}{dt}=-\nabla \cdot j_W +q_W$ \\ 
 \hline Mechanics (Momentum Transport) & Momentum p & Velocity v  & $\frac{\partial p}{\partial t}=F$ & ?? \\ 
 \hline 
@@ -149,17 +153,37 @@ $ J = \frac{kg m^2}{s^2} $\\
 
 \subsection{Constitutive Laws}
 
-\begin{tabular}{|c|c|c|c|}
+\begin{tabular}{|p{3cm}|p{3cm}|p{6cm}|p{3cm}|}
 \hline  & Storage Laws & Constitutive Laws & Source Rates and Sourcerate Densities \\
 \hline Charge Transport & $j_Q=-\sigma \cdot \nabla ??? = \sigma \cdot E$ & & \\
  
-\hline Heat Transport & $w=c_p \rho T$ & $j_W=-\lambda \cdot \nabla T$ &  \\ 
+\hline Heat Transport & $w=c_p \rho T$ & $j_W=-\lambda \cdot \nabla T$  (Fourier's law)&  \\ 
 \hline Particle Transport (Diffusion) & c=c & $j_N=- D \cdot \nabla c_N$ &  \\ 
 \hline Mechanics & $p=mv$ & $F_hook = - k \Delta u$ (Hook's Law) $F_visc=-C \eta \cdot v$ (Viscous Drag) &  \\ 
 \hline 
 \end{tabular} 
 
+\subsection{Beispiele}
+\subsubsection{Ohm's Law}
+% Exercise Chapter 1, Aufgabe 2
+...bitte noch übertragen...
+\subsubsection{Heat conduction in 1D}
+% Exercise Chapter 1, Aufgabe 3
+\begin{itemize}
 
+\item Formulate the stationary het balance equation for a 1D system (slender rod). Genommen wird die Allgemeine Wärmeleitungsgleichung $\frac{\partial w}{\partial t}= -\nabla \cdot j_W+q_W$ und diese Vereinfacht, da Stationär und 1D ergibt es $0= -\frac{\partial j_W}{\partial x}+q_W$
+
+\item Formulate Fourier's law of heat conduction in 1D. Dies ist Allgemein $j_W=-\lambda \cdot \nabla T$ und im 1D $j_W=-\lambda \frac{\partial T}{\partial x} T$
+
+\item Solve this system of 2 ODEs of $1^{st}$ order for following conditions: a Al rod of length L=20cm , cross section $A=1cm^2$ and specific heat conductivity 
+$ \lambda = 240 W/(Km) $ 
+is cooled to $25^\circ C$ on its right hand side and heated on the lhs with a heat flux density of $ 36 kW/m^2 $ (candle).
+Es gilt das Fourier's law in die balance equation einzusetzen ergibt $ 0=\lambda \frac{\partial^2T}{\partial x^2}+q_W$, da es keine Quelle oder Senke hat gilt $q_W=0$. Löst man diese Differentialgleichung ergibt es $T(x)=C_1x+C_2$. An der Stelle (x=0) gilt das Fourier's law, also gilt $j_W=-\lambda \frac{\partial T}{\partial x} = 36000 = -240 \frac{\partial T}{\partial x } \Rightarrow \frac{\partial T}{\partial x}=-150 \frac{K}{m} =C_1$ und auch gegeben ist $25^\circ C$ an der Stelle x=0.2m. Damit $C_2$ ausrechnen ergibt  $ T(0.2)= -150 \frac{K}{m} \cdot 0.2m+C_2=25^{\circ} C $. Allgemein ergibt sich die Gleichung $ T(x)= -150 \frac{K}{m} \cdot x [m] + 25^{\circ} C $.
+
+\item Neu sind beide Seiten sind $25^\circ K$ Nun kommt zusätzlich noch eine Wärmequellerate für $500 kW/m^3$ nun gibt es $ -\lambda \frac{\partial^2T}{\partial x^2}=q_W$ löst man diese Partielle DGL ergibt es $T(x)=\frac{1}{2}\frac{-q_W}{\lambda} x^2+C_1x+C_2$ Setzt man die Randbedingungen ein ergibt es $T(x)=\frac{1}{2}\frac{q_W}{\lambda}(Lx-x^2)+T_0$
+
+
+\end{itemize}
 
 
 \section{Vektoranalysis und Integraltheorem}
