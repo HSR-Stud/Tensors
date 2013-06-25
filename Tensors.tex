@@ -1037,13 +1037,38 @@ Verallgemeinerung:
 0=\frac{\partial \sigma_{ik}}{\partial x_k} + \rho g_i
 \end{align}
 
-\subsubsection{Eigenschaften des Stress Tensors}
+\subsubsection{Eigenschaften des Stress Tensors (Druck, Kraft)}
 Um sich den Stresstensor intuitiv vorzustellen, machen wir folgende Annahme:
 Wir betrachten einen Hexaeder (beliebiger Körper mit sechs Flächen). Externe
 Kräfte wirken auf diesen Körper. An jeder der 6 Flächen haben wir eine
 resultierende Kraft $\vec F^\alpha$...
 
-\subsubsection{Plane Strain}
+\textbf{Plane Stress}
+Plain strain: $\sigma{33} = \sigma{13} = \sigma{23}= 0$ => $\sigma =
+\begin{pmatrix}
+* & * & 0\\
+* & * & 0\\
+* & * & 0\\
+\end{pmatrix} $\\
+In Kapitel 8.3 sind noch irgendwelche Zusammenhänge zwischen Plane Stress und
+Plane Strain definiert (für Details wird ins Exercise verwiesen!)
+
+\subsubsection{Eigenschaften des Strain Tensors (Deformation, Dehnung,
+Verschiebung)}
+Gradient der Deformation: $e = \begin{pmatrix}
+\frac{\partial u_1}{\partial x_1} & \frac{\partial u_1}{\partial x_2} &
+\frac{\partial u_1}{\partial x_3}\\
+\frac{\partial u_2}{\partial x_1} & \frac{\partial u_2}{\partial x_2} &
+\frac{\partial u_2}{\partial x_3}\\
+\frac{\partial u_3}{\partial x_1} & \frac{\partial u_3}{\partial x_2} &
+\frac{\partial u_3}{\partial x_3}\\
+\end{pmatrix}$\\
+Tensor aufteilen (symmetrisch und antisymmetrisch): $e = e^{sym} + e^{anti}$\\
+Strain Tensor: $\epsilon = e^{sym}$\\
+Rotational deformation: $\gamma = e^{anti}$\\
+Anwendung siehe: Beispiel \ref{9.3} (Seite \pageref{9.3})
+
+\textbf{Plane Strain}
 Plain strain: $\epsilon_{33} = \epsilon_{13} = \epsilon_{23}= 0$ => $\epsilon =
 \begin{pmatrix}
 * & * & 0\\
@@ -1054,18 +1079,8 @@ Plain strain: $\epsilon_{33} = \epsilon_{13} = \epsilon_{23}= 0$ => $\epsilon =
   \item Keine Deformation in z-Achse
   \item Beispiel: Druckstaudamm in Schweizer Alpen (large extension along
   z-axis)
-  \item 
 \end{itemize}
 
-\subsubsection{Plane Stress}
-Plain strain: $\sigma{33} = \sigma{13} = \sigma{23}= 0$ => $\sigma =
-\begin{pmatrix}
-* & * & 0\\
-* & * & 0\\
-* & * & 0\\
-\end{pmatrix} $\\
-In Kapitel 8.3 sind noch irgendwelche Zusammenhänge zwischen Plane Stress und
-Plane Strain definiert (für Details wird ins Exercise verwiesen!)
 
 \subsection{Beispiel}
 
@@ -1135,7 +1150,7 @@ Für 1D und isotrop über ganzes Gummiband: $x = L$\\
 $\Delta u = \frac{F L}{A E}$\\
 Aus $F = d \cdot \Delta u $ ergibt sich: $d = \frac{A E}{L}$
 
-\subsection{Beispiel Teil 2 (Strain, Stress, \ldots)}
+\subsection{Beispiel Teil 2 (Strain, Stress, \ldots)} % Exercises Week 9
 
 \subsubsection{Pure Shear Stress}
 
@@ -1323,7 +1338,44 @@ und
 \epsilon^{shear}= \left(\mathbb{I}- \frac{1}{3}\mathbb{E} \right) : \epsilon
 \end{align}
 
-\subsubsection{Deformation Strain State}
+\subsubsection{Deformation Strain State}\label{9.3} % Exercises Week 9.3
+Gegeben Deformation: $u = (a \cdot x_2, b \cdot x_2, 0)^T$
+
+b) Gradient der Deformation: $e_ij= \frac{\partial u_i}{\partial x_j} => e =
+\begin{bmatrix}
+0 & a & 0\\
+0 & b & 0\\
+0 & 0 & 0\\
+\end{bmatrix}$\\
+In symmetrischen und antisymmetrischen Teil splitten: $e = e^sym + e^anti=
+\begin{pmatrix}
+0 & a/2 & 0\\
+a/2 & b & 0\\
+0 & 0 & 0\\
+\end{pmatrix}
++
+\begin{pmatrix}
+0 & a/2 & 0\\
+-a/2 & 0 & 0\\
+0 & 0 & 0\\
+\end{pmatrix}$\\
+Symmetrischer Part: $\epsilon = \begin{pmatrix}
+0 & a/2 & 0\\
+a/2 & b & 0\\
+0 & 0 & 0\\
+\end{pmatrix}$, da $\epsilon_{33} = \epsilon_{13} = \epsilon_{23}= 0$ $\rightarrow$ plane
+strain\\
+Antisymmetrischer Part: $\gamma = \begin{pmatrix}
+0 & a/2 & 0\\
+-a/2 & 0 & 0\\
+0 & 0 & 0\\
+\end{pmatrix}$ $\rightarrow$ Korrespondiert zu einer Drehung um die z-Achse mit
+dem Winkel $\Phi \approx -\frac{a}{2}$ (für kleine Winkel), Drehmatrix:
+$R_z(\alpha) = \begin{pmatrix} \cos \alpha & -\sin \alpha & 0 \\
+\sin \alpha &  \cos \alpha & 0 \\            
+   0        &  0           & 1
+\end{pmatrix}$
+
 
 
 
