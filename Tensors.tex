@@ -1376,7 +1376,38 @@ $R_z(\alpha) = \begin{pmatrix} \cos \alpha & -\sin \alpha & 0 \\
    0        &  0           & 1
 \end{pmatrix}$
 
+c) Find a deformation vector $u(x)$ reproducing the symmetric part of the strain
+tensor that is as symmetric as possible with respectq to $x_1$ and $x_2$. Depict
+this new deformation graphically and interpret the relation of the old
+deformation, the antisymmetric part in the light of the new deformation.\\
 
+$u(x) = \epsilon \cdot \begin{pmatrix} x_1\\ x_2\\ x_3\\ \end{pmatrix} =
+\begin{pmatrix} 0 & a/2 & 0\\
+a/2 & b & 0\\
+0 & 0 & 0\\
+\end{pmatrix} \cdot \begin{pmatrix} x_1\\ x_2\\ x_3\\ \end{pmatrix} =
+\begin{pmatrix}
+\frac{a}{2} \cdot x_2\\ \frac{a}{2} \cdot x_1 + b \cdot x_2\\ 0\\ \end{pmatrix}$
+
+d) Tensor aufteilen (Volumenerhaltung (volume preserving))\\
+$\epsilon =
+\underbrace{
+\begin{pmatrix}
+b/3 & 0 & 0\\
+0 & b/3 & 0\\
+0 & 0 & b/3\\
+\end{pmatrix}
+}_{\text{Volumenänderung}} +
+\underbrace {
+\begin{pmatrix}
+-b/3 & a/2 & 0\\
+a/2 & 2b/3 & 0\\
+0 & 0 & -b/3\\
+\end{pmatrix}}_{\begin{matrix} Spur = 0\\ \text{keine Volumenänderung}\\
+\end{matrix}}$
+
+e) Relative Volumenänderung: $\frac{\Delta V}{V} = \frac{b}{3} + \frac{b}{3} +
+\frac{b}{3} = b$
 
 
 \section{Electrodynamics}
