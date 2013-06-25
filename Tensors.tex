@@ -1043,7 +1043,7 @@ Wir betrachten einen Hexaeder (beliebiger Körper mit sechs Flächen). Externe
 Kräfte wirken auf diesen Körper. An jeder der 6 Flächen haben wir eine
 resultierende Kraft $\vec F^\alpha$...
 
-\textbf{Plane Stress}
+\textbf{Plane Stress}\\
 Plain strain: $\sigma{33} = \sigma{13} = \sigma{23}= 0$ => $\sigma =
 \begin{pmatrix}
 * & * & 0\\
@@ -1053,8 +1053,7 @@ Plain strain: $\sigma{33} = \sigma{13} = \sigma{23}= 0$ => $\sigma =
 In Kapitel 8.3 sind noch irgendwelche Zusammenhänge zwischen Plane Stress und
 Plane Strain definiert (für Details wird ins Exercise verwiesen!)
 
-\subsubsection{Eigenschaften des Strain Tensors (Deformation, Dehnung,
-Verschiebung)}
+\subsection{Strain Tensors (Deformation, Dehnung, Verschiebung)}
 Gradient der Deformation: $e = \begin{pmatrix}
 \frac{\partial u_1}{\partial x_1} & \frac{\partial u_1}{\partial x_2} &
 \frac{\partial u_1}{\partial x_3}\\
@@ -1064,11 +1063,22 @@ Gradient der Deformation: $e = \begin{pmatrix}
 \frac{\partial u_3}{\partial x_3}\\
 \end{pmatrix}$\\
 Tensor aufteilen (symmetrisch und antisymmetrisch): $e = e^{sym} + e^{anti}$\\
-Strain Tensor: $\epsilon = e^{sym}$\\
-Rotational deformation: $\gamma = e^{anti}$\\
+mechanical strain Tensor: $\epsilon \equiv e^{sym} = \frac{1}{2} (e + e^T) =
+\frac{1}{2} (\frac{\partial u_i}{\partial x_j} + \frac{\partial
+u_j}{\partial x_i})$\\
+Rotational deformation (infinitesimal): $\gamma \equiv e^{anti} = \frac{1}{2} (e
+- e^T)$\\
 Anwendung siehe: Beispiel \ref{9.3} (Seite \pageref{9.3})
 
-\textbf{Plane Strain}
+\subsubsection{Volume Change of a Deformation}
+$\frac{\Delta V}{V} = tr \epsilon $
+
+\subsubsection{Isotropic Strain (Gestalterhaltend)}
+$\epsilon_{ij} = \epsilon \cdot \delta_{ij} $
+
+\subsubsection{Pure Shear Strain}
+
+\subsubsection{Plane Strain}
 Plain strain: $\epsilon_{33} = \epsilon_{13} = \epsilon_{23}= 0$ => $\epsilon =
 \begin{pmatrix}
 * & * & 0\\
