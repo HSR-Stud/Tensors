@@ -64,11 +64,13 @@ zu rotieren; die Rotation eines Vektorfeldes ist ein Vektorfeld von
 Pseudovektoren. Und zwar folgt aus dem Stokes’schen Integralsatz (siehe unten),
 dass die Rotation die lokale Wirbeldichte eines Vektorfeldes beschreibt.
 
-Quelle: http://de.wikipedia.org/wiki/Vektoranalysis
+Quelle: http://de.wikipedia.org/wiki/Vektoranalysis\\
 
 \colorbox{red}{Decomposition von Strain und Stress Aufteilung der Kapitel
-besprechen!}
-\colorbox{red}{Colorbox Fragen für Freitag}
+besprechen!}\\
+\colorbox{red}{Tensoralgebra Kronecker Delta Übung Dokumentieren}\\
+\colorbox{red}{Übungsprüfung Mechanikbeispiel, \ldots Dokumentieren}\\
+\colorbox{red}{Colorbox Fragen für Freitag}\\
 \begin{itemize}
 	\item Reihenfolge: Unbedingt Fragen, wichtig oder nicht???
 Find Eigenvalues: - Reihenfolge ist nicht relevant!
@@ -1248,7 +1250,37 @@ Identisch mit Strain Decomposition: Details siehe Kapitel
 \ref{straindecomposition} auf Seite \pageref{straindecomposition}!
 
 \subsection{Elasticity Tensor E and $\nu$}
+$\mathbb{C}^{eng} = \frac{E}{1 + \nu} \cdot \begin{pmatrix}
+\frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & 0 & 0 & 0\\
+\frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & 0 & 0 & 0\\
+\frac{\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu} & 0 & 0 & 0\\
+0 & 0 & 0 & \frac{1}{2} & 0 & 0\\
+0 & 0 & 0 & 0 & \frac{1}{2} & 0\\
+0 & 0 & 0 & 0 & 0 & \frac{1}{2}\\
+\end{pmatrix}$\\
+Vereinfacht (wohl ohne Scherung):\\
+$\mathbf{C} = \frac{E}{1 + \nu} \cdot \begin{pmatrix}
+\frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & \frac{\nu}{1-2\nu}\\
+\frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu}\\
+\frac{\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu}
+\end{pmatrix}$\\
 
+E-module (Young's modulus): $E$\\
+Poisson's ratio: $\nu$\\
+
+\textbf{Elasticity Tensor in Plane Strain $\epsilon$}\\
+$\mathbb{C}^{eng} = \frac{E}{1 + \nu} \cdot \begin{pmatrix}
+\frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & 0\\
+\frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu} & 0\\
+0 & 0 & \frac{1}{2}
+\end{pmatrix}$\\
+
+\textbf{Elasticity Tensor in Plane Stress $\sigma$}\\
+$\mathbb{C}^{eng} = \frac{E}{1 + \nu} \cdot \begin{pmatrix}
+\frac{1}{1-\nu} & \frac{\nu}{1-\nu} & 0\\
+\frac{\nu}{1-\nu} & \frac{1}{1-\nu} & 0\\
+0 & 0 & \frac{1}{2}
+\end{pmatrix}$\\
 
 
 \subsection{Beispiel}
