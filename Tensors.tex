@@ -152,6 +152,10 @@ $ [N/m^2] = [Pa] = j_p Impulsflussdichte$\\
 
 
 
+$ \otimes $ = jeder mal jeder rechnen
+
+
+
 
 \subsection{SI-Einheiten}
 $ J = \frac{kg m^2}{s^2} $\\
@@ -703,6 +707,61 @@ $ \mathbb{I} $ und $ \mathbb{E} $ sind unabhänig vom Koordinatensystem wenn die
 $ I'_{mnpq}=R_{mi}R_{nj}R_{pk}R_{ql}I_{ijkl} = \frac{1}{2}(R_{mi}\delta_{ik}R_{pk}R_{nj}\delta_{jl}R_{ql} + R_{mi}\delta_{il}R_{ql}R_{nj}\delta_{jk}R_{pk})= \frac{1}{2}(R_{mi}R^T_{ip}R_{nj}R^T_{jq}+R_{mi}R^T_{iq}R_{nj}R^T_{jp})= \frac{1}{2}(\delta_{mp}\delta_{mq}\delta_{np})=I_{mnpq} $ dasselbe gilt auch für $ E'_{mnpq}=E_{mnpq}$
 
 
+<<<<<<< HEAD
+=======
+\subsubsection{Engineering Notation}
+\begin{itemize}
+\item Weshalb gibt es den Faktor 2 bei $ \epsilon^{eng}=(\epsilon_{11},\epsilon_{22},\epsilon_{33},2\epsilon_{23},2\epsilon_{13},2\epsilon_{12}) $
+
+???
+
+
+\item Engineering notation von einem Einheitstensor zweiter Stufe
+$ \textbf{I}^{eng}=(1,1,1,0,0,0) $
+
+
+\item Notation von Tensoren 4 Stufe
+\item Mit 2 Tensoren 4ter Stufe in Engineering Notation können die Operationen
+durchgeführt werden, wie wenn er 2ter Stufe wäre (+,-,*,:)!
+
+\end{itemize}
+$ \mathbb{I}^{eng}=
+\begin{pmatrix}
+1 & 0 & 0 & 0 & 0 & 0 \\ 
+0 & 1 & 0 & 0 & 0 & 0 \\ 
+0 & 0 & 1 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & \frac{1}{2} & 0 & 0 \\ 
+0 & 0 & 0 & 0 & \frac{1}{2} & 0 \\ 
+0 & 0 & 0 & 0 & 0 & \frac{1}{2}
+\end{pmatrix} 
+$ $I_{ijkl} = \frac{1}{2} (\delta_{ik} \delta_{jl} + \delta_{il} \delta_{jk}) $
+(Definition nicht begründet)
+
+Für Tensorverjüngung kommts mit diesem I besser:\\
+$ \mathbb{I_{\text{bischsil}}}^{eng}=
+\begin{pmatrix}
+1 & 0 & 0 & 0 & 0 & 0 \\ 
+0 & 1 & 0 & 0 & 0 & 0 \\ 
+0 & 0 & 1 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 1 & 0 & 0 \\ 
+0 & 0 & 0 & 0 & 1 & 0 \\ 
+0 & 0 & 0 & 0 & 0 & 1
+\end{pmatrix}$
+
+$
+\mathbb{E}^{eng}=
+\begin{pmatrix}
+1 & 1 & 1 & 0 & 0 & 0 \\ 
+1 & 1 & 1 & 0 & 0 & 0 \\ 
+1 & 1 & 1 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0 & 0 & 0
+\end{pmatrix} 
+$ $E_{ijkl} = \delta_{ij} \delta_{kl}$ (Definition nicht
+begründet)
+
+>>>>>>> cae9f13db7809f1c5781e839df232e871b599cdc
 \section{Transport Phenomenas}
 In diesem Kapitel werden anisotropische Transportphänomene betrachtet. Der
 Begriff der Quadrik wird eingeführt. Im Fokus stehen thermische Leitfähigkeit,
@@ -1156,13 +1215,15 @@ $\epsilon_{ij} = \epsilon \cdot \delta_{ij} $
 $e_{ij}$ with $trace \epsilon = 0$, Volumen bleibt gleich!
 
 \subsubsection{Strain Decomposition (Zerlegung isotropic/shear)}
-Volumenändernd, isotropic: $e^{iso} = \frac{tr \epsilon}{3} \cdot \mathbf{I}
+Volumenändernd, isotropic: $\epsilon^{iso} = \frac{tr \epsilon}{3} \cdot \mathbf{I}
 \equiv \frac{1}{3} \mathbb{E} : \epsilon$\\
 
 Volumenerhaltend, shape changing (Formverändernd): $\epsilon^{shear} =
 (\mathbb{I} - \frac{1}{3} \mathbb{E} ) : \epsilon $\\
-Wobei (Achtung in Engineering Notation siehe Kapitel \ref{tensor4th} auf Seite
-\pageref{tensor4th}):\\ $ \mathbb{I}^{eng}=
+\textbf{Hint}: $\epsilon = \epsilon^{iso} + \epsilon^{shear}$ $\rightarrow$
+$\epsilon^{shear} = \epsilon -\epsilon^{iso}$\\
+Wobei (Achtung in Engineering
+Notation siehe Kapitel \ref{tensor4th} auf Seite \pageref{tensor4th}):\\ $ \mathbb{I}^{eng}=
 \begin{pmatrix}
 1 & 0 & 0 & 0 & 0 & 0 \\ 
 0 & 1 & 0 & 0 & 0 & 0 \\ 
@@ -1534,9 +1595,13 @@ e) Relative Volumenänderung: $\frac{\Delta V}{V} = \frac{b}{3} + \frac{b}{3} +
 $ \vec{p}=q\cdot\vec{d} $
 
 
+Strom berechnen in X-Richutng
+
+$ I = \sigma_{11} \cdot E_1 \cdot A $
+
 
 Wiederstand berechnen:\\
-$ R=\rho\cdot\frac{l}{A}$\\
+$ R=\rho\cdot\frac{l}{A}=\frac{1}{\sigma} \cdot\frac{l}{A}$\\
 
 E-Feld berechnen:\\
 $ \vec E = \rho \cdot \vec j $\\
