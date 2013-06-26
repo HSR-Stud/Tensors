@@ -14,7 +14,9 @@
 \usepackage{fancyhdr}
 \usepackage{color}
 \usepackage{hyperref}
-
+\usepackage{multicol}
+\newcommand{\dx}{\hspace{2pt}dx}
+\newcommand{\dd}[1]{\hspace{2pt}d#1}
 %\usepackage[ansinew]{inputenc}
 \usepackage[T1]{fontenc}
 
@@ -644,14 +646,14 @@ C_{55}^{\text{v}} & C_{56}^{\text{v}} & \\ C_{61}^{\text{v}} & C_{62}^{\text{v}}
 
 \subsection{Voigt Notation Strain Tensor}
 
- \begin{align} \varepsilon_{ij}= \begin{bmatrix} \varepsilon_{11} &
+ \begin{align} \varepsilon_{ij}= \begin{pmatrix} \varepsilon_{11} &
 \varepsilon_{12} & \varepsilon_{13} \\ & \varepsilon_{22} & \varepsilon_{23} \\
-\text{sym} & & \varepsilon_{33} \\ \end{bmatrix} \longrightarrow &
-\begin{bmatrix} \varepsilon_{11} \\ \varepsilon_{22} \\ \varepsilon_{33} \\ 2 
-\varepsilon_{23} \\ 2 \varepsilon_{13} \\ 2 \varepsilon_{12} \\ \end{bmatrix} =
-: \begin{bmatrix} \varepsilon^{\text{v}}_{1} \\ \varepsilon^{\text{v}}_{2} \\
+\text{sym} & & \varepsilon_{33} \\ \end{pmatrix} \longrightarrow &
+\begin{pmatrix} \varepsilon_{11} \\ \varepsilon_{22} \\ \varepsilon_{33} \\ 2 
+\varepsilon_{23} \\ 2 \varepsilon_{13} \\ 2 \varepsilon_{12} \\ \end{pmatrix} =
+: \begin{pmatrix} \varepsilon^{\text{v}}_{1} \\ \varepsilon^{\text{v}}_{2} \\
 \varepsilon^{\text{v}}_{3} \\ \varepsilon^{\text{v}}_{4} \\
-\varepsilon^{\text{v}}_{5} \\ \varepsilon^{\text{v}}_{6} \\ \end{bmatrix} = 
+\varepsilon^{\text{v}}_{5} \\ \varepsilon^{\text{v}}_{6} \\ \end{pmatrix} = 
 \varepsilon^{\text{v}}_\alpha \end{align}
 
 \subsection{Beispiel}
@@ -1785,10 +1787,89 @@ Kommt nicht ist nicht drin das Kapitelangabe stimmt, juppi
 			a_{21}&a_{22}\\
 		\end{bmatrix}\right)=
 		a_{11} + a_{22}$\\
+	\subsection{Integraltable}
+\begin{center}	
+\begin{multicols}{2}
+
+\begin{equation}
+\int x^n \dx = \frac{1}{n+1}x^{n+1}, \hspace{1ex} n\neq-1
+\end{equation}
+
+\begin{equation}
+\int \frac{1}{x}\dx = \ln |x|
+\end{equation}
+
+\begin{equation}
+\int u \hspace{2pt} \dd{v} = uv - \int v du
+\end{equation}
+
+
+
+\begin{equation}
+\int e^x \dx = e^x 
+\end{equation}
+
+\begin{equation}
+\int a^x \dx = \frac{1}{\ln a} a^x
+\end{equation}
+
+\begin{equation}
+\int \ln x \dx = x \ln x - x
+\end{equation}
+
+
+\begin{equation}
+\int \sin x \dx = -\cos x
+\end{equation}
+
+\begin{equation}
+\int \cos x \dx = \sin x
+\end{equation}
+
+\begin{equation}
+\int \tan x \dx = \ln |\sec x| 
+\end{equation}
+
+\begin{equation}
+\int \sec x \dx = \ln |\sec x + \tan x|
+\end{equation}
+
+\begin{equation}
+\int \sec^2 x \dx = \tan x
+\end{equation}
+
+\begin{equation}
+\int \sec x \tan x \dx = \sec x
+\end{equation}
+
+\begin{equation}
+\int \frac{a}{a^2+x^2}\dx = \tan^{-1}\frac{x}{a}
+\end{equation}
+
+\begin{equation}
+\int \frac{a}{a^2-x^2}\dx = \frac{1}{2}\ln\left|\frac{x+a}{x-a}\right|
+\end{equation}
+
+\begin{equation}
+\int \frac{1}{\sqrt{a^2-x^2}} \dx = \sin^{-1} \frac{x}{a}
+\end{equation}
+
+\begin{equation}
+\int \frac{a}{x \sqrt{x^2-a^2}} \dx = \sec^{-1} \frac{x}{a}
+\end{equation}
+
+\begin{align}
+\int \frac{1}{\sqrt{x^2-a^2}} \dx &= \cosh^{-1} \frac{x}{a} \\&= \nonumber \ln (x+\sqrt{x^2-a^2})
+\end{align}
+
+\begin{align}
+\int \frac{1}{\sqrt{x^2+a^2}} \dx &= \sinh^{-1} \frac{x}{a} \\&=\nonumber \ln (x+\sqrt{x^2+a^2})
+\end{align}
+
+\end{multicols}
+\end{center}		
 		
-		\subsection{todo!!!!!!!!!!!!!!}
-		\colorbox{red}{Ableitungs und Integral table aus PDE copy, welche
-		brauchen wir? stand auf meinem Notizzettel (bischsil)}
+
 		
 	\subsection{TI-89/92/Voyage 200}
 		\textbf{Gleichung für mehrere Werte}\\
