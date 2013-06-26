@@ -372,7 +372,7 @@ $\partial F$ berandet wird:
 
 
 \section{Mathematical Basics}
-\subsection{Grundlagen}
+\subsection{Grundlagen Matrix Rechnung}
 
 Matrix:
 
@@ -381,6 +381,13 @@ A=\mathbf{A}=\underline{A}=\begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n}\\
 a_{21} & a_{22} & \cdots & a_{2n}\\ \vdots & \vdots & \ddots & \vdots\\ a_{m1}
 & a_{m2} & \cdots & a_{mn}\\ \end{pmatrix} = (a_{ij})
 \end{align}
+
+Determinante:
+
+\begin{align} \det A &= \det \begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21}
+& a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{pmatrix} \\ &= a_{11} a_{22}
+a_{33} +a_{12} a_{23} a_{31} + a_{13} a_{21} a_{32} - a_{13} a_{22} a_{31} -
+a_{12} a_{21} a_{33} - a_{11} a_{23} a_{32}. \end{align}
 
 
 Einsteinnotation: $w_i=\sum_{j=1}^{3}A_ijv_j=A_ijv_j$
