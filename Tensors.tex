@@ -1143,7 +1143,9 @@ Plain strain: $\sigma{33} = \sigma{13} = \sigma{23}= 0$ => $\sigma =
 In Kapitel 8.3 sind noch irgendwelche Zusammenhänge zwischen Plane Stress und
 Plane Strain definiert (für Details wird ins Exercise verwiesen!)
 
-\subsection{Strain Tensors (Deformation, Dehnung, Verschiebung)}
+\subsection{Strain Tensors $\epsilon$ (Deformation, Dehnung, Verschiebung)}
+Strain, Dehnung: $\frac{\Delta L}{L}$ (Wirkung die Auftritt durch Stress
+Tensor (Spannung $\frac{F}{A}$) $\sigma$)\\
 Gradient der Deformation: $e = \begin{pmatrix}
 \frac{\partial u_1}{\partial x_1} & \frac{\partial u_1}{\partial x_2} &
 \frac{\partial u_1}{\partial x_3}\\
@@ -1170,6 +1172,7 @@ $\epsilon_{ij} = \epsilon \cdot \delta_{ij} $
 $e_{ij}$ with $trace \epsilon = 0$, Volumen bleibt gleich!
 
 \subsubsection{Strain Decomposition (Zerlegung isotropic/shear)}
+\label{straindecomposition}
 Volumenändernd, isotropic: $\epsilon^{iso} = \frac{tr \epsilon}{3} \cdot \mathbf{I}
 \equiv \frac{1}{3} \mathbb{E} : \epsilon$\\
 
@@ -1211,6 +1214,41 @@ Plain strain: $\epsilon_{33} = \epsilon_{13} = \epsilon_{23}= 0$ => $\epsilon =
   \item Beispiel: Druckstaudamm in Schweizer Alpen (large extension along
   z-axis)
 \end{itemize}
+
+\subsection{Stress Tensor $\sigma$ (Spannung)}
+Spannung: $\frac{\text{Kraft}}{\text{Fläche}} = \frac{F}{A}$\\
+
+\subsubsection{Plane Stress (Ebener Spannungszustand)}
+$\sigma_{33} = \sigma_{13} = \sigma_{23} = 0$ => $\sigma =
+\begin{pmatrix}
+* & * & 0\\
+* & * & 0\\
+* & * & 0\\
+\end{pmatrix} $\\
+
+Beachte: Falls ebener Spannungszustand gilt: $\epsilon_{33} \neq 0$\\
+
+\subsubsection{Stress Decomposition (Zerlegung isotropic/shear)}
+\label{stressdecomposition}
+
+$\sigma$ kann in zwei verschiedene Teile zerlegt werden (Tensorverjüngung!!!):
+
+\begin{align}
+\sigma^{iso}=\frac{\operatorname{tr} \sigma}{3} \cdot \mathbf{I} \equiv
+\frac{1}{3} \mathbb{E} : \epsilon
+\end{align}
+
+und
+
+\begin{align}
+\sigma^{shear}= \left(\mathbb{I}- \frac{1}{3}\mathbb{E} \right) : \epsilon
+\end{align}
+
+Identisch mit Strain Decomposition: Details siehe Kapitel
+\ref{straindecomposition} auf Seite \pageref{straindecomposition}!
+
+\subsection{Elasticity Tensor E and $\nu$}
+
 
 
 \subsection{Beispiel}
@@ -1454,20 +1492,8 @@ Resultat:
 \end{pmatrix}
 \end{align}
 
-\textbf{Decomposition}\\
-
-$\sigma$ kann in zwei verschiedene Teile zerlegt werden (Tensorverjüngung!!!):
-
-\begin{align}
-\epsilon^{iso}=\frac{\operatorname{tr} \epsilon}{3} \cdot \mathbf{I} \equiv
-\frac{1}{3} \mathbb{E} : \epsilon
-\end{align}
-
-und
-
-\begin{align}
-\epsilon^{shear}= \left(\mathbb{I}- \frac{1}{3}\mathbb{E} \right) : \epsilon
-\end{align}
+Aufteilung des Stresstensor siehe Kapitel \ref{stressdecomposition} auf Seite
+\pageref{stressdecomposition}!
 
 \subsubsection{Deformation Strain State}\label{9.3} % Exercises Week 9.3
 Gegeben Deformation: $u = (a \cdot x_2, b \cdot x_2, 0)^T$
