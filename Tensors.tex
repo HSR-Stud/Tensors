@@ -524,6 +524,26 @@ Indizes können wie folgt umgerechnet werden:
 11&22&33&23&13&12
 \end{pmatrix}
 \end{align}
+
+
+ \begin{align} C_{ijkl} \longrightarrow& \begin{bmatrix} C_{1111} & C_{1122} &
+C_{1133} & C_{1123} & C_{1113} & C_{1112} & \\ C_{2211} & C_{2222} & C_{2233} &
+C_{2223} & C_{2213} & C_{2212} & \\ C_{3311} & C_{3322} & C_{3333} & C_{3323} &
+C_{3313} &  C_{3312} & \\ C_{2311} & C_{2322} & C_{2333} & C_{2323} & C_{2313} &
+C_{2312}  & \\ C_{1311} & C_{1322} & C_{1333} & C_{1323} & C_{1313} & C_{1312} &
+\\  C_{1211} & C_{1222} & C_{1233} & C_{1223} & C_{1213} & C_{1212} & \\ 
+\end{bmatrix}=: \begin{bmatrix} C_{11}^{\text{v}} & C_{12}^{\text{v}} &
+C_{13}^{\text{v}} &  C_{14}^{\text{v}} & C_{15}^{\text{v}} & C_{16}^{\text{v}} &
+\\  C_{21}^{\text{v}} & C_{22}^{\text{v}} & C_{23}^{\text{v}} &
+C_{24}^{\text{v}} & C_{25}^{\text{v}} &  C_{26}^{\text{v}} & \\
+C_{31}^{\text{v}} & C_{32}^{\text{v}} &  C_{33}^{\text{v}} & C_{34}^{\text{v}} &
+C_{35}^{\text{v}} &  C_{36}^{\text{v}} & \\ C_{41}^{\text{v}} &
+C_{42}^{\text{v}} & C_{43}^{\text{v}}  & C_{44}^{\text{v}} & C_{45}^{\text{v}} &
+C_{46}^{\text{v}} &  \\ C_{51}^{\text{v}} & C_{52}^{\text{v}} &
+C_{53}^{\text{v}} & C_{54}^{\text{v}}  & C_{55}^{\text{v}} & C_{56}^{\text{v}} &
+\\ C_{61}^{\text{v}}  & C_{62}^{\text{v}} & C_{63}^{\text{v}} &
+C_{64}^{\text{v}} & C_{65}^{\text{v}}  & C_{66}^{\text{v}} & \\ \end{bmatrix} =C^{\text{v}}_{\alpha\beta} \end{align}
+
 \subsection{Bestimmen der Transformationsmatrix}
 %Übung Exercise 3b) Aufgabe 3
 
@@ -565,6 +585,64 @@ $R_z(\alpha) = \begin{pmatrix}
 \\
 
 
+\subsection{Engineering Notation Voigt Notation}
+\begin{itemize}
+\item Weshalb gibt es den Faktor 2 bei $ \epsilon^{eng}=(\epsilon_{11},\epsilon_{22},\epsilon_{33},2\epsilon_{23},2\epsilon_{13},2\epsilon_{12}) $
+
+???
+
+
+\item Engineering notation von einem Einheitstensor zweiter Stufe
+$ \textbf{I}^{eng}=(1,1,1,0,0,0) $
+
+
+\item Notation von Tensoren 4 Stufe
+\item Mit 2 Tensoren 4ter Stufe in Engineering Notation können die Operationen
+durchgeführt werden, wie wenn er 2ter Stufe wäre (+,-,*,:)!
+
+\end{itemize}
+$ \mathbb{I}^{eng}=
+\begin{pmatrix}
+1 & 0 & 0 & 0 & 0 & 0 \\ 
+0 & 1 & 0 & 0 & 0 & 0 \\ 
+0 & 0 & 1 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & \frac{1}{2} & 0 & 0 \\ 
+0 & 0 & 0 & 0 & \frac{1}{2} & 0 \\ 
+0 & 0 & 0 & 0 & 0 & \frac{1}{2}
+\end{pmatrix} 
+$ $I_{ijkl} = \frac{1}{2} (\delta_{ik} \delta_{jl} + \delta_{il} \delta_{jk}) $
+(Definition nicht begründet)
+
+$
+\mathbb{E}^{eng}=
+\begin{pmatrix}
+1 & 1 & 1 & 0 & 0 & 0 \\ 
+1 & 1 & 1 & 0 & 0 & 0 \\ 
+1 & 1 & 1 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0 & 0 & 0
+\end{pmatrix} 
+$ $E_{ijkl} = \delta_{ij} \delta_{kl}$ (Definition nicht
+begründet)
+
+ \begin{align} C_{ijkl} \longrightarrow& \begin{pmatrix} C_{1111} & C_{1122} &
+C_{1133} & C_{1123} & C_{1113} & C_{1112} & \\ C_{2211} & C_{2222} & C_{2233} &
+C_{2223} & C_{2213} & C_{2212} & \\ C_{3311} & C_{3322} & C_{3333} & C_{3323} &
+C_{3313} & C_{3312} & \\ C_{2311} & C_{2322} & C_{2333} & C_{2323} & C_{2313} &
+C_{2312} & \\ C_{1311} & C_{1322} & C_{1333} & C_{1323} & C_{1313} & C_{1312} &
+\\ C_{1211} & C_{1222} & C_{1233} & C_{1223} & C_{1213} & C_{1212} & \\
+\end{pmatrix}=: \begin{pmatrix} C_{11}^{\text{v}} & C_{12}^{\text{v}} &
+C_{13}^{\text{v}} & C_{14}^{\text{v}} & C_{15}^{\text{v}} & C_{16}^{\text{v}} &
+\\ C_{21}^{\text{v}} & C_{22}^{\text{v}} & C_{23}^{\text{v}} & C_{24}^{\text{v}}
+&  C_{25}^{\text{v}} & C_{26}^{\text{v}} & \\ C_{31}^{\text{v}} &
+C_{32}^{\text{v}}  & C_{33}^{\text{v}} & C_{34}^{\text{v}} & C_{35}^{\text{v}} &
+C_{36}^{\text{v}} & \\ C_{41}^{\text{v}} & C_{42}^{\text{v}} & C_{43}^{\text{v}}
+& C_{44}^{\text{v}} & C_{45}^{\text{v}} & C_{46}^{\text{v}} & \\
+C_{51}^{\text{v}}  & C_{52}^{\text{v}} & C_{53}^{\text{v}} & C_{54}^{\text{v}} &
+C_{55}^{\text{v}} & C_{56}^{\text{v}} & \\ C_{61}^{\text{v}} & C_{62}^{\text{v}}
+& C_{63}^{\text{v}} & C_{64}^{\text{v}} & C_{65}^{\text{v}} & C_{66}^{\text{v}}
+&  \\ \end{pmatrix} =C^{\text{v}}_{\alpha\beta} \end{align}
 
 \subsection{Beispiel}
 
@@ -624,47 +702,6 @@ $ \mathbb{I} $ und $ \mathbb{E} $ sind unabhänig vom Koordinatensystem wenn die
 
 $ I'_{mnpq}=R_{mi}R_{nj}R_{pk}R_{ql}I_{ijkl} = \frac{1}{2}(R_{mi}\delta_{ik}R_{pk}R_{nj}\delta_{jl}R_{ql} + R_{mi}\delta_{il}R_{ql}R_{nj}\delta_{jk}R_{pk})= \frac{1}{2}(R_{mi}R^T_{ip}R_{nj}R^T_{jq}+R_{mi}R^T_{iq}R_{nj}R^T_{jp})= \frac{1}{2}(\delta_{mp}\delta_{mq}\delta_{np})=I_{mnpq} $ dasselbe gilt auch für $ E'_{mnpq}=E_{mnpq}$
 
-
-\subsubsection{Engineering Notation}
-\begin{itemize}
-\item Weshalb gibt es den Faktor 2 bei $ \epsilon^{eng}=(\epsilon_{11},\epsilon_{22},\epsilon_{33},2\epsilon_{23},2\epsilon_{13},2\epsilon_{12}) $
-
-???
-
-
-\item Engineering notation von einem Einheitstensor zweiter Stufe
-$ \textbf{I}^{eng}=(1,1,1,0,0,0) $
-
-
-\item Notation von Tensoren 4 Stufe
-\item Mit 2 Tensoren 4ter Stufe in Engineering Notation können die Operationen
-durchgeführt werden, wie wenn er 2ter Stufe wäre (+,-,*,:)!
-
-\end{itemize}
-$ \mathbb{I}^{eng}=
-\begin{pmatrix}
-1 & 0 & 0 & 0 & 0 & 0 \\ 
-0 & 1 & 0 & 0 & 0 & 0 \\ 
-0 & 0 & 1 & 0 & 0 & 0 \\ 
-0 & 0 & 0 & \frac{1}{2} & 0 & 0 \\ 
-0 & 0 & 0 & 0 & \frac{1}{2} & 0 \\ 
-0 & 0 & 0 & 0 & 0 & \frac{1}{2}
-\end{pmatrix} 
-$ $I_{ijkl} = \frac{1}{2} (\delta_{ik} \delta_{jl} + \delta_{il} \delta_{jk}) $
-(Definition nicht begründet)
-
-$
-\mathbb{E}^{eng}=
-\begin{pmatrix}
-1 & 1 & 1 & 0 & 0 & 0 \\ 
-1 & 1 & 1 & 0 & 0 & 0 \\ 
-1 & 1 & 1 & 0 & 0 & 0 \\ 
-0 & 0 & 0 & 0 & 0 & 0 \\ 
-0 & 0 & 0 & 0 & 0 & 0 \\ 
-0 & 0 & 0 & 0 & 0 & 0
-\end{pmatrix} 
-$ $E_{ijkl} = \delta_{ij} \delta_{kl}$ (Definition nicht
-begründet)
 
 \section{Transport Phenomenas}
 In diesem Kapitel werden anisotropische Transportphänomene betrachtet. Der
