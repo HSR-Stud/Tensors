@@ -653,6 +653,17 @@ $ \mathbb{I}^{eng}=
 $ $I_{ijkl} = \frac{1}{2} (\delta_{ik} \delta_{jl} + \delta_{il} \delta_{jk}) $
 (Definition nicht begründet)
 
+Für Tensorverjüngung kommts mit diesem I besser:\\
+$ \mathbb{I_{\text{bischsil}}}^{eng}=
+\begin{pmatrix}
+1 & 0 & 0 & 0 & 0 & 0 \\ 
+0 & 1 & 0 & 0 & 0 & 0 \\ 
+0 & 0 & 1 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 1 & 0 & 0 \\ 
+0 & 0 & 0 & 0 & 1 & 0 \\ 
+0 & 0 & 0 & 0 & 0 & 1
+\end{pmatrix}$
+
 $
 \mathbb{E}^{eng}=
 \begin{pmatrix}
@@ -1119,13 +1130,15 @@ $\epsilon_{ij} = \epsilon \cdot \delta_{ij} $
 $e_{ij}$ with $trace \epsilon = 0$, Volumen bleibt gleich!
 
 \subsubsection{Strain Decomposition (Zerlegung isotropic/shear)}
-Volumenändernd, isotropic: $e^{iso} = \frac{tr \epsilon}{3} \cdot \mathbf{I}
+Volumenändernd, isotropic: $\epsilon^{iso} = \frac{tr \epsilon}{3} \cdot \mathbf{I}
 \equiv \frac{1}{3} \mathbb{E} : \epsilon$\\
 
 Volumenerhaltend, shape changing (Formverändernd): $\epsilon^{shear} =
 (\mathbb{I} - \frac{1}{3} \mathbb{E} ) : \epsilon $\\
-Wobei (Achtung in Engineering Notation siehe Kapitel \ref{tensor4th} auf Seite
-\pageref{tensor4th}):\\ $ \mathbb{I}^{eng}=
+\textbf{Hint}: $\epsilon = \epsilon^{iso} + \epsilon^{shear}$ $\rightarrow$
+$\epsilon^{shear} = \epsilon -\epsilon^{iso}$\\
+Wobei (Achtung in Engineering
+Notation siehe Kapitel \ref{tensor4th} auf Seite \pageref{tensor4th}):\\ $ \mathbb{I}^{eng}=
 \begin{pmatrix}
 1 & 0 & 0 & 0 & 0 & 0 \\ 
 0 & 1 & 0 & 0 & 0 & 0 \\ 
