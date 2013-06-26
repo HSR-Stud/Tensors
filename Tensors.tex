@@ -501,6 +501,14 @@ Indizes können wie folgt umgerechnet werden:
 
 Gegeben eine Matrix M... mit $det(A-\lambda E)$ die Eigenvektoren bestimmen und zusammensetzen ergibt die Transformationsmatrix R am Schluss Kontrollieren mit $M^{diag}=R \cdot R^T$
 
+\subsection{Tensor Invarianten}
+\begin{itemize}
+  \item 1. Invariante: $I_1 = trace(A)$ (Volumenänderung)
+  \item 2. Invariante: $I_2 = \frac{1}{2} ((tr A)^2 - tr(A^2))$
+  (Plastizitätstheorie)
+  \item 3. Invariante: $I_3 = det(A)$ (selten benötigt für Tensoren)
+\end{itemize}
+
 
 
 \subsection{Beispiel}
@@ -613,7 +621,8 @@ $ \mathbb{I}^{eng}=
 0 & 0 & 0 & 0 & \frac{1}{2} & 0 \\ 
 0 & 0 & 0 & 0 & 0 & \frac{1}{2}
 \end{pmatrix} 
-$
+$ $I_{ijkl} = \frac{1}{2} (\delta_{ik} \delta_{jl} + \delta_{il} \delta_{jk}) $
+(Definition nicht begründet)
 
 $
 \mathbb{E}^{eng}=
@@ -625,7 +634,8 @@ $
 0 & 0 & 0 & 0 & 0 & 0 \\ 
 0 & 0 & 0 & 0 & 0 & 0
 \end{pmatrix} 
-$
+$ $E_{ijkl} = \delta_{ij} \delta_{kl}$ (Definition nicht
+begründet)
 
 \section{Transport Phenomenas}
 In diesem Kapitel werden anisotropische Transportphänomene betrachtet. Der
