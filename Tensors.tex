@@ -374,9 +374,17 @@ Orientierung der Fläche sei so festgelegt, daß die Aussenseite die positive
 Seite ist.
 
 \begin{align}
-\int_V \operatorname{div} \vec u \; \mathrm d^{(n)}V = \oint_{S} \vec u \cdot
-\vec n\; \mathrm d^{(n-1)}A\,.
+\int_V \operatorname{div} \vec u \; \mathrm dV = \oint_{S} \vec u \cdot
+\vec n\; \mathrm dA
 \end{align}
+
+oder
+
+\begin{align}
+\int_V \nabla \cdot \vec u \; \mathrm dV = \oint_{S} \vec u \cdot
+\vec n\; \mathrm dA
+\end{align}
+
 \subsection{Satz von Stokes}
 Das Kurven- oder Linienintegral eines räumlichen Vektorfeldes $\vec u$ längs
 einer geschlossenen Kurve $\partial F$ ist gleich dem Oberflächenintegral der
@@ -387,6 +395,14 @@ $\partial F$ berandet wird:
  \int_{F} \operatorname{rot} \vec u \cdot d \vec A =
 \oint_{\partial F} \vec u \cdot d \vec r
 \end{align}
+
+oder
+
+\begin{align}
+ \int_{F} \nabla \times \vec u \cdot d \vec A =
+\oint_{\partial F} \vec u \cdot d \vec r
+\end{align}
+
 
 
 \section{Mathematical Basics}
