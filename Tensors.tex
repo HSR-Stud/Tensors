@@ -1277,6 +1277,72 @@ $\mathbb{C}^{eng} = \frac{E}{1 + \nu} \cdot \begin{pmatrix}
 0 & 0 & \frac{1}{2}
 \end{pmatrix}$\\
 
+\subsection{Kompressionsmodul K / Schermodul G}
+
+Kompressionsmodul (bulk modulus) $K$\\
+
+Schermodul (shear modulus) $G$\\
+
+\textbf{Isotropic Mechanical Material Laws (Skript 8.2)}\\
+
+
+\begin{align}\label{eq:materiallaw}
+\mathbb{C}^{iso} = K \cdot \mathbb{E} + 2G \cdot (\mathbb{I} - \frac{1}{3}
+\mathbb{E})
+\end{align}
+etwas umgeformt:
+\begin{align}
+\mathbb{C}^{iso} = (K - \frac{2}{3} G) \cdot \mathbb{E} + 2G \cdot \mathbb{I}
+\end{align}
+
+Formel \ref{eq:materiallaw} in Voigt's Notation:
+\begin{align}
+\mathbb{C}^{eng} = K \cdot \begin{pmatrix}
+1 & 1 & 1 & 0 & 0 & 0\\
+1 & 1 & 1 & 0 & 0 & 0\\
+1 & 1 & 1 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+\end{pmatrix}
++ 2 G \cdot \begin{pmatrix}
+\frac{2}{3} & -\frac{1}{3} & -\frac{1}{3} & 0 & 0 & 0\\
+-\frac{1}{3} & \frac{2}{3} & -\frac{1}{3} & 0 & 0 & 0\\
+-\frac{1}{3} & -\frac{1}{3} & \frac{2}{3} & 0 & 0 & 0\\
+0 & 0 & 0 & \frac{1}{2} & 0 & 0\\
+0 & 0 & 0 & 0 & \frac{1}{2} & 0\\
+0 & 0 & 0 & 0 & 0 & \frac{1}{2}\\
+\end{pmatrix}
+\end{align}
+
+\textbf{Deformation under Uniaxial Stress}\\
+\begin{align}
+\begin{pmatrix}
+\sigma_{11}\\
+0\\
+0
+\end{pmatrix} = 
+\begin{pmatrix}
+K + \frac{4G}{3} & K - \frac{2G}{3} & K - \frac{2G}{3}\\
+K - \frac{2G}{3} & K + \frac{4G}{3} & K - \frac{2G}{3}\\
+K - \frac{2G}{3} & K - \frac{2G}{3} & K + \frac{4G}{3}\\
+\end{pmatrix} =
+\begin{pmatrix}
+\epsilon_{11}\\
+- \epsilon_{22}\\
+- \epsilon_{33}
+\end{pmatrix}
+\end{align}
+
+Repräsentiert:
+\begin{align}
+\sigma_{11} = E \cdot \epsilon_{11}
+\end{align}
+wobei:
+\begin{align}
+E \equiv \frac{9 K G}{3K + G}
+\end{align}
+
 
 \subsection{Beispiel}
 
