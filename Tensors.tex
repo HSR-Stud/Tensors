@@ -438,7 +438,7 @@ dx_1 \mathrm dx_3 = \frac{v_0}{a} \int_{0}^{1} \int_{0}^{1} 0 \mathrm dx_1
 Fläche oben $x_1$,$x_3$ bei $x_2 = 1$:
 \begin{align}
 \oint_{S}
-\vec n\; \mathrm dA = \frac{v_0}{a} \oint_{S} \frac{v_0}{a} \begin{pmatrix}
+\vec n\; \mathrm dA = \frac{v_0}{a} \oint_{S} \begin{pmatrix}
 x_1\\ x_2\\ 0
 \end{pmatrix} \cdot
 \begin{pmatrix}
@@ -460,15 +460,21 @@ dx_2 = 0
 \end{align}
 Sinngemäss für alle Flächen Durchziehen:
 \begin{align}
-I_tot = \frac{v_0}{a} + \frac{v_0}{a} + 0 + 0 + 0 + 0 = 2 \frac{v_0}{a}
+I_{tot} = \frac{v_0}{a} + \frac{v_0}{a} + 0 + 0 + 0 + 0 = 2 \frac{v_0}{a}
 \end{align}
 
 Mit Gauss theorem über Fläche (einfacher):
 \begin{align}
 \int_V \nabla \vec u \; \mathrm dV = \int_V \nabla \begin{pmatrix}
 x_1\\ x_2\\ 0
-\end{pmatrix} \; \mathrm dV = \int_{0}{1} \int_{0}{1} \int_{0}{1} \; \mathrm
-dx_1 \mathrm dx_2 \mathrm dx_3
+\end{pmatrix} \; \mathrm dV = \int_{V}
+\frac{\partial x_1}{\partial x_1} + \frac{\partial x_2}{\partial x_2} +
+\frac{\partial 0}{\partial x_3} \; \mathrm dV =
+\frac{v_0}{a}
+\int_{0}^{1}
+\int_{0}^{1}
+\int_{0}^{1} 1 + 1 + 0 \; \mathrm dx_1 \mathrm dx_2 \mathrm dx_3 = 2
+\frac{v_0}{a}
 \end{align}
 
 \section{Mathematical Basics}
