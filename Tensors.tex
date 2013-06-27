@@ -66,8 +66,6 @@ dass die Rotation die lokale Wirbeldichte eines Vektorfeldes beschreibt.
 
 Quelle: http://de.wikipedia.org/wiki/Vektoranalysis\\
 
-\colorbox{red}{Decomposition von Strain und Stress Aufteilung der Kapitel
-besprechen!}\\
 \colorbox{red}{Tensoralgebra Kronecker Delta Übung Dokumentieren}\\
 \colorbox{red}{Übungsprüfung Mechanikbeispiel, \ldots Dokumentieren}\\
 \colorbox{red}{Colorbox Fragen für Freitag}\\
@@ -606,7 +604,8 @@ $ \mathbb{I}^{eng}=
 $ $I_{ijkl} = \frac{1}{2} (\delta_{ik} \delta_{jl} + \delta_{il} \delta_{jk}) $
 (Definition nicht begründet)
 
-Für Tensorverjüngung kommts mit diesem I besser:\\
+Für Tensorverjüngung mit diesem I (weil die Indizes 2mal vorkommen da $C_{2323}$
+und $C_{3232}$):\\
 $ \mathbb{I_{\text{bischsil}}}^{eng}=
 \begin{pmatrix}
 1 & 0 & 0 & 0 & 0 & 0 \\ 
@@ -1225,21 +1224,49 @@ Verallgemeinerung:
 0=\frac{\partial \sigma_{ik}}{\partial x_k} + \rho g_i
 \end{align}
 
-\subsubsection{Eigenschaften des Stress Tensors (Druck, Kraft)}
+\subsection{Stress Tensors $\sigma$ (Spannung, Druck, Kraft)}
+Spannung: $\frac{\text{Kraft}}{\text{Fläche}} = \frac{F}{A}$\\
+
 Um sich den Stresstensor intuitiv vorzustellen, machen wir folgende Annahme:
 Wir betrachten einen Hexaeder (beliebiger Körper mit sechs Flächen). Externe
 Kräfte wirken auf diesen Körper. An jeder der 6 Flächen haben wir eine
 resultierende Kraft $\vec F^\alpha$...
 
-\textbf{Plane Stress}\\
-Plain strain: $\sigma{33} = \sigma{13} = \sigma{23}= 0$ => $\sigma =
+\subsubsection{Plane Stress (Ebener Spannungszustand)}
+Plain Stress: $\sigma_{33} = \sigma_{13} = \sigma_{23} = 0$ => $\sigma =
 \begin{pmatrix}
 * & * & 0\\
 * & * & 0\\
 * & * & 0\\
 \end{pmatrix} $\\
-In Kapitel 8.3 sind noch irgendwelche Zusammenhänge zwischen Plane Stress und
-Plane Strain definiert (für Details wird ins Exercise verwiesen!)
+
+Beachte: Falls ebener Spannungszustand gilt: $\epsilon_{33} \neq 0$\\
+
+\subsubsection{Stress Decomposition (Zerlegung isotropic/shear)}
+\label{stressdecomposition}
+
+$\sigma$ kann in zwei verschiedene Teile zerlegt werden (Tensorverjüngung!!!):
+
+\begin{align}
+\sigma^{iso}=\frac{\operatorname{tr} \sigma}{3} \cdot \mathbf{I} \equiv
+\frac{1}{3} \mathbb{E} : \epsilon
+\end{align}
+
+und
+
+\begin{align}
+\sigma^{shear}= \left(\mathbb{I}- \frac{1}{3}\mathbb{E} \right) : \epsilon
+\end{align}
+
+\textbf{Hint}:
+\begin{align}
+\sigma^{shear} = \sigma -\sigma^{iso}
+\end{align}
+
+
+
+
+
 
 \subsection{Strain Tensors $\epsilon$ (Deformation, Dehnung, Verschiebung)}
 Strain, Dehnung: $\frac{\Delta L}{L}$ (Wirkung die Auftritt durch Stress
@@ -1313,38 +1340,6 @@ Plain strain: $\epsilon_{33} = \epsilon_{13} = \epsilon_{23}= 0$ => $\epsilon =
   z-axis)
 \end{itemize}
 
-\subsection{Stress Tensor $\sigma$ (Spannung)}
-Spannung: $\frac{\text{Kraft}}{\text{Fläche}} = \frac{F}{A}$\\
-
-\subsubsection{Plane Stress (Ebener Spannungszustand)}
-$\sigma_{33} = \sigma_{13} = \sigma_{23} = 0$ => $\sigma =
-\begin{pmatrix}
-* & * & 0\\
-* & * & 0\\
-* & * & 0\\
-\end{pmatrix} $\\
-
-Beachte: Falls ebener Spannungszustand gilt: $\epsilon_{33} \neq 0$\\
-
-\subsubsection{Stress Decomposition (Zerlegung isotropic/shear)}
-\label{stressdecomposition}
-
-$\sigma$ kann in zwei verschiedene Teile zerlegt werden (Tensorverjüngung!!!):
-
-\begin{align}
-\sigma^{iso}=\frac{\operatorname{tr} \sigma}{3} \cdot \mathbf{I} \equiv
-\frac{1}{3} \mathbb{E} : \epsilon
-\end{align}
-
-und
-
-\begin{align}
-\sigma^{shear}= \left(\mathbb{I}- \frac{1}{3}\mathbb{E} \right) : \epsilon
-\end{align}
-
-Identisch mit Strain Decomposition: Details siehe Kapitel
-\ref{straindecomposition} auf Seite \pageref{straindecomposition}!
-
 \subsection{Elasticity Tensor E and $\nu$}
 $\mathbb{C}^{eng} = \frac{E}{1 + \nu} \cdot \begin{pmatrix}
 \frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & 0 & 0 & 0\\
@@ -1377,6 +1372,72 @@ $\mathbb{C}^{eng} = \frac{E}{1 + \nu} \cdot \begin{pmatrix}
 \frac{\nu}{1-\nu} & \frac{1}{1-\nu} & 0\\
 0 & 0 & \frac{1}{2}
 \end{pmatrix}$\\
+
+\subsection{Kompressionsmodul K / Schermodul G}
+
+Kompressionsmodul (bulk modulus) $K$\\
+
+Schermodul (shear modulus) $G$\\
+
+\textbf{Isotropic Mechanical Material Laws (Skript 8.2)}\\
+
+
+\begin{align}\label{eq:materiallaw}
+\mathbb{C}^{iso} = K \cdot \mathbb{E} + 2G \cdot (\mathbb{I} - \frac{1}{3}
+\mathbb{E})
+\end{align}
+etwas umgeformt:
+\begin{align}
+\mathbb{C}^{iso} = (K - \frac{2}{3} G) \cdot \mathbb{E} + 2G \cdot \mathbb{I}
+\end{align}
+
+Formel \ref{eq:materiallaw} in Voigt's Notation:
+\begin{align}
+\mathbb{C}^{eng} = K \cdot \begin{pmatrix}
+1 & 1 & 1 & 0 & 0 & 0\\
+1 & 1 & 1 & 0 & 0 & 0\\
+1 & 1 & 1 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+\end{pmatrix}
++ 2 G \cdot \begin{pmatrix}
+\frac{2}{3} & -\frac{1}{3} & -\frac{1}{3} & 0 & 0 & 0\\
+-\frac{1}{3} & \frac{2}{3} & -\frac{1}{3} & 0 & 0 & 0\\
+-\frac{1}{3} & -\frac{1}{3} & \frac{2}{3} & 0 & 0 & 0\\
+0 & 0 & 0 & \frac{1}{2} & 0 & 0\\
+0 & 0 & 0 & 0 & \frac{1}{2} & 0\\
+0 & 0 & 0 & 0 & 0 & \frac{1}{2}\\
+\end{pmatrix}
+\end{align}
+
+\textbf{Deformation under Uniaxial Stress}\\
+\begin{align}
+\begin{pmatrix}
+\sigma_{11}\\
+0\\
+0
+\end{pmatrix} = 
+\begin{pmatrix}
+K + \frac{4G}{3} & K - \frac{2G}{3} & K - \frac{2G}{3}\\
+K - \frac{2G}{3} & K + \frac{4G}{3} & K - \frac{2G}{3}\\
+K - \frac{2G}{3} & K - \frac{2G}{3} & K + \frac{4G}{3}\\
+\end{pmatrix} =
+\begin{pmatrix}
+\epsilon_{11}\\
+- \epsilon_{22}\\
+- \epsilon_{33}
+\end{pmatrix}
+\end{align}
+
+Repräsentiert:
+\begin{align}
+\sigma_{11} = E \cdot \epsilon_{11}
+\end{align}
+Gleichungssystem nach E aufgelöst:
+\begin{align}
+E \equiv \frac{9 K G}{3K + G}
+\end{align}
 
 
 \subsection{Beispiel}
@@ -1693,6 +1754,21 @@ a/2 & 2b/3 & 0\\
 
 e) Relative Volumenänderung: $\frac{\Delta V}{V} = \frac{b}{3} + \frac{b}{3} +
 \frac{b}{3} = b$
+
+\subsection{Beispiel Elastizität II}
+
+\subsubsection{E-Modul Along Special Directions}
+
+\textbf{E-Modul Silicon along one axis}\\
+Determine the E-module for Si in the direction along one of the cubic
+axes\\
+
+
+
+
+\textbf{E-Modul Silicon diagonal face}\\
+
+
 
 
 \section{Electrodynamics}
