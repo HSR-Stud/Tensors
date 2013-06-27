@@ -1005,8 +1005,8 @@ a = \frac{1}{\sqrt{\sigma_1}} = \frac{1}{\sqrt{50}} \text{ und } b =
 
 \begin{center}
 Ellipse Conductivity Tensor Quadrik:\\
-\colorbox{red}{x2,x3 und senkrechte Striche einfügen}
-\includegraphics[scale=0.8]{images/quadrik_2d_ellipse_uebung.pdf}
+\includegraphics[scale=0.8]{images/quadrik_2d_ellipse_uebung.pdf}\\
+Kommentar zu Grafik: x2,x3 und senkrechte Striche einfügen\\
 \end{center}
 Bemerkungen: blauer Kreis zeigt den Widerstand, ist dieser Gross leitet es schlecht, ist der Widerstand klein leitet es gut.
 \\
@@ -1072,8 +1072,8 @@ d) Ellipsoid
 
 \begin{center}
 Gedrehter Tensor (nicht im Hauptachsensystem):\\
-\colorbox{red}{x2,x3 und schräge Striche einfügen}
-\includegraphics[scale=0.8]{images/quadrik_2d_ellipse_uebung_rotation.pdf}
+\includegraphics[scale=0.8]{images/quadrik_2d_ellipse_uebung_rotation.pdf}\\
+Kommentar zur Grafik: x2,x3 und schräge Striche einfügen\\
 \end{center}
 
 e) Determine the resistivity $r_{12}$
@@ -2036,13 +2036,36 @@ Anhand Formel \ref{eq:elasticity}:
 \frac{\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu}
 \end{pmatrix}
 \end{align}
-
+Ergibt sich:
+\begin{align}
+\frac{E}{1 + \nu} \cdot \begin{pmatrix}
+\frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & \frac{\nu}{1-2\nu}\\
+\frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu}\\
+\frac{\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu}
+\end{pmatrix}
+\begin{pmatrix}
+-e_1\\ -e_1\\ e_3
+\end{pmatrix}
+=
+\begin{pmatrix}
+0\\ 0\\ s_3
+\end{pmatrix}
+\end{align}
+Linie 1 und 2 ergeben identische Formel, wobei Faktoren mit $C_{ij}$
+geschrieben werden:
+\begin{align}
+(C_{11} + C_{12}) \cdot (-e_1) + C_{12} \cdot e_3 = 0
+\end{align}
+2te Gleichung, Beachte $\frac{E}{1+\nu}$ ist wohl in den $C_{ij}$ versteckt:
+\begin{align}
+2 \cdot C_{11} \cdot (-e_1) + C_{C_12} e_3 = s_3
+\end{align}
+Bei der Auflösung des Gleichungssystem wird dass Prinzip der Mut zur Lücke laut
+der Formel 379 nach Dr. D. Strebel angewahnt!
 
 
 
 \section{Electrodynamics}
-
-\colorbox{red}{Skriptzusammenfassung...}\\
 Piezo Elektrizität kommt nicht an Prüfung!\\
 
 $ \vec{p}=q\cdot\vec{d} $
