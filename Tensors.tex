@@ -413,6 +413,49 @@ und $a = 1m$\\
 \textbf{sketch flow field in $x_1$, $x_2$-plane}\\
 
 \textbf{Fluss über Fläche berechnen}\\
+Fluss über alle Flächen summieren:\\
+Fläche unten $x_1$,$x_3$ bei $x_2 = 0$:
+\begin{align}
+\oint_{S} \vec u \cdot
+\vec n\; \mathrm dA = \frac{v_0}{a} \oint_{S} \begin{pmatrix}
+x_1\\ x_2\\ 0
+\end{pmatrix} \cdot
+\begin{pmatrix}
+0\\ -1\\ 0
+\end{pmatrix} \mathrm dA = \frac{v_0}{a} \int_{0}^{1} \int_{0}^{1} x_2 \mathrm
+dx_1 \mathrm dx_3 = \frac{v_0}{a} \int_{0}^{1} \int_{0}^{1} 0 \mathrm dx_1
+\mathrm dx_3 = 0
+\end{align}
+Fläche oben $x_1$,$x_3$ bei $x_2 = 1$:
+\begin{align}
+\frac{v_0}{a} \oint_{S}
+\vec n\; \mathrm dA = \frac{v_0}{a} \oint_{S} \frac{v_0}{a} \begin{pmatrix}
+x_1\\ x_2\\ 0
+\end{pmatrix} \cdot
+\begin{pmatrix}
+0\\ -1\\ 0
+\end{pmatrix} \mathrm dA = \frac{v_0}{a} \int_{0}^{1} \int_{0}^{1} x_2 \mathrm
+dx_1 \mathrm dx_3 = \frac{v_0}{a} \int_{0}^{1} \int_{0}^{1} 1 \mathrm dx_1
+\mathrm dx_3 = \frac{v_0}{a}
+\end{align}
+Fläche hinten $x_1$,$x_2$ bei $x_3 = 1$:
+\begin{align}
+\oint_{S} \vec u \cdot
+\vec n\; \mathrm dA = \oint_{S} \frac{v_0}{a} \begin{pmatrix}
+x_1\\ x_2\\ 0
+\end{pmatrix} \cdot
+\begin{pmatrix}
+0\\ 0\\ 1
+\end{pmatrix} \mathrm dA = \int_{0}^{1} \int_{0}^{1} 0 \mathrm dx_1 \mathrm
+dx_2 = 0
+\end{align}
+Sinngemäss für alle Flächen Durchziehen:
+\begin{align}
+I_tot = \frac{v_0}{a} + \frac{v_0}{a} + 0 + 0 + 0 + 0 = 2 \frac{v_0}{a}
+\end{align}
+
+
+Mit Gauss theorem über Fläche (einfacher):
 
 
 \section{Mathematical Basics}
