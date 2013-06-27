@@ -410,9 +410,7 @@ kubischer Würfel [1m, 1m, 1m] in 3d\\
 Vektorfeld: $v = v_0 (\frac{x_1}{a}, \frac{x_2}{a}, 0)^T$ mit $v_0 = 0.1 m/s$
 und $a = 1m$\\
 
-\textbf{Sketch flow field in $x_1$, $x_2$-plane} \\
-
-Siehe Abbildung \ref{fig:Vectorfield}. \\
+\textbf{sketch flow field in $x_1$, $x_2$-plane}\\
 
 \begin{figure}[h]
 \begin{center}
@@ -439,8 +437,8 @@ dx_1 \mathrm dx_3 = \frac{v_0}{a} \int_{0}^{1} \int_{0}^{1} 0 \mathrm dx_1
 \end{align}
 Fläche oben $x_1$,$x_3$ bei $x_2 = 1$:
 \begin{align}
-\frac{v_0}{a} \oint_{S}
-\vec n\; \mathrm dA = \frac{v_0}{a} \oint_{S} \begin{pmatrix}
+\oint_{S}
+\vec n\; \mathrm dA = \frac{v_0}{a} \oint_{S} \frac{v_0}{a} \begin{pmatrix}
 x_1\\ x_2\\ 0
 \end{pmatrix} \cdot
 \begin{pmatrix}
@@ -462,12 +460,16 @@ dx_2 = 0
 \end{align}
 Sinngemäss für alle Flächen Durchziehen:
 \begin{align}
-I_{tot} = \frac{v_0}{a} + \frac{v_0}{a} + 0 + 0 + 0 + 0 = 2 \frac{v_0}{a}
+I_tot = \frac{v_0}{a} + \frac{v_0}{a} + 0 + 0 + 0 + 0 = 2 \frac{v_0}{a}
 \end{align}
 
-
 Mit Gauss theorem über Fläche (einfacher):
-
+\begin{align}
+\int_V \nabla \vec u \; \mathrm dV = \int_V \nabla \begin{pmatrix}
+x_1\\ x_2\\ 0
+\end{pmatrix} \; \mathrm dV = \int_{0}{1} \int_{0}{1} \int_{0}{1} \; \mathrm
+dx_1 \mathrm dx_2 \mathrm dx_3
+\end{align}
 
 \section{Mathematical Basics}
 \subsection{Grundlagen Matrix Rechnung}
