@@ -1814,8 +1814,88 @@ Diesen Invertieren:
 \textbf{E-Modul Silicon diagonal face}\\
 
 
+Spannung in [1, 0, 0] Richtung: $\sigma = (\sigma_{11}, 0, 0, 0, 0, 0)^T$\\
+
+Beziehung gegeben: $\sigma = \mathbb{C} \epsilon$ Umgeformt: $\epsilon =
+\mathbb{C}^{-1} \sigma$\\
 
 
+Stelle $\mathbb{C}$ mit
+
+\begin{align}
+\mathbb{C}^{cube} = \begin{pmatrix}
+C_{11} & C_{12} & C_{12} & 0 & 0 & 0\\
+C_{12} & C_{11} & C_{12} & 0 & 0 & 0\\
+C_{12} & C_{12} & C_{11} & 0 & 0 & 0\\
+0 & 0 & 0 & C_{44} & 0 & 0\\
+0 & 0 & 0 & 0 & C_{44} & 0\\
+0 & 0 & 0 & 0 & 0 & C_{44}\\
+\end{pmatrix}
+\end{align}
+
+mit
+
+\begin{align}
+\begin{pmatrix}
+C_{11} = 166 GPa\\
+C_{12} = 64 GPa\\
+C_{44} = 79.6 GPa\\
+\end{pmatrix}
+\end{align}
+
+Wechsle $\sigma$ in die Matrixnotation und drehe $\sigma$ um $\frac{\pi}{4}$
+
+\begin{align}
+\sigma'=R \sigma R^{T}
+\end{align}
+
+Wechsle $\sigma$ wieder in Voigt-Notation
+
+\begin{align}
+\sigma'=\begin{pmatrix}
+\frac{\sigma_{11}}{2} \\
+\frac{\sigma_{11}}{2} \\
+0 \\
+0 \\
+0 \\
+\sigma_{11}
+\end{pmatrix}
+\end{align}
+
+Wende $\mathbb{C}^{-1} \cdot \sigma'$ an um $\epsilon'$ zu erhalten
+
+\begin{align}
+\epsilon'=\begin{pmatrix}
+0.00276 \cdot \sigma_{11} \\
+0.00276 \cdot \sigma_{11} \\
+-0.00213 \cdot \sigma_{11} \\
+0 \\
+0 \\
+0.01256 \cdot \sigma_{11}
+\end{pmatrix}
+\end{align}
+
+Wechsle $\epsilon'$ wieder in Matrix Notation und transformiere es auf um
+$\frac{\pi}{4}$ zurück und wechsle wieder in Voigt Notation.
+
+\begin{align}
+\epsilon=R^{T}\epsilon'R \\
+\epsilon=\begin{pmatrix}
+0.0059 \cdot \sigma_{11} \\
+-0.00038 \cdot \sigma_{11} \\
+-0.00213 \cdot \sigma_{11} \\
+0 \\
+0 \\
+0
+\end{pmatrix}
+\end{align}
+
+Rechne $E=\frac{sigma_{11}}{epsilon_{11}}$
+
+\begin{align}
+E=\frac{\sigma_{11}}{0.0059 \cdot \sigma_{11}} \\
+E=169GPa
+\end{align}
 \section{Electrodynamics}
 
 \colorbox{red}{Skriptzusammenfassung...}
