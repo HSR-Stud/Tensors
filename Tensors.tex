@@ -66,10 +66,6 @@ dass die Rotation die lokale Wirbeldichte eines Vektorfeldes beschreibt.
 
 Quelle: http://de.wikipedia.org/wiki/Vektoranalysis\\
 
-
-\colorbox{red}{Übungsprüfung Mechanikbeispiel, \ldots Dokumentieren}\\
-
-
 \newpage
 \tableofcontents
 
@@ -1529,15 +1525,12 @@ In DGL einsetzen: $\sigma (x) = - \rho g x + \rho g L = \rho g (L-x)$\\
 Material law: $\epsilon (x) = \frac{\rho g}{E} (L-x)$\\
 Aus Material law: $\frac{\partial u(x)}{\partial x} = \epsilon (x) = \frac{\rho
 g}{E} (L-x)$ $\mid$ $\int dx$\\
-Deformation: $u(x) - u(0) = \int\limits_{0}^{x} \epsilon(x) dx =
+Deformation: $u(x) - u(0) = \int\limits_{0}^{x} dx' \cdot \epsilon(x') =
 \int\limits_{0}^{x} \frac{\rho g}{E} (L-x) dx = \frac{\rho g}{E} (x \cdot L -
 \frac{1}{2} \cdot x^2) = \frac{\rho g}{E} \cdot x(L-\frac{x}{2})$, wobei $u(0) =
 0$\\
-\colorbox{red}{Was zum Teufel passiert mit dem
-Integral?????? -> kei Plan}$\int\limits_{0}^{x} x \cdot dx$
-
 Wichtig x' statt x verwenden, u(x) ist gemeint dasss wir die Dehnung von 0 bis
-zu einem Punkt zwischen 0 und L integrieren -> Nochmals nachvollziehen!!
+zu einem Punkt zwischen 0 und L integrieren!\\
 
 \end{minipage}
 \textbf{Maximaler Stress} tritt an der Aufhängung an Punkt $x = 0$ auf:\\
@@ -1989,6 +1982,11 @@ Rechne $E=\frac{\sigma_{11}}{\epsilon_{11}}$
 E=\frac{\sigma_{11}}{0.0059 \cdot \sigma_{11}} \\
 E=169GPa
 \end{align}
+
+\subsection{Beispiel Structural Mechanics} % Übungsprüfung Problem 4
+
+
+
 \section{Electrodynamics}
 
 \colorbox{red}{Skriptzusammenfassung...}\\
