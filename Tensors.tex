@@ -1668,7 +1668,52 @@ e) Relative Volumenänderung: $\frac{\Delta V}{V} = \frac{b}{3} + \frac{b}{3} +
 Determine the E-module for Si in the direction along one of the cubic
 axes\\
 
+Spannung in [1, 0, 0] Richtung: $\sigma = (\sigma_{11}, 0, 0, 0, 0, 0)^T$\\
 
+Beziehung gegeben: $\sigma = \mathbb{C} \epsilon$ Umgeformt: $\epsilon =
+\mathbb{C}^{-1} \sigma$\\
+
+Für $\mathbb{C}$ gilt (fliegt von SkriptHimmel):
+\begin{align}
+\mathbb{C}^{cube} = \begin{pmatrix}
+C_{11} & C_{12} & C_{12} & 0 & 0 & 0\\
+C_{12} & C_{11} & C_{12} & 0 & 0 & 0\\
+C_{12} & C_{12} & C_{11} & 0 & 0 & 0\\
+0 & 0 & 0 & C_{44} & 0 & 0\\
+0 & 0 & 0 & 0 & C_{44} & 0\\
+0 & 0 & 0 & 0 & 0 & C_{44}\\
+\end{pmatrix}
+\end{align}
+with:
+\begin{align}
+\begin{pmatrix}
+C_{11} = 166 GPa\\
+C_{12} = 64 GPa\\
+C_{44} = 79.6 GPa\\
+\end{pmatrix}
+\end{align}
+Dabei interessiert uns nur der obere Teil:
+\begin{align}
+\mathbb{C} = \begin{pmatrix}
+C_{11} & C_{12} & C_{12}\\
+C_{12} & C_{11} & C_{12}\\
+C_{12} & C_{12} & C_{11}
+\end{pmatrix}
+\end{align}
+Diesen Invertieren:
+\begin{align}
+\mathbb{C}^{-1} = \begin{pmatrix}
+\frac{C_{11} + C_{12}}{C_{11}^2 + C_{11} \cdot C_{12} - 2 \cdot C_{12}^2} &
+\frac{-C_{11}}{C_{11}^2 + C_{11} \cdot C_{12} - 2 \cdot C_{12}^2} &
+\frac{-C_{11}}{C_{11}^2 + C_{11} \cdot C_{12} - 2 \cdot C_{12}^2}\\
+\frac{-C_{11}}{C_{11}^2 + C_{11} \cdot C_{12} - 2 \cdot C_{12}^2} &
+\frac{C_{11} + C_{12}}{C_{11}^2 + C_{11} \cdot C_{12} - 2 \cdot C_{12}^2} & 
+\frac{-C_{11}}{C_{11}^2 + C_{11} \cdot C_{12} - 2 \cdot C_{12}^2}\\
+\frac{-C_{11}}{C_{11}^2 + C_{11} \cdot C_{12} - 2 \cdot C_{12}^2} &
+\frac{-C_{11}}{C_{11}^2 + C_{11} \cdot C_{12} - 2 \cdot C_{12}^2} &
+\frac{C_{11} + C_{12}}{C_{11}^2 + C_{11} \cdot C_{12} - 2 \cdot C_{12}^2}
+\end{pmatrix}
+\end{align}
 
 
 \textbf{E-Modul Silicon diagonal face}\\
