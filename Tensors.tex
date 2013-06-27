@@ -661,6 +661,101 @@ C_{55}^{\text{v}} & C_{56}^{\text{v}} & \\ C_{61}^{\text{v}} & C_{62}^{\text{v}}
 
 \subsection{Beispiel}
 
+\subsubsection{Elastic Energy Density} % Probeprüfung Aufgabe 5
+
+Der Tensor $ \epsilon^{eng}=(1,-1,1,2,0,0)^T $ aufteilen in $ \epsilon^{iso} $ und $ \epsilon^{shear} $. 
+\\
+Man übersetzt den Tensor von eng Notation in einen normalen Tensor. 
+\\
+$ \epsilon^{ing}
+=
+\begin{pmatrix} 
+1 \\ 
+-1 \\
+1 \\ 
+2 \\
+0 \\ 
+0 \\ 
+\end{pmatrix}
+\rightarrow 
+\begin{pmatrix} 
+1 & 0 & 0 \\
+0 & -1 & 1 \\
+0 & 0 & 1 \\
+\end{pmatrix}
+=
+\epsilon $
+\\
+Nun gilt es den Tensor $ \epsilon $ aufzuteilen
+\\
+$ \epsilon^{iso}=\frac{tr(\epsilon)}{3}\cdot \textbf{I} = \frac{1}{3}\cdot
+\underbrace{tr\begin{pmatrix} 
+1 & 0 & 0 \\
+0 & -1 & 1 \\
+0 & 0 & 1 \\
+\end{pmatrix}}_1
+\cdot
+\begin{pmatrix} 
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{pmatrix}
+\rightarrow
+\epsilon^{eng}_{iso}=
+\frac{1}{3}\cdot
+\begin{pmatrix} 
+1 \\ 
+1 \\
+1 \\ 
+0 \\
+0 \\ 
+0 \\ 
+\end{pmatrix}
+$
+\\
+$ \epsilon^{shear}=\epsilon-\epsilon^{iso}=
+\begin{pmatrix} 
+1 & 0 & 0 \\
+0 & -1 & 1 \\
+0 & 0 & 1 \\
+\end{pmatrix}
+-
+\frac{1}{3}
+\begin{pmatrix} 
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{pmatrix}
+=
+\frac{1}{3}
+\begin{pmatrix} 
+2 & 0 & 0 \\
+0 & -4 & 1 \\
+0 & 0 & 2 \\
+\end{pmatrix}
+=
+\frac{1}{3}\cdot
+\begin{pmatrix} 
+2 \\ 
+-4 \\
+2 \\ 
+6 \\
+0 \\ 
+0 \\ 
+\end{pmatrix}
+\rightarrow
+\epsilon^{ing}_{shear}
+\frac{1}{3}\cdot
+\begin{pmatrix} 
+2 \\ 
+-4 \\
+2 \\ 
+6 \\
+0 \\ 
+0 \\ 
+\end{pmatrix}
+$
+
 \subsubsection{2nd Rank Tensor Manipulation} % Exercises of Chapter 3
 
 a) $\mathbf{C}=\mathbf{AB}$ $\Rightarrow$ $C_{ij}=A_{ik}B_{kj}$
