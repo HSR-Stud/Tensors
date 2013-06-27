@@ -1404,20 +1404,24 @@ Plain strain: $\epsilon_{33} = \epsilon_{13} = \epsilon_{23}= 0$ => $\epsilon =
 \end{itemize}
 
 \subsection{Elasticity Tensor E and $\nu$}
-$\mathbb{C}^{eng} = \frac{E}{1 + \nu} \cdot \begin{pmatrix}
+\begin{align}
+\mathbb{C}^{eng} = \frac{E}{1 + \nu} \cdot \begin{pmatrix}
 \frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & 0 & 0 & 0\\
 \frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & 0 & 0 & 0\\
 \frac{\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu} & 0 & 0 & 0\\
 0 & 0 & 0 & \frac{1}{2} & 0 & 0\\
 0 & 0 & 0 & 0 & \frac{1}{2} & 0\\
 0 & 0 & 0 & 0 & 0 & \frac{1}{2}\\
-\end{pmatrix}$\\
-Vereinfacht (wohl ohne Scherung):\\
-$\mathbf{C} = \frac{E}{1 + \nu} \cdot \begin{pmatrix}
+\end{pmatrix}
+\end{align}
+Vereinfacht (wohl ohne Scherung):
+\begin{align}\label{eq:elasticity}
+\mathbf{C} = \frac{E}{1 + \nu} \cdot \begin{pmatrix}
 \frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & \frac{\nu}{1-2\nu}\\
 \frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu}\\
 \frac{\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu}
-\end{pmatrix}$\\
+\end{pmatrix}
+\end{align}
 
 E-module (Young's modulus): $E$\\
 Poisson's ratio: $\nu$\\
@@ -2024,11 +2028,17 @@ Daraus folgt, dass die Einspannung als Kraft in $x_2$ Richtung wirken muss.\\
 \textbf{Berechnung Verzerrungs- und den Spannungstensor}\\
 E-Modul: $E = 70 GPa$, Poissonzahl $\nu = 0.3$\\
 Ausgehend von $\sigma = C \cdot \epsilon$:\\
+Anhand Formel \ref{eq:elasticity}:
 \begin{align}
-\begin{pmatrix}
-
+\mathbf{C} = \frac{E}{1 + \nu} \cdot \begin{pmatrix}
+\frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & \frac{\nu}{1-2\nu}\\
+\frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu}\\
+\frac{\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu}
 \end{pmatrix}
 \end{align}
+
+
+
 
 \section{Electrodynamics}
 
