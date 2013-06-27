@@ -1993,13 +1993,36 @@ E=169GPa
 \end{center}
 \end{figure}
 
-Länge: $L = 10 cm$, Breite $w=2cm$, Dicke $t=2mm$
+Koordinatensystem: $x_1$: gegen mich, $x_2$: nach rechts, $x_3$ nach unten\\
+Länge: $L = 10 cm$, Breite $w=2cm$, Dicke $t=2mm$\\
 
-\textbf{Bestimme die Form des Spannungs- und Verzerrungstensor}
+\textbf{Bestimme die Form des Spannungs- und Verzerrungstensor}\\
 
+\textbf{Fall 1}\\
+\begin{align}
+\epsilon_I^{eng} = (-e1, -e_1, e_3, 0, 0, 0)^T
+\end{align}
+Objekt wird nach unten in die Länge gezogen $e_3$. Dadurch zieht sich
+das Objekt in $x_1$ und $x_2$ Richtung zusammen (identisch). Die hinteren
+Nullen sind für die Eigenschaften der Scherrung reserviert.\\
+\begin{align}
+\sigma_I = (0,0,s_3,0,0,0)^T
+\end{align}
+Es wirkt nur eine Kraft (Spannung) nach unten.\\
 
+\textbf{Fall 2}\\
+\begin{align}
+\epsilon_I^{eng} = (-e1, 0, e_3, 0, 0, 0)^T
+\end{align}
+Durch die Einspannung kann sich das Objekt in $x_2$ Richtung nicht
+zusammenziehen.
+\begin{align}
+\sigma_I = (0,s_2,s_3,0,0,0)^T
+\end{align}
+Daraus folgt, dass die Einspannung als Kraft in $x_2$ Richtung wirken muss.\\
 
-
+\textbf{Berechnung Verzerrungs- und den Spannungstensor}\\
+E-Modul: $E = 70 GPa$, Poissonzahl $\nu = 0.3$\\
 
 \section{Electrodynamics}
 
