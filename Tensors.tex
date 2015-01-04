@@ -15,6 +15,9 @@
 \usepackage{color}
 \usepackage{hyperref}
 \usepackage{multicol}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\sisetup{sticky-per=true,per-mode=symbol}
 \newcommand{\dx}{\hspace{2pt}dx}
 \newcommand{\dd}[1]{\hspace{2pt}d#1}
 %\usepackage[ansinew]{inputenc}
@@ -41,11 +44,12 @@ $\blacksquare \dagger$ \end{flushright}}
  \smallskip
 \centerline{\Large \bf \textsf {Zusammenfassung}}
 \medskip
-  \centerline{\bf \textsf{dstrebel, s1bischo, sboller }}
+  \centerline{\bf \textsf{dstrebel, s1bischo, sboller, hbaderts }}
 
  \smallskip \noindent\rule{\textwidth}{0.5pt}
 \smallskip%]
 
+\setcounter{tocdepth}{2}
 
 
 % dies ist  noch einzubetten
@@ -59,25 +63,31 @@ $\blacksquare \dagger$ \end{flushright}}
 \section{Description of Physical Phenomena}
 \subsection{Einheiten}
 
-Mathe\\
-$ [\lambda]=\frac{W}{mK} $\\
-$ [\nabla]=\frac{1}{m} $\\
+\paragraph{Mathematik} ~\\
+\begin{tabularx}{\linewidth}{lclX}
+	$[\lambda]$ &=& \si{\watt\per\meter\kelvin} & \\
+	$[\nabla]$ &=& \si{\per\meter} & \\
+\end{tabularx}
 
-Wärme\\
-$ [\rho]=\frac{kg}{m^3} (Dichte)$\\
-$ [c_p]=\frac{J}{kgK} $\\
-$ [m]=kg (Masse)$\\
-$ [T]=K (Temperatur)$\\
-$ [j_w]=\frac{W}{m^2} (Energieflussdichte)$\\
-$ [I_W]=W (Waermefluss)$\\
-$ [W]=\frac{J}{m^3} (???weiss nicht fuer was)$\\
-$ [ \lambda ] = \frac{W}{mK} \text{(thermische Leitfähigkeit bzw. spez.  Wärmewiederstand)}????????? $\\
-$ [ \sigma ]=??? ???)$\\
-$ [ r ]=??? ???)$\\
-$ [\omega] = J/m^3 (Energiedichte)$ \\
-\colorbox{red}{?????? prüfen} noch mehr? \\
+\paragraph{Wärme}~\\
+\begin{tabularx}{\linewidth}{lclX}
+	$[\rho]$ &=& \si{\kilogram\per\meter\tothe{3}} & Dichte \\
+	$[c_p]$ &=& \si{\joule\per\kilogram\kelvin} & \\
+	$[m]$ &=& \si{\kilogram} & Masse \\
+	$[T]$ &=& \si{\kelvin} & Temperatur \\
+	$[j_w]$ &=& \si{\watt\per\square\meter} & Energieflussdichte \\
+	$[I_W]$ &=& \si{\watt} & Wärmefluss \\
+	$[W]$ &=& \si{\joule\per\meter\tothe{3}} & ??? \\
+	$[\lambda]$ &=& \si{\watt\per\meter\kelvin} & Thermische Leitfähigkeit \\
+	$[\sigma]$ &=& & ??? \\
+	$[r]$ &=& & ??? \\
+	$[\omega]$ &=& \si{\joule\per\meter\tothe{3}} & Energiedichte \\
+\end{tabularx}
 
-Elektrotechnik\\
+\paragraph{Elektrotechnik}~\\
+\begin{tabularx}{\linewidth}{lclX}
+	$[Q]$ &=& \si{\coulomb} = \si{\ampere\second} & El. Ladung \\
+\end{tabularx}
 $ [Q]=C=As (el. Ladung)$\\
 $ [F]=N=\frac{kg m}{s^2} (Kraft)$\\
 $ [\dot W]=[P]=W=\frac{J}{s} (elektrische Leistung)$\\
