@@ -16,6 +16,7 @@
 \usepackage{hyperref}
 \usepackage{multicol}
 \usepackage{tabularx}
+\usepackage{booktabs}
 \usepackage{siunitx}
 \sisetup{sticky-per=true,per-mode=symbol}
 \newcommand{\dx}{\hspace{2pt}dx}
@@ -157,26 +158,28 @@ $ J = \frac{kg m^2}{s^2} $\\
 
 \subsection{Bilanzgleichungen}
 
-\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
-\hline  & Stoffliche Grösse & Potential & Balance Equation uniform & Balance Equation distributed \\ 
-\hline Charge Transport & Charge Q & el. Potential ??? & $\frac{dQ}{dt}=I_Q$ & $ \frac{\partial p_Q}{\partial t}=-\nabla\cdot j_Q$ \\ 
-\hline Heat Transport & thermal Energy W & Temperatur T & $\frac{\partial W}{\partial t}= I_W+Q_W$ & $\frac{\partial w}{\partial t}= -\nabla \cdot j_W+q_W$  \\ 
-\hline Particle Transport & Partical number N & Particle density c & $\frac{dN}{dt}=I_N+Q_N$ & $\frac{dp}{dt}=-\nabla \cdot j_W +q_W$ \\ 
-\hline Mechanics (Momentum Transport) & Momentum p & Velocity v  & $\frac{\partial p}{\partial t}=F$ & ?? \\ 
-\hline 
-\end{tabular} 
+\begin{tabularx}{\linewidth}{XXXcc}
+    \toprule
+    & Stoffliche Grösse & Potential & \multicolumn{2}{c}{Balance Equation} \\ 
+    & & & uniform & distributed \\ \midrule
+    Charge Transport & Charge $Q$ & El. Potential $\Phi$ & $\frac{dQ}{dt}=I_Q$ & $ \frac{\partial p_Q}{\partial t}=-\nabla\cdot j_Q$ \\ 
+    Heat Transport & Thermal energy \newline $W$ & Temperatur $T$ & $\frac{\partial W}{\partial t}= I_W+Q_W$ & $\frac{\partial w}{\partial t}= -\nabla \cdot j_W+q_W$  \\ 
+    Particle Transport & Partical number \newline $N$ & Particle density \newline $c$ & $\frac{dN}{dt}=I_N+Q_N$ & $\frac{dp}{dt}=-\nabla \cdot j_W +q_W$ \\ 
+    Mechanics (Momentum Transport) & Momentum $p$ & Velocity $v$  & $\frac{\partial p}{\partial t}=F$ & ?? \\ 
+    \bottomrule
+\end{tabularx} 
 
 \subsection{Constitutive Laws}
 
-\begin{tabular}{|p{3cm}|p{3cm}|p{6cm}|p{3cm}|}
-\hline  & Storage Laws & Constitutive Laws & Source Rates and Sourcerate Densities \\
-\hline Charge Transport & $j_Q=-\sigma \cdot \nabla ??? = \sigma \cdot E$ & & \\
- 
-\hline Heat Transport & $w=c_p \rho T$ & $j_W=-\lambda \cdot \nabla T$  (Fourier's law)&  \\ 
-\hline Particle Transport (Diffusion) & c=c & $j_N=- D \cdot \nabla c_N$ &  \\ 
-\hline Mechanics & $p=mv$ & $F_hook = - k \Delta u$ (Hook's Law) $F_visc=-C \eta \cdot v$ (Viscous Drag) &  \\ 
-\hline 
-\end{tabular} 
+\begin{tabularx}{\linewidth}{Xcp{4cm}X}
+    \toprule
+    & Storage Laws & Constitutive Laws & Source Rates and Sourcerate Densities \\ \midrule
+    Charge Transport & & $j_Q=-\sigma \cdot \nabla\varphi \equiv \sigma \cdot E$ (Microscop. Ohmic law) & $q_+ = - q_-$ \\
+    Heat Transport & $w=c_p \rho T$ & $j_W=-\lambda \cdot \nabla T$  (Fourier's law)& $Q_W = -(\phi_2-\phi_1)I_Q$\newline $q_W = -\nabla\Phi\cdot j_Q$  \\ 
+    Particle Transport (Diffusion) & c=c & $j_N=- D \cdot \nabla c_N$ &  \\ 
+    Mechanics & $p=mv$ & $F_{hook} = - k \Delta u$ (Hook's Law)\newline $F_{visc}=-C \eta \cdot v$ (Viscous Drag) & $F_{grav} = M g$\newline $f_{grav}=\rho g$ \\ 
+\bottomrule
+\end{tabularx} 
 
 \subsection{Beispiele}
 \subsubsection{Ohm's Law}
