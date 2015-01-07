@@ -63,6 +63,8 @@ $\blacksquare \dagger$ \end{flushright}}
 \section{Description of Physical Phenomena}
 \subsection{Einheiten}
 
+\begin{multicols}{2}
+
 \paragraph{Mathematik} ~\\
 \begin{tabularx}{\linewidth}{lclX}
 	$[\lambda]$ &=& \si{\watt\per\meter\kelvin} & \\
@@ -84,52 +86,49 @@ $\blacksquare \dagger$ \end{flushright}}
 	$[\omega]$ &=& \si{\joule\per\meter\tothe{3}} & Energiedichte \\
 \end{tabularx}
 
+\paragraph{Mechanik}~\\
+\begin{tabularx}{\linewidth}{lclX}
+    $[d]$ &=& \si{\newton\per\meter} & Federkonstant (Spring constant)\\
+    $[E]$ &=& \si{\newton\per\square\meter} & \\
+    $[A]$ &=& \si{\square\meter} & Fläche \\
+    $[F]$ &=& \si{\newton} & Kraft = Impulsfluss\\
+    $[\sigma]$ &=& \si{\newton\per\square\meter} & Spannung (stress), neg. Impulsflussdichte \\
+    $[l_0]$ &=& \si{m} & Ursprüngliche Länge \\
+    $[\delta l]$ &=& \si{m} & Längenausdehnung \\
+    $[\varepsilon l]$ &=& & Dehung (Strain)\\
+    $[p]$ &=& \si{\newton\second} & Impuls \\
+    $[J_p]$ &=& \si{\newton} & Impulsfluss = Kraft \\
+    $[\delta u]$ &=& \si{\meter} & Längenveränderung \\
+    $[j_p]$ &=& \si{\newton\per\square\meter} = \si{\pascal} & Impulsflussdichte\\
+\end{tabularx}
+
+\end{multicols}
+
 \paragraph{Elektrotechnik}~\\
 \begin{tabularx}{\linewidth}{lclX}
-	$[Q]$ &=& \si{\coulomb} = \si{\ampere\second} & El. Ladung \\
+    $[U]$ &=& \si{\volt} = \si{\newton\meter\per\ampere\second} & Elektrische Spannung \\
+    $[I]$ &=& \si{\ampere} & Elektrischer Strom \\
+    $[j]$ &=& \si{\ampere\per\square\meter} & Stromdichte (current density) \\
+	$[Q]=[q]$ &=& \si{\coulomb} = \si{\ampere\second} & Elektrische Ladung \\
+	$[F]$ &=& \si{\newton} = \si{\kilogram\meter\per\square\second} & Kraft \\
+    $[\dot W]=[P]$ &=& \si{\watt} = \si{\joule\per\second} & Elektrische Leistung \\
+    $[R]$ &=& \si{\ohm} = \si{\kilogram\square\meter\per\square\ampere\second\tothe{3}} & Elektrischer Widerstand (Resistivity) \\
+    $[G]$ &=& \si{\siemens} = \si{\per\ohm} & Elektrische Leitfähigkeit \\
+    $[\rho]$ &=& \si{\ohm\meter} & Spezifischer Widerstand \\
+    $[\sigma]$ &=& \si{\per\ohm\meter} = \si{\ampere\per\volt\meter} = \si{\siemens\per\meter} & Spezifische Leitfähigkeit, Konduktivität \\
+    $[w]$ &=& \si{\kilogram\per\meter\square\second} & \colorbox{red}{nochmals kontrollieren!!!} \\
+    $[\vec{E}]$ &=& \si{\volt\per\meter} = \si{\newton\per\coulomb} & Elektrisches Feld \\
+    $[M]$ &=& \si{\newton\meter} & Drehmoment \\
+    $[\vec{p}\:]$ &=& \si{\coulomb\meter} & Dipolmoment \\
+    $[\rho]$ &=& \si{\coulomb\per\meter\tothe{3}} & Ladungsdichte \\
+    $[D]$ &=& \si{\coulomb\per\square\meter} & Electrical Displacement \\
+    $[B]$ &=& \si{\tesla} (Tesla) = \si{\kilogram\per\ampere\square\second} = \si{\newton\per\ampere\meter} = \si{\volt\second\per\square\meter} & Magnetische Flussdichte (=Magnetisches Feld) \\
+    $[H]$ &=& \si{\ampere\per\meter} & Magnetische Feldstärke \\
+    $[m]$ &=& ??? & Magnetic Moment \\
+    $[\varepsilon_0]$ &=& \si{\ampere\second\per\volt\meter} = \si{\square\coulomb\per\newton\square\meter} & Elektrische Feldkonstante \\
+    $[\mu_0]$ &=& \si{\volt\second\per\ampere\meter} & Magnetische Feldkonstante \\
+    $[k]$ &=& \si{\volt\meter\per\ampere\second} & Coulomb-Konstante \\
 \end{tabularx}
-$ [Q]=C=As (el. Ladung)$\\
-$ [F]=N=\frac{kg m}{s^2} (Kraft)$\\
-$ [\dot W]=[P]=W=\frac{J}{s} (elektrische Leistung)$\\
-$ [R] = \Omega = \frac{kg m^2}{A^2 s^3} (Widerstand/resistivity) $\\
-$ [G] = S = \frac{1}{\Omega} \text{(elektrische Leitfähigkeit)}$\\
-$ [\rho] = \Omega m (Spezifischer Widerstand)$\\
-$ [\sigma] = \frac{1}{\Omega m} = \frac{A}{Vm} = \frac{S}{m} \text{(spezifische Leitfähigkeit,Konduktivität)} $\\
-$ [r] , [\rho]= \Omega m \text{(Wiederstand, resitiviti???)} $\\
-$ [w]=\frac{kg}{ms^2} \colorbox{red}{nochmals kontrollieren!!!} $\\
-$ [\vec E]=\frac{V}{m} = \frac{N}{C}$\\
-$ [M]=Nm (Drehmoment)$\\
-$ [\vec p]=Cm (Dipolmoment)$\\
-$ [\rho]=\frac{C}{m^3} Ladungsdichte$\\
-$ [D]=\frac{C}{m^2} (electrical Displacement)$\\
-$ [\epsilon_0]= \frac{C^2}{Nm^2}=\frac{As}{Vm} (elektrische Feldkonstante)$\\
-$ [\mu_0] = \frac{Vs}{Am} (magnetische Feldkonstante)$\\
-$ [k] = \frac{Vm}{As} (Coulomb Konstante)$\\
-$ [B]= T (Tesla) = \frac{kg}{As^2} = \frac{N}{Am} = \frac{Vs}{m^2} (magnetisches
-Feld = magnetische Flussdichte)$\\
-$ [H]= \frac{A}{m} (magnetische Feldstaerke)$\\
-$ [U]= V = \frac{Nm}{As} (Spannung) $\\
-$ [I]= A (Strom) $\\
-$ [q]= C = As (Ladung)$\\
-$ [m]= ??? (magnetic moment)$\\
-$ [j]= \frac{A}{m^2} (Stromdichte, current density)$\\
-
-
-Mechanik\\
-$ [d]=\frac{N}{m} (Federkonstante)(spring constant)$\\
-$ [E]=\frac{N}{m^2} $\\
-$ [A]=A^2 (Flaeche)$\\
-$ [F]=N (Kraft bez. Implusfluss)$\\
-$ [\sigma]=\frac{N}{m^2} (Spannung)(Stress)oder negative Impusflussdichte$\\
-$ [l_0]=m (urspruengliche Laenge)$\\
-$ [\delta l]=m (Laengenausdehnung)$\\
-$ [\epsilon l]=- (Dehnung)(strain)$\\
-$ [p]=Ns (Impuls)$\\
-$ [J_p]  = N \text{(Implusfluss bez. auch Kraft)} $\\
-$ [\delta u] = m \text{(Längenveränderung)}$\\
-$ [N/m^2] = [Pa] = j_p Impulsflussdichte$\\
-
-
 
 $ \otimes $ = jeder mal jeder rechnen
 
@@ -140,15 +139,21 @@ $ \otimes $ = jeder mal jeder rechnen
 $ J = \frac{kg m^2}{s^2} $\\
 
 \subsection{Begriffe}
-\begin{itemize}
-\item Grössen
-\subitem extensive Grösse: wenn sich System verdoppelt verdoppelt sich auch die Eigenschaft z.B. Impuls, Volumen ...
-\subitem intensive Grösse: wenn sich System verdoppelt verdoppelt sich Eigenschaft nicht z.B. Druck, Temperatur, ...
-\item Randbedingungen
-\subitem Neumann: feste Temperatur
-\subitem Dirichlet: fester Gradient
-\end{itemize}
-
+\begin{multicols}{2}
+    \begin{itemize}
+    \item Grössen
+        \begin{itemize}
+            \item \emph{Extensive} Grösse: wenn sich System verdoppelt verdoppelt sich auch die Eigenschaft z.B. Impuls, Volumen ...    
+            \item \emph{Intensive} Grösse: wenn sich System verdoppelt verdoppelt sich Eigenschaft nicht z.B. Druck, Temperatur, ...
+        \end{itemize}
+\vfill\columnbreak
+    \item Randbedingungen
+        \begin{itemize}
+            \item Neumann: feste Temperatur
+            \item Dirichlet: fester Gradient
+        \end{itemize}
+    \end{itemize}
+\end{multicols}
 
 \subsection{Bilanzgleichungen}
 
