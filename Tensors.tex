@@ -1,526 +1,47 @@
-
-
 \documentclass[a4paper, 10pt]{scrartcl}
 
+\title{MSE Tensor}
+\subtitle{Formulary}
+\author{dstrebel, s1bischo, sboller, hbaderts, ssteiner}
+\date{\today}
+\input{sections/header}
 
-% Mathematik-Pakete
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amstext}
-\usepackage{amsfonts}
-\usepackage{mathrsfs}
-\usepackage{paralist}
-\usepackage[pdftex]{graphicx}
-\usepackage{fancyhdr}
-\usepackage{color}
-\usepackage{hyperref}
-\usepackage{multicol}
-\usepackage{tabularx}
-\usepackage{booktabs}
-\usepackage{siunitx}
-\sisetup{sticky-per=true,per-mode=symbol}
+
+\definecolor{lightgray}{gray}{0.9}
+
+\renewcommand{\arraystretch}{1.2}
+
 \newcommand{\dx}{\hspace{2pt}dx}
 \newcommand{\dd}[1]{\hspace{2pt}d#1}
-%\usepackage[ansinew]{inputenc}
-\usepackage[T1]{fontenc}
-
-\usepackage[utf8]{inputenc}
-
-\usepackage[a4paper]{geometry}
-\geometry{verbose,tmargin=1.5cm,lmargin=2cm,rmargin=2cm,bmargin=3cm,nohead}
-\usepackage[ngerman]{babel}
-\setlength{\parindent}{0cm}
+\newcommand{\laplace}{\Delta}
 \newcommand{\qed}{\begin{flushright}
 		$\blacksquare \dagger$ \end{flushright}}
 
-\renewcommand{\arraystretch}{1.5}
 
 \begin{document}
-	\pagestyle{fancy}
-	%\setlength{\footskip}{5mm}
-	\fancyhf{} 
-	\fancyfoot[C]{\thepage} %Seitennummer
-	\renewcommand{\headrulewidth}{0pt}
-	\renewcommand{\footrulewidth}{0.5pt}
-	\newcommand{\laplace}{\Delta}
-	%\twocolumn[
-	\centerline{\LARGE \bf \textsf{MSE Tensor}} 
+	\maketitle 
+
+	\setlength{\parskip}{0cm}
+	\setcounter{tocdepth}{1}	
+	
+	\tableofcontents 	
+	
+	\smallskip 
+	\rule{\textwidth}{0.5pt}
 	\smallskip
-	\centerline{\Large \bf \textsf {Zusammenfassung}}
-	\medskip
-	\centerline{\bf \textsf{dstrebel, s1bischo, sboller, hbaderts, ssteiner }}
 	
-	\smallskip \noindent\rule{\textwidth}{0.5pt}
-	\smallskip%]
-	
-	\setcounter{tocdepth}{2}
-	
-	
-	% dies ist  noch einzubetten
-	
-	
-	
-	\tableofcontents
-	
-	\newpage
-	
+
+%%rowcolor
+{\rowcolors{3}{lightgray}{white}
+
+
 	\section{Description of Physical Phenomena}
-	\subsection{Einheiten}
+		\input{sections/01_units}	
+		\input{sections/02_balance_equations}
 	
-	\begin{multicols}{2}
-		
-		\paragraph{Mathematik} ~\\
-		\begin{tabularx}{\linewidth}{lclX}
-			$[\nabla]$ &=& \si{1\per\meter} & nabla\\
-			$[\laplace]$ &=& \si{1\per\meter\tothe{2}} & laplace\\
-		\end{tabularx}
-		\paragraph{Allgemein}~\\
-		\begin{tabularx}{\linewidth}{lclX}
-			$[F]$ &=& \si{\newton=\kilogram\meter\per\second\tothe{2}}& Kraft, force \\
-			$[E]$ &=& \si{\joule=\kilogram\meter\tothe{2}\per\second\tothe{2}}& Energie, energy \\
-			$[P]$ &=& \si{\joule\per\second=\kilogram\meter\tothe{2}\per\second\tothe{3}}& Leistung, power \\
-			$[p]$ &=& \si{\pascal= \newton\per\meter\tothe{2}}& Druck, pressure \\
-			$[V]$ &=& \si{\meter\tothe{3}}& Volumen, volume\\
-			$[n]$ &=& \si{\mole}& Stoffmenge, Amount of substance\\
-			$[T]$ &=& \si{\kelvin}& Temperatur, temperature \\
-			$[m]$ &=& \si{\kilogram} & Masse, mass \\
-			$[\rho]$ &=& \si{\kilogram\per\meter\tothe{3}} & Dichte, mass density \\
-			$[A]$ &=& \si{\meter\tothe{2}} & Fl√§che, surface\\
-		\end{tabularx}
-		\paragraph{W√§rme}~\\
-		\begin{tabularx}{\linewidth}{lclX}
-			$[Q_W]$ &=& \si{\joule} & W√§rme, heat\\
-			$[q_\omega]$ &=& \si{\joule\per\meter\tothe{3}} & Thermische Leitf√§higkeit, thermal energy source rate density \\	
-			$[W]$ &=& \si{J} & W√§rmeenergie, thermal energy\\
-			$[\omega]$ &=& \si{\joule\per\meter\tothe{3}} & Energiedichte, thermal energy storage density \\
-			$[I_W]$ &=& \si{\joule\per\second=\watt} & W√§rmefluss, heat flux\\
-			$[j_w]$ &=& \si{\watt\per\square\meter} & Energieflussdichte, thermal energy flux density \\
-			$[c_p]$ &=& \si{\joule\per\kilogram\kelvin} & spezifischer W√§rmekapazit√§t, specific heat capacity\\
-			$[\lambda]$ &=& \si{\watt\per\meter\kelvin} & Thermische Leitf√§higkeit \\	
-		\end{tabularx}
-		
-		\paragraph{Mechanik}~\\
-		\begin{tabularx}{\linewidth}{lclX}
-			$[p]$ &=& \si{\newton\second} & Impuls \\
-			$[J_p]$ &=& \si{\newton} & Impulsfluss, Kraft, Force \\
-			$[j_p]$ &=& \si{\newton\per\square\meter} = \si{\pascal} & Impulsflussdichte\\
-			$[\sigma]$ &=& \si{\newton\per\square\meter} & Spannung (stress), neg. Impulsflussdichte \\
-			$[W]$ &=& \si{\newton\meter} & arbeit, work, mechanical energy\\
-			$[\varepsilon l]$ &=& 1& Dehung (Strain)\\
-			$[l_0]$ &=& \si{m} & Urspr√ºngliche L√§nge \\
-			$[\Delta l]$ &=& \si{m} & L√§ngenausdehnung \\
-			$[d]$ &=& \si{\newton\per\meter} & Federkonstant, Spring constant\\
+	\section{Vector Analysis and Integral theorems}
+		\input{sections/03_vector_analysis}
 			
-			
-		\end{tabularx}
-		\paragraph{Stofftransport}~\\
-		\begin{tabularx}{\linewidth}{lclX}
-			$[c_n]$ &=& \si{\mole\per\meter\cubed} & particle density concentration\\
-			$[I_n]$ &=& \si{\mole\per\second} & particle flux\\
-			$[j_n]$ &=& \si{\mole\per\meter\squared\second} & particle flux density\\
-			$[D_n]$ &=& \si{\meter\squared\per\second} & Diffusionskoeffizient, diffusion coefficient\\
-			
-			
-		\end{tabularx}
-		
-	\end{multicols}
-	
-	\paragraph{Elektrotechnik}~\\
-	\begin{tabularx}{\linewidth}{lclX}
-		$[U]$ &=& \si{\volt} = \si{\newton\meter\per\ampere\second} & Elektrische Spannung, voltage \\
-		$[I]$ &=& \si{\ampere} & Elektrischer Strom, current \\
-		$[j]$ &=& \si{\ampere\per\square\meter} & Stromdichte, current density \\
-		$[R]$ &=& \si{\ohm} = \si{\kilogram\square\meter\per\square\ampere\second\tothe{3}} & Elektrischer Widerstand, resistance \\
-		$[G]$ &=& \si{\siemens} = \si{\per\ohm} & Elektrische Leitf√§higkeit, conductivity \\
-		$[\rho]$ &=& \si{\ohm\meter = \kilogram \meter\cubed \per\ampere\tothe{3}\second\tothe{3}} & Spezifischer Widerstand, specific resistance \\
-		$[\sigma]$ &=& \si{\per\ohm\meter} = \si{\ampere\per\volt\meter} = \si{\siemens\per\meter} & Spezifische Leitf√§higkeit, specific conductivity \\
-		
-		
-		
-		$[Q]=[q]$ &=& \si{\coulomb} = \si{\ampere\second} & Elektrische Ladung, charge \\
-		$[\dot W]=[P]$ &=& \si{\watt} = \si{\joule\per\second} & Elektrische Leistung, power \\
-		$[\vec{E}]$ &=& \si{\volt\per\meter} = \si{\newton\per\coulomb} & Elektrisches Feld \\
-		$[D]$ &=& \si{\coulomb\per\square\meter} & Elektrische Flussdichte, Electrical Displacement \\
-		
-		$[B]$ &=& \si{\tesla} (Tesla) = \si{\kilogram\per\ampere\square\second} = \si{\newton\per\ampere\meter} = \si{\volt\second\per\square\meter} & Magnetische Flussdichte, conductance \\
-		$[H]$ &=& \si{\ampere\per\meter} & Magnetische Feldst√§rke \\
-		
-		$[w]$ &=& \si{\kilogram\per\meter\square\second=\pascal} & \colorbox{red}{nochmals kontrollieren!!!} \\
-		
-		$[M]$ &=& \si{\newton\meter} & Drehmoment \\
-		$[\vec{p}\:]$ &=& \si{\coulomb\meter} & Dipolmoment \\
-		$[\rho]$ &=& \si{\coulomb\per\meter\tothe{3}} & Ladungsdichte \\
-		$[m]$ &=& ??? & Magnetic Moment \\
-		$[\varepsilon_0]$ &=& \si{\ampere\second\per\volt\meter} = \si{\square\coulomb\per\newton\square\meter} & Elektrische Feldkonstante \\
-		$[\mu_0]$ &=& \si{\volt\second\per\ampere\meter} & Magnetische Feldkonstante \\
-		$[k]$ &=& \si{\volt\meter\per\ampere\second} & Coulomb-Konstante \\
-	\end{tabularx}
-	
-	$ \otimes $ = jeder mal jeder rechnen
-	
-	
-	
-	
-	\subsection{Begriffe}
-	\begin{multicols}{2}
-		\begin{itemize}
-			\item Gr√∂ssen
-			\begin{itemize}
-				\item \emph{Extensive / Substance like } Gr√∂ssen: wenn sich System verdoppelt verdoppelt sich auch die Eigenschaft z.B. Impuls, Volumen ...    
-				\item \emph{Intensive} Gr√∂sse: wenn sich System verdoppelt verdoppelt sich Eigenschaft nicht z.B. Druck, Temperatur, ...
-			\end{itemize}
-			\vfill\columnbreak
-			\item Randbedingungen
-			\begin{itemize}
-				\item Neumann: feste Temperatur
-				\item Dirichlet: fester Gradient
-			\end{itemize}
-		\end{itemize}
-	\end{multicols}
-	
-	
-	\subsection{Balance equation, Bilanzgleichungen}
-	\begin{multicols}{2}
-		Diese haben die Form :	
-		$\dfrac{dG}{dt} = \sum\limits_{i} I_{G,i} + Q_G$
-		
-		\columnbreak 
-		\begin{itemize}
-			\item G, I und Q sind dabei extensive Gr√∂ssen
-			
-			\item $\dfrac{dG}{dt}$: Zeitliche √§ndrung
-			
-			\item $I_X$: Fluss
-			
-			\item $Q_G$: Quellenterm: Prozess, der im System abl√§uft
-		\end{itemize}
-	\end{multicols}
-	
-	
-	{
-		\begin{tabularx}{\linewidth}{XXXcc}
-			\toprule
-			& Stoffliche Gr√∂sse & Potential & \multicolumn{2}{c}{Balance Equation} \\
-			& & & uniform & distributed, local \\ \midrule
-			Charge Transport & Charge $Q$ & El. Potential $\Phi$ & $\frac{dQ}{dt}=I_Q$ & $ \frac{\partial p_Q}{\partial t}=-\nabla\cdot j_Q$ \\ \hline
-			Heat Transport & Thermal energy \newline $W$ & Temperatur $T$ & $\frac{\partial W}{\partial t}= I_W+Q_W$ & $\frac{\partial w}{\partial t}= -\nabla \cdot j_W+q_W$  \\ \hline
-			Particle Transport & Partical number \newline $N$ & Particle density \newline $c$ & $\frac{dN}{dt}=I_N+Q_N$ & $\frac{dp}{dt}=-\nabla \cdot j_W +q_W$ \\ \hline
-			Mechanics (Momentum Transport) & Momentum $p$ & Velocity $v$  & $\frac{\partial p}{\partial t}=F$ & ?? \\ 
-			\bottomrule
-		\end{tabularx} }
-		
-		\subsection{Constitutive Laws}
-		Folgt aus den Bilanzgleichungen. Das System wird auf physikalische Umst√§nde festgelegt.
-		
-		\begin{tabularx}{\linewidth}{Xcp{4cm}X}
-			\toprule
-			& Storage Laws & Constitutive Laws & Source Rates and Sourcerate Densities \\ \midrule
-			Charge Transport & & $j_Q=-\sigma \cdot \nabla\varphi \equiv \sigma \cdot E$ (Microscop. Ohmic law) & $q_+ = - q_-$ \\
-			Heat Transport & $w=c_p \rho T$ & $j_W=-\lambda \cdot \nabla T$  (Fourier's law)& $Q_W = -(\phi_2-\phi_1)I_Q$\newline $q_W = -\nabla\Phi\cdot j_Q$  \\ 
-			Particle Transport (Diffusion) & c=c & $j_N=- D \cdot \nabla c_N$ &  \\ 
-			Mechanics & $p=mv$ & $F_{hook} = - k \Delta u$ (Hook's Law)\newline $F_{visc}=-C \eta \cdot v$ (Viscous Drag) & $F_{grav} = M g$\newline $f_{grav}=\rho g$ \\ 
-			\bottomrule
-		\end{tabularx} 
-		\begin{multicols}{2}
-			\emph{Isotropic/Anisotropic:} An isotropic relation is independent of the spatial direction of the gradient (richtungsunabh√§ngig)
-			
-			\columnbreak
-			
-			\emph{Homogeneous/Inhomogeneous:}
-			if a body is spatially constant, its homogeneous (material besitzt √ºberall gleiche werte).
-			
-			\emph{Linear/Nonlinear:} balance equation are always linear, consecutive laws can be nonlinear. 
-			
-		\end{multicols}
-		\subsection{Beispiele}
-		\subsubsection{Ohm's Law}
-		% Exercise Chapter 1, Aufgabe 2
-		...bitte noch √ºbertragen...
-		\subsubsection{Heat conduction in 1D}
-		% Exercise Chapter 1, Aufgabe 3
-		\begin{itemize}
-			
-			\item Formulate the stationary het balance equation for a 1D system (slender rod). Genommen wird die Allgemeine W√§rmeleitungsgleichung $\frac{\partial w}{\partial t}= -\nabla \cdot j_W+q_W$ und diese Vereinfacht, da Station√§r und 1D ergibt es $0= -\frac{\partial j_W}{\partial x}+q_W$
-			
-			\item Formulate Fourier's law of heat conduction in 1D. Dies ist Allgemein $j_W=-\lambda \cdot \nabla T$ und im 1D $j_W=-\lambda \frac{\partial T}{\partial x} T$
-			
-			\item Solve this system of 2 ODEs of $1^{st}$ order for following conditions: a Al rod of length L=20cm , cross section $A=1cm^2$ and specific heat conductivity 
-			$ \lambda = 240 W/(Km) $ 
-			is cooled to $25^\circ C$ on its right hand side and heated on the lhs with a heat flux density of $ 36 kW/m^2 $ (candle).
-			Es gilt das Fourier's law in die balance equation einzusetzen ergibt $ 0=\lambda \frac{\partial^2T}{\partial x^2}+q_W$, da es keine Quelle oder Senke hat gilt $q_W=0$. L√∂st man diese Differentialgleichung ergibt es $T(x)=C_1x+C_2$. An der Stelle (x=0) gilt das Fourier's law, also gilt $j_W=-\lambda \frac{\partial T}{\partial x} = 36000 = -240 \frac{\partial T}{\partial x } \Rightarrow \frac{\partial T}{\partial x}=-150 \frac{K}{m} =C_1$ und auch gegeben ist $25^\circ C$ an der Stelle x=0.2m. Damit $C_2$ ausrechnen ergibt  $ T(0.2)= -150 \frac{K}{m} \cdot 0.2m+C_2=25^{\circ} C $. Allgemein ergibt sich die Gleichung $ T(x)= -150 \frac{K}{m} \cdot x [m] + 25^{\circ} C $.
-			
-			\item Neu sind beide Seiten sind $25^\circ K$ Nun kommt zus√§tzlich noch eine W√§rmequellerate f√ºr $500 kW/m^3$ nun gibt es $ -\lambda \frac{\partial^2T}{\partial x^2}=q_W$ l√∂st man diese Partielle DGL ergibt es $T(x)=\frac{1}{2}\frac{-q_W}{\lambda} x^2+C_1x+C_2$ Setzt man die Randbedingungen ein ergibt es $T(x)=\frac{1}{2}\frac{q_W}{\lambda}(Lx-x^2)+T_0$
-			
-			
-		\end{itemize}
-		
-		
-		\section{Vektoranalysis und Integraltheorem}
-		\subsection{Generelle Remarks}
-		Gradient eines Skalarfeldes: gibt die Richtung und St√§rke des steilsten Anstiegs
-		eines Skalarfeldes an.
-		Skalarfeld $\Rightarrow$ Vektorfeld
-		
-		Divergenz eines Vektorfeldes (Quellendichte eins Vektorfeldes): Gibt die Tendenz
-		eines Vektorfeldes an, von Punkten wegzufliessen (das gilt f√ºr positives
-		Vorzeichen; bei negativem Vorzeichen handelt es sich dementsprechend um die
-		Tendenz zu den Punkten hinzufliessen) Vektorfeld $\Rightarrow$ Skalarfeld
-		
-		Rotation eines Vektorfeldes: Gibt die Tendenz eines Vektorfeldes an, um Punkte
-		zu rotieren; die Rotation eines Vektorfeldes ist ein Vektorfeld von
-		Pseudovektoren. Und zwar folgt aus dem Stokes‚Äôschen Integralsatz (siehe unten),
-		dass die Rotation die lokale Wirbeldichte eines Vektorfeldes beschreibt.
-		
-		\subsection{Nabla Operator}
-		
-		\begin{align}
-			\nabla \: \mathrm{oder} \: \vec \nabla = \left (\frac\partial{\partial
-				x_1},\ldots, \frac\partial{\partial x_n}\right)
-		\end{align}
-		\subsection{Gradient}
-		Der Gradient ist ein mathematischer Operator, genauer ein Differentialoperator,
-		der auf ein \textbf{Skalarfeld} angewandt werden kann und in diesem Fall ein
-		Gradientenfeld genanntes \textbf{Vektorfeld} liefert, das die √Ñnderungsrate d
-		Richtung der gr√∂√üten √Ñnderung des Skalarfeldes angibt.
-		
-		\begin{align}
-			\operatorname{grad}(f(x,y,z)) = \nabla f = \frac{{\partial f}}{{\partial x}} +
-			\frac{{\partial f}}{{\partial y}} + \frac{{\partial f}}{{\partial z}} = 
-			\begin{pmatrix} \frac{\partial f}{\partial x} \\ \frac{\partial f}{\partial
-					y} \\ \frac{\partial f}{\partial z} \end{pmatrix}
-		\end{align}
-		
-		\subsection{Divergenz}
-		In der Mathematik ist die Divergenz ein Differentialoperator, der einem
-		\textbf{Vektorfeld} ein \textbf{Skalarfeld (Zahl)} zuordnet. W√§hrend bei einem
-		Vektorfeld jedem Punkt ein Vektor zugeordnet wird, wird bei einem Skalarfeld jedem Punkt ein Skalar, also
-		eine Zahl, zugeodnet. Interpretiert man das Vektorfeld als Str√∂mungsfeld, so
-		gibt die Divergenz f√ºr jeden Raumpunkt an, wie viel mehr aus einer Umgebung
-		dieses Punkts hinausflie√üt als in sie hineinflie√üt. Mithilfe der Divergenz l√§sst
-		sich also herausfinden, ob und wo das Vektorfeld Quellen (Divergenz gr√∂√üer als
-		Null) oder Senken (Divergenz kleiner als Null) hat. Ist die Divergenz √ºberall
-		gleich Null, so bezeichnet man das Feld als quellenfrei.
-		
-		\begin{align}
-			\vec F = \begin{pmatrix} F_1 \\ F_2 \\ F_3 \end{pmatrix}
-		\end{align}
-		
-		\begin{align}
-			\operatorname{div}\vec F = \nabla \cdot \vec F =
-			\frac{\partial}{\partial x_1}F_1 + \frac{\partial}{\partial x_2}F_2+ \frac{\partial}{\partial x_3}F_3
-		\end{align}
-		
-		\subsection{Rotation (curl)}
-		Als Rotation bezeichnet man in der Vektoranalysis, einem Teilgebiet der
-		Mathematik, einen bestimmten Differentialoperator, der einem \textbf{Vektorfeld}
-		im dreidimensionalen euklidischen Raum mit Hilfe der Differentiation ein neues
-		\textbf{Vektorfeld} zuordnet. Handelt es sich beispielsweise um ein
-		Str√∂mungsfeld, so gibt die Rotation f√ºr jeden Ort das Doppelte der Winkelgeschwindigkeit an, mit
-		der ein mitschwimmender K√∂rper rotiert, also wie schnell und um welche Achse er
-		sich dreht. Dieser Zusammenhang ist namensgebend.
-		
-		\begin{align}
-			\mathbf{\operatorname{rot}}\,\vec F(x,y,z) = \nabla\times \vec F =
-			\begin{pmatrix} \frac{\partial}{\partial x} \\ \frac{\partial}{\partial y} \\
-				\frac{\partial}{\partial z} \end{pmatrix} \times \begin{pmatrix} F_x\\ F_y\\ F_z
-			\end{pmatrix} = \begin{pmatrix} \frac{\partial F_z}{\partial y} - \frac{\partial
-				F_y}{\partial z} \\ \frac{\partial F_x}{\partial z} - \frac{\partial
-				F_z}{\partial x} \\ \frac{\partial F_y}{\partial x} - \frac{\partial
-				F_x}{\partial y} \end{pmatrix}
-	\end{align}
-	
-	\begin{align}
-		\mathbf{\wedge = \times}
-	\end{align}
-	
-	\subsection{Rotation 2D}
-	\begin{align}
-		\mathbf{\operatorname{rot}}\,\vec F = \left (\frac{\partial
-			F_y}{\partial x} - \frac{\partial F_x}{\partial y}\right )\vec e_z 
-	\end{align}
-	
-	\subsection{Vektorprodukt}
-	\begin{align}
-		\vec{a}\times\vec{b} = \begin{pmatrix}a_1 \\ a_2 \\ a_3\end{pmatrix} \times
-		\begin{pmatrix}b_1 \\ b_2 \\ b_3 \end{pmatrix} = \begin{pmatrix} a_2b_3 - a_3b_2
-			\\ a_3b_1 - a_1b_3 \\ a_1b_2 - a_2b_1 \end{pmatrix}
-	\end{align}
-	
-	\subsection{Rechenregeln}
-	Es seien $\vec F$, $\vec G$ Vektorfelder und $U$, $V$ Skalarfelder.
-	
-	
-	\subsection{Gradient}
-	
-	Gradient ist einfach gesagt die Ableitung in einer Richtung, wird dieser in mehreren Dimensionen angewendet schreibt man das Nabla Symbol $ \nabla $, nun einige Rechenregeln mit dem Gradient.
-	
-	\begin{align}
-		\operatorname{grad}\,c=\vec{0}
-	\end{align}
-	
-	\begin{align}
-		\operatorname{grad}\,(c\cdot u)=c\cdot\operatorname{grad}\,u
-	\end{align}
-	
-	\begin{align}
-		\operatorname{grad}\,(u+v)=\operatorname{grad}\,u+\operatorname{grad}\,v
-	\end{align}
-	
-	\begin{align}
-		\operatorname{grad}\,(u\, v) = u\ \operatorname{grad}\,v + v\ \operatorname{grad}\,u
-	\end{align}
-	
-	
-	\begin{align}
-		\label{eqn:ProduktregelEinesGradientMitPotenzen}
-		\operatorname{grad}\,(u^n) = n\, u^{n-1}\ \operatorname{grad}\,u \text{ f√ºr } n\neq 0
-	\end{align}
-	
-	
-	\subsection{andere}
-	\begin{align}
-		\operatorname{rot}(\operatorname{grad}U)=\nabla \times (\nabla U) = 0
-	\end{align}
-	
-	\begin{align}
-		\operatorname{div}(\operatorname{rot}\vec{F}) = \nabla \cdot (\nabla \times
-		\vec F) = 0
-	\end{align}
-	
-	\begin{align}
-		\operatorname{rot}(\operatorname{rot}\vec{F}) =
-		\operatorname{grad}(\operatorname{div}\vec{F}) -\Delta \vec{F}
-	\end{align}
-	
-	\begin{align}
-		\operatorname{grad}(UV)=U\operatorname{grad}V+V\operatorname{grad}U
-	\end{align}
-	
-	\begin{align}
-		\operatorname{grad}(\vec{F}\cdot \vec{G}) =
-		(\operatorname{grad}\vec{F})^{\operatorname t}\vec{G} + (\operatorname{grad}\vec{G})^{\operatorname t}\vec{F}
-	\end{align}
-	
-	\begin{align}
-		\operatorname{div}(U\vec{F})=U\operatorname{div}\vec{F}+
-		\vec{F}\cdot\operatorname{grad}U
-	\end{align}
-	
-	\begin{align}
-		\operatorname{div}(\vec{F}\times \vec{G})= \vec{G} \cdot
-		\operatorname{rot}\vec{F} -\vec{F}\cdot\operatorname{rot}\vec{G}
-	\end{align}
-	
-	\begin{align}
-		\operatorname{rot}(U\vec{F})= U\operatorname{rot}\vec{F}
-		-\vec{F}\times\operatorname{grad}U\
-	\end{align}
-	\subsection{Satz von Gauss}
-	Der Integralsatz von  liefert den Zusammenhang zwischen einem Volumenintegral
-	√ºber ein Volumen $V$, das von einem Feld $\vec F$ durchsetzt ist, und einem
-	Oberfl√§chenintegral √ºber die dieses Volumen umschliessende Fl√§che $A$. Die
-	Orientierung der Fl√§che sei so festgelegt, da√ü die Aussenseite die positive
-	Seite ist.
-	
-	\begin{align}
-		\int_V \operatorname{div} \vec u \; \mathrm dV = \oint_{S} \vec u \cdot
-		\vec n\; \mathrm dA
-	\end{align}
-	
-	oder
-	
-	\begin{align}
-		\int_V \nabla \cdot \vec u \; \mathrm dV = \oint_{S} \vec u \cdot
-		\vec n\; \mathrm dA
-	\end{align}
-	
-	\subsection{Satz von Stokes}
-	Das Kurven- oder Linienintegral eines r√§umlichen Vektorfeldes $\vec u$ l√§ngs
-	einer geschlossenen Kurve $\partial F$ ist gleich dem Oberfl√§chenintegral der
-	Rotation von $\vec u$ √ºber eine beliebige Fl√§che $F$, die durch die Kurve
-	$\partial F$ berandet wird:
-	
-	\begin{align}
-		\int_{F} \operatorname{rot} \vec u \cdot d \vec A =
-		\oint_{\partial F} \vec u \cdot d \vec r
-	\end{align}
-	
-	oder
-	
-	\begin{align}
-		\int_{F} \nabla \times \vec u \cdot d \vec A =
-		\oint_{\partial F} \vec u \cdot d \vec r
-	\end{align}
-	
-	\subsection{Beispiel} % Exercise Chapter 3 (a)
-	
-	\subsubsection{Gauss Theorem}
-	kubischer W√ºrfel [1m, 1m, 1m] in 3d\\
-	Vektorfeld: $v = v_0 (\frac{x_1}{a}, \frac{x_2}{a}, 0)^T$ mit $v_0 = 0.1 m/s$
-	und $a = 1m$\\
-	
-	\textbf{sketch flow field in $x_1$, $x_2$-plane}\\
-	
-	\includegraphics[scale=1.0]{images/gauss.pdf}\\ % weg mit dem figure plunder
-	Vectorfield\\
-	
-	
-	\textbf{Fluss √ºber Fl√§che berechnen}\\
-	Fluss √ºber alle Fl√§chen summieren:\\
-	Fl√§che unten $x_1$,$x_3$ bei $x_2 = 0$:
-	\begin{align}
-		\oint_{S} \vec u \cdot
-		\vec n\; \mathrm dA = \frac{v_0}{a} \oint_{S} \begin{pmatrix}
-			x_1\\ x_2\\ 0
-		\end{pmatrix} \cdot
-		\begin{pmatrix}
-			0\\ -1\\ 0
-		\end{pmatrix} \mathrm dA = \frac{v_0}{a} \int_{0}^{1} \int_{0}^{1} x_2 \mathrm
-		dx_1 \mathrm dx_3 = \frac{v_0}{a} \int_{0}^{1} \int_{0}^{1} 0 \mathrm dx_1
-		\mathrm dx_3 = 0
-	\end{align}
-	Fl√§che oben $x_1$,$x_3$ bei $x_2 = 1$:
-	\begin{align}
-		\oint_{S}
-		\vec n\; \mathrm dA = \frac{v_0}{a} \oint_{S} \begin{pmatrix}
-			x_1\\ x_2\\ 0
-		\end{pmatrix} \cdot
-		\begin{pmatrix}
-			0\\ -1\\ 0
-		\end{pmatrix} \mathrm dA = \frac{v_0}{a} \int_{0}^{1} \int_{0}^{1} x_2 \mathrm
-		dx_1 \mathrm dx_3 = \frac{v_0}{a} \int_{0}^{1} \int_{0}^{1} 1 \mathrm dx_1
-		\mathrm dx_3 = \frac{v_0}{a}
-	\end{align}
-	Fl√§che hinten $x_1$,$x_2$ bei $x_3 = 1$:
-	\begin{align}
-		\oint_{S} \vec u \cdot
-		\vec n\; \mathrm dA = \oint_{S} \frac{v_0}{a} \begin{pmatrix}
-			x_1\\ x_2\\ 0
-		\end{pmatrix} \cdot
-		\begin{pmatrix}
-			0\\ 0\\ 1
-		\end{pmatrix} \mathrm dA = \int_{0}^{1} \int_{0}^{1} 0 \mathrm dx_1 \mathrm
-		dx_2 = 0
-	\end{align}
-	Sinngem√§ss f√ºr alle Fl√§chen Durchziehen:
-	\begin{align}
-		I_{tot} = \frac{v_0}{a} + \frac{v_0}{a} + 0 + 0 + 0 + 0 = 2 \frac{v_0}{a}
-	\end{align}
-	
-	Mit Gauss theorem √ºber Fl√§che (einfacher):
-	\begin{align}
-		\int_V \nabla \vec u \; \mathrm dV = \int_V \nabla \begin{pmatrix}
-			x_1\\ x_2\\ 0
-		\end{pmatrix} \; \mathrm dV = \int_{V}
-		\frac{\partial x_1}{\partial x_1} + \frac{\partial x_2}{\partial x_2} +
-		\frac{\partial 0}{\partial x_3} \; \mathrm dV =
-		\frac{v_0}{a}
-		\int_{0}^{1}
-		\int_{0}^{1}
-		\int_{0}^{1} 1 + 1 + 0 \; \mathrm dx_1 \mathrm dx_2 \mathrm dx_3 = 2
-		\frac{v_0}{a}
-	\end{align}
-	
 	\section{Mathematical Basics}
 	\subsection{Grundlagen Matrix Rechnung}
 	
@@ -565,7 +86,7 @@
 		\hline 
 	\end{tabular} 
 	
-	\subsection{Tensorverj√ºngung}
+	\subsection{Tensorverj¸ngung}
 	\begin{tabular}{|c|c|p{12cm}|}
 		\hline Allgemein & in components & Ausgedeutscht\\ 
 		\hline $c=A:B$ & $c=A_{ij}B_{ij}$ & $c = \sum\limits_{i=1}^{2}
@@ -655,7 +176,7 @@
 		\end{pmatrix}
 	\end{align}
 	
-	Indizes k√∂nnen wie folgt umgerechnet werden:
+	Indizes kˆnnen wie folgt umgerechnet werden:
 	
 	\begin{align}
 		\begin{pmatrix}
@@ -668,16 +189,16 @@
 	
 	
 	\subsection{Bestimmen der Transformationsmatrix}
-	%√úbung Exercise 3b) Aufgabe 3
+	%‹bung Exercise 3b) Aufgabe 3
 	
 	Gegeben eine Matrix M... mit $det(A-\lambda E)$ die Eigenvektoren bestimmen und zusammensetzen ergibt die Transformationsmatrix R am Schluss Kontrollieren mit $M^{diag}=R \cdot R^T$
 	
 	\subsection{Tensor Invarianten}
 	\begin{itemize}
-		\item 1. Invariante: $I_1 = trace(A)$ (Volumen√§nderung)
+		\item 1. Invariante: $I_1 = trace(A)$ (Volumen‰nderung)
 		\item 2. Invariante: $I_2 = \frac{1}{2} ((tr A)^2 - tr(A^2))$
-		(Plastizit√§tstheorie)
-		\item 3. Invariante: $I_3 = det(A)$ (selten ben√∂tigt f√ºr Tensoren)
+		(Plastizit‰tstheorie)
+		\item 3. Invariante: $I_3 = det(A)$ (selten benˆtigt f¸r Tensoren)
 	\end{itemize}
 	
 	\subsection{Rotationsmatrix: Transformation 2nd Rank Tensor}
@@ -720,8 +241,8 @@
 		
 		
 		\item Notation von Tensoren 4 Stufe
-		\item Mit 2 Tensoren 4ter Stufe in Engineering Notation k√∂nnen die Operationen
-		durchgef√ºhrt werden, wie wenn er 2ter Stufe w√§re (+,-,*,:)!
+		\item Mit 2 Tensoren 4ter Stufe in Engineering Notation kˆnnen die Operationen
+		durchgef¸hrt werden, wie wenn er 2ter Stufe w‰re (+,-,*,:)!
 		
 	\end{itemize}
 	$ \mathbb{I}^{eng}=
@@ -734,9 +255,9 @@
 	0 & 0 & 0 & 0 & 0 & \frac{1}{2}
 	\end{pmatrix} 
 	$ $I_{ijkl} = \frac{1}{2} (\delta_{ik} \delta_{jl} + \delta_{il} \delta_{jk}) $
-	(Definition nicht begr√ºndet)
+	(Definition nicht begr¸ndet)
 	
-	F√ºr Tensorverj√ºngung mit diesem I (weil die Indizes 2mal vorkommen da $C_{2323}$
+	F¸r Tensorverj¸ngung mit diesem I (weil die Indizes 2mal vorkommen da $C_{2323}$
 	und $C_{3232}$):\\
 	$ \mathbb{I_{\text{bischsil}}}^{eng}=
 	\begin{pmatrix}
@@ -759,7 +280,7 @@
 	0 & 0 & 0 & 0 & 0 & 0
 	\end{pmatrix} 
 	$ $E_{ijkl} = \delta_{ij} \delta_{kl}$ (Definition nicht
-	begr√ºndet)
+	begr¸ndet)
 	
 	\begin{align} C_{ijkl} \longrightarrow& \begin{pmatrix} C_{1111} & C_{1122} &
 			C_{1133} & C_{1123} & C_{1113} & C_{1112} & \\ C_{2211} & C_{2222} & C_{2233} &
@@ -793,11 +314,11 @@
 
 \subsection{Beispiel}
 
-\subsubsection{Elastic Energy Density} % Probepr√ºfung Aufgabe 5
+\subsubsection{Elastic Energy Density} % Probepr¸fung Aufgabe 5
 
 Der Tensor $ \epsilon^{eng}=(1,-1,1,2,0,0)^T $ aufteilen in $ \epsilon^{iso} $ und $ \epsilon^{shear} $. 
 \\
-Man √ºbersetzt den Tensor von eng Notation in einen normalen Tensor. 
+Man ¸bersetzt den Tensor von eng Notation in einen normalen Tensor. 
 \\
 $ \epsilon^{ing}
 =
@@ -940,16 +461,16 @@ f) \colorbox{red}{Kucksch du selber!, nicht realistisch!}
 $I_{ijkl}A_{kl}=\frac{1}{2}(\delta_{ik}\delta_{kl}+\delta_{il}\delta_{jk})A_{kl}=\frac{1}{2}(A_{ij}+A_{ji})=A_{ij}$
 \\
 \\
-$ \mathbb{I} $ und $ \mathbb{E} $ sind unabh√§nig vom Koordinatensystem wenn diese isotrop sind
+$ \mathbb{I} $ und $ \mathbb{E} $ sind unabh‰nig vom Koordinatensystem wenn diese isotrop sind
 
-$ I'_{mnpq}=R_{mi}R_{nj}R_{pk}R_{ql}I_{ijkl} = \frac{1}{2}(R_{mi}\delta_{ik}R_{pk}R_{nj}\delta_{jl}R_{ql} + R_{mi}\delta_{il}R_{ql}R_{nj}\delta_{jk}R_{pk})= \frac{1}{2}(R_{mi}R^T_{ip}R_{nj}R^T_{jq}+R_{mi}R^T_{iq}R_{nj}R^T_{jp})= \frac{1}{2}(\delta_{mp}\delta_{mq}\delta_{np})=I_{mnpq} $ dasselbe gilt auch f√ºr $ E'_{mnpq}=E_{mnpq}$
+$ I'_{mnpq}=R_{mi}R_{nj}R_{pk}R_{ql}I_{ijkl} = \frac{1}{2}(R_{mi}\delta_{ik}R_{pk}R_{nj}\delta_{jl}R_{ql} + R_{mi}\delta_{il}R_{ql}R_{nj}\delta_{jk}R_{pk})= \frac{1}{2}(R_{mi}R^T_{ip}R_{nj}R^T_{jq}+R_{mi}R^T_{iq}R_{nj}R^T_{jp})= \frac{1}{2}(\delta_{mp}\delta_{mq}\delta_{np})=I_{mnpq} $ dasselbe gilt auch f¸r $ E'_{mnpq}=E_{mnpq}$
 
 
 
 \section{Transport Phenomenas}
-In diesem Kapitel werden anisotropische Transportph√§nomene betrachtet. Der
-Begriff der Quadrik wird eingef√ºhrt. Im Fokus stehen thermische Leitf√§higkeit,
-elektrische Leitf√§higkeit und Diffusion
+In diesem Kapitel werden anisotropische Transportph‰nomene betrachtet. Der
+Begriff der Quadrik wird eingef¸hrt. Im Fokus stehen thermische Leitf‰higkeit,
+elektrische Leitf‰higkeit und Diffusion
 \subsection{Theory}
 \subsubsection{Quadrik}
 Jeder symmetrischer Tensor 2-ter Stufe kann als Ellipsoid in drei dimensionalen
@@ -973,7 +494,7 @@ Gegeben ist der symmtrische Tensor 2-ter Stufe:
 	\end{pmatrix}
 \end{align}
 
-Die quadrische Form kann folgendermassen erf√ºllt folgende Ellipsoidgleichung:
+Die quadrische Form kann folgendermassen erf¸llt folgende Ellipsoidgleichung:
 
 \begin{align}
 	\sigma_1x_1^2+\sigma_2x_2^2+\sigma_3x_3^2=1
@@ -993,22 +514,22 @@ Dabei entsprechen die Halbachsen:
 \end{center}
 
 \subsubsection{Thermal Conduction}
-In isotropischen Medien ist die W√§rmeleitung durch Fourier's Gesetz
+In isotropischen Medien ist die W‰rmeleitung durch Fourier's Gesetz
 
 \begin{align}
 	\mathbf{j}=-\lambda \nabla T
 \end{align}
 
-gegeben. In anistropischen Materialien ist die W√§rmeleitung in Tensorform
+gegeben. In anistropischen Materialien ist die W‰rmeleitung in Tensorform
 gegeben:
 \begin{align}
 	j_i=\lambda_{ij}\frac{\partial T}{\partial x_j}
 \end{align}
 
-Dieser Tensor ist gem√§ss Skript symmetrisch. Es gilt also
+Dieser Tensor ist gem‰ss Skript symmetrisch. Es gilt also
 $\lambda_{ij}=\lambda_{ji}$
 
-Dieser Tensor erf√ºllt folgende Quadrik:
+Dieser Tensor erf¸llt folgende Quadrik:
 
 \begin{align}
 	\lambda_1 x_1^2+\lambda_2 x_2^2+\lambda_3 x_3^2=1
@@ -1075,7 +596,7 @@ a) Conductivity Tensor of the problem
 \begin{center}
 	Ellipse Conductivity Tensor Quadrik:\\
 	\includegraphics[scale=0.8]{images/quadrik_2d_ellipse_uebung.pdf}\\
-	Kommentar zu Grafik: x2,x3 und senkrechte Striche einf√ºgen\\
+	Kommentar zu Grafik: x2,x3 und senkrechte Striche einf¸gen\\
 \end{center}
 Bemerkungen: blauer Kreis zeigt den Widerstand, ist dieser Gross leitet es schlecht, ist der Widerstand klein leitet es gut.
 \\
@@ -1142,7 +663,7 @@ d) Ellipsoid
 \begin{center}
 	Gedrehter Tensor (nicht im Hauptachsensystem):\\
 	\includegraphics[scale=0.8]{images/quadrik_2d_ellipse_uebung_rotation.pdf}\\
-	Kommentar zur Grafik: x2,x3 und schr√§ge Striche einf√ºgen\\
+	Kommentar zur Grafik: x2,x3 und schr‰ge Striche einf¸gen\\
 \end{center}
 
 e) Determine the resistivity $r_{12}$
@@ -1235,16 +756,16 @@ c) Ellipsoid zeichnen
 \section{Elasticity}
 \subsection{Elasticity in 1D}
 \subsubsection{Implussfluss}
-Generell folgen Elastizit√§tsprobleme Hook's Law:
+Generell folgen Elastizit‰tsprobleme Hook's Law:
 
 \begin{align}
 	F=d \cdot \Delta u
 \end{align}
-Dabei ist $d$ die Federkonstante (materialabh√§ngig) und $\Delta u$ die
-L√§ngen√§nderung des betrachteten K√∂rpers.
+Dabei ist $d$ die Federkonstante (materialabh‰ngig) und $\Delta u$ die
+L‰ngen‰nderung des betrachteten Kˆrpers.
 
-Im mehrdimensionalen Fall bietet sich das Rechnen mit Fl√ºssen an. Im
-Elastizit√§tsfall ist dies der Impulsfluss. √úber die Definition des Impulses
+Im mehrdimensionalen Fall bietet sich das Rechnen mit Fl¸ssen an. Im
+Elastizit‰tsfall ist dies der Impulsfluss. ‹ber die Definition des Impulses
 nach:
 
 \begin{align}
@@ -1259,23 +780,23 @@ Daraus ergibt sich der Impulsfluss als:
 
 also Kraft.
 
-Impuls kann nur von einem Objekt auf ein anderes √ºbertragen werden.
+Impuls kann nur von einem Objekt auf ein anderes ¸bertragen werden.
 Gespeicherter Impuls setzt deshalb ein Objekt in Bewegung. (Beispiel
-Tennisball: Ein in Bewegung gesetzter, fliegender Tennisball enth√§lt den Impuls
+Tennisball: Ein in Bewegung gesetzter, fliegender Tennisball enth‰lt den Impuls
 $p=m \cdot v$)
 
 Im Fall eines deformierten und an einer Wand befestigten Gummibandes kann man
 sich den Impulsfluss folgendermassen vorstellen: Obwohl sich nichts bewegt,
 fliesst der Impulsfluss nach der obigen Definition durch das Gummiband in die
-Wand hinein (Energieerhaltung). Sobald das Band von der Wand gel√∂st wird, setzt
+Wand hinein (Energieerhaltung). Sobald das Band von der Wand gelˆst wird, setzt
 es sich in Bewegung $\Rightarrow$ Der Impuls ist nun im Band gespeichert. 
 
-Es ist m√∂glich an jeder Position des Bandes ($0<x_0<L$) den Impulsfluss zu
+Es ist mˆglich an jeder Position des Bandes ($0<x_0<L$) den Impulsfluss zu
 messen. An jedem $x_0$ muss die Kraft F aufgewendet werden um das Band in
 gedehnten Zustand zu halten.
 
 \subsubsection{Mechanical Stress \& Impulsflussdichte}
-Wie jeder Fluss kann dieser als Flussdichte ausgedr√ºckt werden. Definition der
+Wie jeder Fluss kann dieser als Flussdichte ausgedr¸ckt werden. Definition der
 Flussdichte ist:
 
 
@@ -1289,15 +810,15 @@ Das Mechanische Stressfeld ist als negative Impulsflussdichte definiert:
 	\sigma_{11}=- \frac{J_p}{A} \Rightarrow [\sigma_{11}]= \frac{N}{m^2} = Pa
 \end{align}
 
-Integriert man √ºber dieses mechanische Stressfeld:
+Integriert man ¸ber dieses mechanische Stressfeld:
 
 \begin{align}
 	F=\int_A dA \cdot \sigma_{11}
 \end{align}
-so erh√§lt man \flqq Cutting Force\frqq. 
+so erh‰lt man \flqq Cutting Force\frqq. 
 \subsubsection{1D-Equations}
 
-Um 1-D Elastizit√§tsprobleme zu l√∂sen, ben√∂tigen wir drei Gleichungen:
+Um 1-D Elastizit‰tsprobleme zu lˆsen, benˆtigen wir drei Gleichungen:
 
 Balance:
 \begin{align}
@@ -1324,8 +845,8 @@ Funktion:
 
 $\Rightarrow$ Siehe Beispiele
 \subsubsection{Elasticity in 3D}
-Generell l√§sst sich die Gleichung analog zur Ladungsgleichung. Es gibt aber
-Unterschiede: Der Impuls ist eine vektorielle Gr√∂sse. Als Konsequenz wird
+Generell l‰sst sich die Gleichung analog zur Ladungsgleichung. Es gibt aber
+Unterschiede: Der Impuls ist eine vektorielle Grˆsse. Als Konsequenz wird
 $\sigma$ zu einem Tensor zweiter Stufe:
 
 \begin{align}
@@ -1336,7 +857,7 @@ $\sigma$ zu einem Tensor zweiter Stufe:
 	\end{pmatrix}
 \end{align}
 
-M√∂chte man nun die Impulsbilanz vektoriell in x-Richtung aufstellen ergibt sich
+Mˆchte man nun die Impulsbilanz vektoriell in x-Richtung aufstellen ergibt sich
 (1D-vektoriell):
 
 \begin{align}
@@ -1349,7 +870,7 @@ Weiter verallgmemeinert ergibt sich im 3D Fall:
 	0=\frac{\partial \sigma_{ik}}{\partial x_k}
 \end{align}
 
-Wird zus√§tzlich das Gravitationsfeld ber√ºcksichtigt, ergibt sich noch folgende
+Wird zus‰tzlich das Gravitationsfeld ber¸cksichtigt, ergibt sich noch folgende
 Verallgemeinerung:
 
 \begin{align}
@@ -1357,11 +878,11 @@ Verallgemeinerung:
 \end{align}
 
 \subsection{Stress Tensors $\sigma$ (Spannung, Druck, Kraft)}
-Spannung: $\frac{\text{Kraft}}{\text{Fl√§che}} = \frac{F}{A}$\\
+Spannung: $\frac{\text{Kraft}}{\text{Fl‰che}} = \frac{F}{A}$\\
 
 Um sich den Stresstensor intuitiv vorzustellen, machen wir folgende Annahme:
-Wir betrachten einen Hexaeder (beliebiger K√∂rper mit sechs Fl√§chen). Externe
-Kr√§fte wirken auf diesen K√∂rper. An jeder der 6 Fl√§chen haben wir eine
+Wir betrachten einen Hexaeder (beliebiger Kˆrper mit sechs Fl‰chen). Externe
+Kr‰fte wirken auf diesen Kˆrper. An jeder der 6 Fl‰chen haben wir eine
 resultierende Kraft $\vec F^\alpha$...
 
 \subsubsection{Plane Stress (Ebener Spannungszustand)}
@@ -1377,7 +898,7 @@ Beachte: Falls ebener Spannungszustand gilt: $\epsilon_{33} \neq 0$\\
 \subsubsection{Stress Decomposition (Zerlegung isotropic/shear)}
 \label{stressdecomposition}
 
-$\sigma$ kann in zwei verschiedene Teile zerlegt werden (Tensorverj√ºngung!!!):
+$\sigma$ kann in zwei verschiedene Teile zerlegt werden (Tensorverj¸ngung!!!):
 
 \begin{align}
 	\sigma^{iso}=\frac{\operatorname{tr} \sigma}{3} \cdot \mathbf{I} \equiv
@@ -1430,10 +951,10 @@ $e_{ij}$ with $trace \epsilon = 0$, Volumen bleibt gleich!
 
 \subsubsection{Strain Decomposition (Zerlegung isotropic/shear)}
 \label{straindecomposition}
-Volumen√§ndernd, isotropic: $\epsilon^{iso} = \frac{tr \epsilon}{3} \cdot \mathbf{I}
+Volumen‰ndernd, isotropic: $\epsilon^{iso} = \frac{tr \epsilon}{3} \cdot \mathbf{I}
 \equiv \frac{1}{3} \mathbb{E} : \epsilon$\\
 
-Volumenerhaltend, shape changing (Formver√§ndernd): $\epsilon^{shear} =
+Volumenerhaltend, shape changing (Formver‰ndernd): $\epsilon^{shear} =
 (\mathbb{I} - \frac{1}{3} \mathbb{E} ) : \epsilon $\\
 \textbf{Hint}: $\epsilon = \epsilon^{iso} + \epsilon^{shear}$ $\rightarrow$
 $\epsilon^{shear} = \epsilon -\epsilon^{iso}$\\
@@ -1566,11 +1087,11 @@ Formel \ref{eq:materiallaw} in Voigt's Notation:
 	\end{pmatrix}
 \end{align}
 
-Repr√§sentiert:
+Repr‰sentiert:
 \begin{align}
 	\sigma_{11} = E \cdot \epsilon_{11}
 \end{align}
-Gleichungssystem nach E aufgel√∂st:
+Gleichungssystem nach E aufgelˆst:
 \begin{align}
 	E \equiv \frac{9 K G}{3K + G}
 \end{align}
@@ -1590,10 +1111,10 @@ Gleichungssystem nach E aufgel√∂st:
 	
 	DGL aufstellen: $\frac{\partial \sigma (x)}{\partial x} = - \rho g$ $\mid$ $\int
 	dx$\\
-	DGL l√∂sen: $\sigma (x) = - \rho g x + \sigma_0$\\
+	DGL lˆsen: $\sigma (x) = - \rho g x + \sigma_0$\\
 	Boundary Conditions bei L: $\sigma (L) = \frac{F}{A} = \frac{0}{A} = 0$\\
 	BC in DGL einsetzen: $\sigma (L) = - \rho g L + \sigma_0 = 0$\\
-	Aufl√∂sen: $\sigma_0 = \rho g L$\\
+	Auflˆsen: $\sigma_0 = \rho g L$\\
 	In DGL einsetzen: $\sigma (x) = - \rho g x + \rho g L = \rho g (L-x)$\\
 	Material law: $\epsilon (x) = \frac{\rho g}{E} (L-x)$\\
 	Aus Material law: $\frac{\partial u(x)}{\partial x} = \epsilon (x) = \frac{\rho
@@ -1606,7 +1127,7 @@ Gleichungssystem nach E aufgel√∂st:
 	zu einem Punkt zwischen 0 und L integrieren!\\
 	
 \end{minipage}
-\textbf{Maximaler Stress} tritt an der Aufh√§ngung an Punkt $x = 0$ auf:\\
+\textbf{Maximaler Stress} tritt an der Aufh‰ngung an Punkt $x = 0$ auf:\\
 $\sigma(0) = - \rho g (L-x) = \rho g L = \frac{m \cdot g}{A}$\\
 Einheitenkontrolle: $[\rho \cdot g \cdot L] = \frac{kg}{m^3} \cdot
 \frac{m}{s^2} \cdot m = \frac{kg}{m \cdot s^2}$\\
@@ -1617,10 +1138,10 @@ $F \neq 0$ $\to$ $\sigma(L) = \frac{M
 	g}{A}$\\
 DGL aufstellen: $\frac{\partial \sigma (x)}{\partial x} = - \rho g$ $\mid$
 $\int dx$\\
-DGL l√∂sen: $\sigma (x) = - \rho g x + \sigma_0$\\
+DGL lˆsen: $\sigma (x) = - \rho g x + \sigma_0$\\
 Boundary Conditions bei L: $\sigma (L) = \frac{F}{A} = \frac{M g}{A}$\\
 BC in DGL einsetzen: $\sigma (L) = - \rho g L + \sigma_0 = \frac{M g}{A}$\\
-Aufl√∂sen: $\sigma_0 = \rho g L + \frac{M
+Auflˆsen: $\sigma_0 = \rho g L + \frac{M
 	g}{A}$\\
 In DGL einsetzen: $\sigma (x) = - \rho g x + \rho g L + \frac{M g}{A}= \rho g
 (L-x) + \frac{M g}{A}$\\
@@ -1635,9 +1156,9 @@ Deformation: $u(x) - u(0) = \int\limits_{0}^{x} \epsilon(x) dx =
 
 \subsubsection{Spring Constant (Federkonstante)}
 Definition Federkonstante: $F = d \cdot \Delta u $\\
-$\sigma = \frac{F}{A}$ $\Rightarrow$ (siehe √úbung oben) $u(x) = \frac{F}{A E}
+$\sigma = \frac{F}{A}$ $\Rightarrow$ (siehe ‹bung oben) $u(x) = \frac{F}{A E}
 x$\\
-F√ºr 1D und isotrop √ºber ganzes Gummiband: $x = L$\\
+F¸r 1D und isotrop ¸ber ganzes Gummiband: $x = L$\\
 $\Delta u = \frac{F L}{A E}$\\
 Aus $F = d \cdot \Delta u $ ergibt sich: $d = \frac{A E}{L}$
 
@@ -1801,7 +1322,7 @@ Find Eigenvalues:
 	\operatorname{eig}(\sigma)=\left(1,-2, 3\right) \operatorname{or}
 	\left(1,3,-2\right)
 \end{align}
-Eigenwerte werden standardm√§ssig nach Gr√∂sse geordnet (Reihenfolge jedoch nicht
+Eigenwerte werden standardm‰ssig nach Grˆsse geordnet (Reihenfolge jedoch nicht
 relevant, ergibt anderes Koordinatensystem).
 
 
@@ -1850,7 +1371,7 @@ Antisymmetrischer Part: $\gamma = \begin{pmatrix}
 -a/2 & 0 & 0\\
 0 & 0 & 0\\
 \end{pmatrix}$ $\rightarrow$ Korrespondiert zu einer Drehung um die z-Achse mit
-dem Winkel $\Phi \approx -\frac{a}{2}$ (f√ºr kleine Winkel), Drehmatrix:
+dem Winkel $\Phi \approx -\frac{a}{2}$ (f¸r kleine Winkel), Drehmatrix:
 $R_z(\alpha) = \begin{pmatrix} \cos \alpha & -\sin \alpha & 0 \\
 \sin \alpha &  \cos \alpha & 0 \\            
 0        &  0           & 1
@@ -1877,19 +1398,19 @@ $\epsilon =
 	0 & b/3 & 0\\
 	0 & 0 & b/3\\
 	\end{pmatrix}
-}_{\text{Volumen√§nderung}} +
+}_{\text{Volumen‰nderung}} +
 \underbrace {
 	\begin{pmatrix}
 	-b/3 & a/2 & 0\\
 	a/2 & 2b/3 & 0\\
 	0 & 0 & -b/3\\
-	\end{pmatrix}}_{\begin{matrix} Spur = 0\\ \text{keine Volumen√§nderung}\\
+	\end{pmatrix}}_{\begin{matrix} Spur = 0\\ \text{keine Volumen‰nderung}\\
 	\end{matrix}}$
 
-e) Relative Volumen√§nderung: $\frac{\Delta V}{V} = \frac{b}{3} + \frac{b}{3} +
+e) Relative Volumen‰nderung: $\frac{\Delta V}{V} = \frac{b}{3} + \frac{b}{3} +
 \frac{b}{3} = b$
 
-\subsection{Beispiel Elastizit√§t II} % Exercises of Chapter 10
+\subsection{Beispiel Elastizit‰t II} % Exercises of Chapter 10
 
 \subsubsection{Elasticity Tensor and Projections} % Aufgabe 10.1
 Show that:
@@ -1898,7 +1419,7 @@ Show that:
 	\mathbb{E}
 \end{align}
 Definition E: $E_{ijkl} = \delta_{ij} \delta_{kl}$\\
-Formel \ref{eq:10.1a} in Komponenten repr√§sentation:
+Formel \ref{eq:10.1a} in Komponenten repr‰sentation:
 \begin{align}
 	\frac{1}{9} E_{ijkl} E_{klpq} = \frac{1}{9} \delta_{ij} \delta_{kl} \delta_{kl}
 	\delta_{pq} = \frac{1}{9} \delta_{ij} \delta_{kk} \delta_{pq} = \frac{1}{3}
@@ -1916,7 +1437,7 @@ Spannung in [1, 0, 0] Richtung: $\sigma = (\sigma_{11}, 0, 0, 0, 0, 0)^T$\\
 Beziehung gegeben: $\sigma = \mathbb{C} \epsilon$ Umgeformt: $\epsilon =
 \mathbb{C}^{-1} \sigma$\\
 
-F√ºr $\mathbb{C}$ gilt (fliegt von SkriptHimmel):
+F¸r $\mathbb{C}$ gilt (fliegt von SkriptHimmel):
 \begin{align}
 	\mathbb{C}^{cube} = \begin{pmatrix}
 		C_{11} & C_{12} & C_{12} & 0 & 0 & 0\\
@@ -2035,7 +1556,7 @@ Wende $\mathbb{C}^{-1} \cdot \sigma'$ an um $\epsilon'$ zu erhalten
 \end{align}
 
 Wechsle $\epsilon'$ wieder in Matrix Notation und transformiere es auf um
-$\frac{\pi}{4}$ zur√ºck und wechsle wieder in Voigt Notation.
+$\frac{\pi}{4}$ zur¸ck und wechsle wieder in Voigt Notation.
 
 \begin{align}
 	\epsilon=R^{T}\epsilon'R \\
@@ -2056,7 +1577,7 @@ Rechne $E=\frac{\sigma_{11}}{\epsilon_{11}}$
 	E=169GPa
 \end{align}
 
-\subsection{Beispiel Structural Mechanics} % √úbungspr√ºfung Problem 4
+\subsection{Beispiel Structural Mechanics} % ‹bungspr¸fung Problem 4
 
 \begin{figure}[h]
 	\begin{center}
@@ -2067,7 +1588,7 @@ Rechne $E=\frac{\sigma_{11}}{\epsilon_{11}}$
 \end{figure}
 
 Koordinatensystem: $x_1$: gegen mich, $x_2$: nach rechts, $x_3$ nach unten\\
-L√§nge: $L = 10 cm$, Breite $w=2cm$, Dicke $t=2mm$\\
+L‰nge: $L = 10 cm$, Breite $w=2cm$, Dicke $t=2mm$\\
 
 \textbf{Bestimme die Form des Spannungs- und Verzerrungstensor}\\
 
@@ -2075,9 +1596,9 @@ L√§nge: $L = 10 cm$, Breite $w=2cm$, Dicke $t=2mm$\\
 \begin{align}
 	\epsilon_I^{eng} = (-e1, -e_1, e_3, 0, 0, 0)^T
 \end{align}
-Objekt wird nach unten in die L√§nge gezogen $e_3$. Dadurch zieht sich
+Objekt wird nach unten in die L‰nge gezogen $e_3$. Dadurch zieht sich
 das Objekt in $x_1$ und $x_2$ Richtung zusammen (identisch). Die hinteren
-Nullen sind f√ºr die Eigenschaften der Scherrung reserviert.\\
+Nullen sind f¸r die Eigenschaften der Scherrung reserviert.\\
 \begin{align}
 	\sigma_I = (0,0,s_3,0,0,0)^T
 \end{align}
@@ -2129,13 +1650,13 @@ geschrieben werden:
 \begin{align}
 	2 \cdot C_{11} \cdot (-e_1) + C_{C_12} e_3 = s_3
 \end{align}
-Bei der Aufl√∂sung des Gleichungssystem wird dass Prinzip der Mut zur L√ºcke laut
+Bei der Auflˆsung des Gleichungssystem wird dass Prinzip der Mut zur L¸cke laut
 der Formel 379 nach Dr. D. Strebel angewahnt!
 
 
 
 \section{Electrodynamics}
-Piezo Elektrizit√§t kommt nicht an Pr√ºfung!\\
+Piezo Elektrizit‰t kommt nicht an Pr¸fung!\\
 
 $ \vec{p}=q\cdot\vec{d} $
 
@@ -2188,12 +1709,12 @@ In der Abbildung \ref{fig:E-Feld} ist ein homogenes Elektisches Feld (E-Feld) ge
 	\end{center}
 \end{figure}
 
-In der Abbildung \ref{fig:E-Feldstaerke} ist ebenfalls ein E-Feld $ \vec{E} $ abgebildet, wobei hier die L√§nge der Vektoren gleich der elektrischen Feldst√§rke entspricht, diese ist in diesem Fall nicht homogen.
+In der Abbildung \ref{fig:E-Feldstaerke} ist ebenfalls ein E-Feld $ \vec{E} $ abgebildet, wobei hier die L‰nge der Vektoren gleich der elektrischen Feldst‰rke entspricht, diese ist in diesem Fall nicht homogen.
 
 \begin{figure}[h!]
 	\begin{center}
 		\includegraphics[scale=0.5]{images/E-Feldstaerke.png}
-		\caption{E-Feldst√§rke entspricht der L√§nge der Vektoren}
+		\caption{E-Feldst‰rke entspricht der L‰nge der Vektoren}
 		\label{fig:E-Feldstaerke}
 	\end{center}
 \end{figure}
@@ -2301,8 +1822,8 @@ Non uniform E-Field\\
 \subsubsection{Maxwell's equation}
 \begin{itemize}
 	
-	\item Die Quelle des E-Feldes ist die Ladung. Der elektrische Fluss √ºber die
-	geschlossene Oberfl√§che entspricht der eingeschlossenen Ladung.\\
+	\item Die Quelle des E-Feldes ist die Ladung. Der elektrische Fluss ¸ber die
+	geschlossene Oberfl‰che entspricht der eingeschlossenen Ladung.\\
 	$ \vec \nabla \vec D = \rho \rightarrow \oint_{\partial V} \vec D \cdot \vec n
 	dA = Q$\\
 	$\vec D = \epsilon_0 \vec E$\\
@@ -2312,23 +1833,23 @@ Non uniform E-Field\\
 	\end{center}
 	
 	\item Es existieren keine magnetische Monopole im Volumen. Magnetische
-	Feldlinien sind geschlossene Kurven. Daraus folgt, dass das Integrall √ºber die
-	Oberfl√§che gleich 0 ist.\\
+	Feldlinien sind geschlossene Kurven. Daraus folgt, dass das Integrall ¸ber die
+	Oberfl‰che gleich 0 ist.\\
 	$ \vec \nabla \vec B = 0 \rightarrow \oint_{\partial V} \vec B \cdot \vec n
 	dA = 0$
 	\begin{center}
 		\includegraphics[scale=0.5]{images/maxwell_2.pdf}
 	\end{center}
 	
-	\item Wechselnde Induktionsfl√ºsse erzeugen eine Spannung.\\
+	\item Wechselnde Induktionsfl¸sse erzeugen eine Spannung.\\
 	$ \vec \nabla \times \vec E = - \frac{\partial \vec B}{\partial t} \rightarrow
 	\oint_{\partial A} \vec E \cdot \vec t ds = - \frac{\partial \Phi}{\partial t}$
 	\begin{center}
 		\includegraphics[scale=0.5]{images/maxwell_3.pdf}
 	\end{center}
 	
-	\item Magnetische Felder werden durch Str√§me (fliessende Ladungen) verursacht
-	(nur bei kleinen Frequenzen g√ºltig, < 1 GHz)\\
+	\item Magnetische Felder werden durch Str‰me (fliessende Ladungen) verursacht
+	(nur bei kleinen Frequenzen g¸ltig, < 1 GHz)\\
 	$\vec \nabla \times \vec H = \vec j \rightarrow \oint \vec H \cdot \vec t ds =
 	I$\\
 	$I=\int \vec j \vec n dA = \sum I_i$
@@ -2343,7 +1864,7 @@ Non uniform E-Field\\
 
 Kommt nicht ist nicht drin das Kapitelangabe stimmt, juppi
 
-\section{Anhang f√ºr Dubeli}
+\section{Anhang f¸r Dubeli}
 \subsection{Matrixmultiplikation}
 \includegraphics[scale=0.5]{images/matrixmultiplikation.pdf}
 
@@ -2463,7 +1984,7 @@ a_{11} + a_{22}$\\
 
 
 \subsection{TI-89/92/Voyage 200}
-\textbf{Gleichung f√ºr mehrere Werte}\\
+\textbf{Gleichung f¸r mehrere Werte}\\
 $(3x+y^2) \mid x=1 \text{ and } y=2 \to Resultat$\\
 \textbf{Matrizeneditor}
 \begin{itemize}
@@ -2474,12 +1995,12 @@ $(3x+y^2) \mid x=1 \text{ and } y=2 \to Resultat$\\
 	\item Werte eingeben
 \end{itemize}
 
-\textbf{Gespeicherte Variabeln l√∂schen}
+\textbf{Gespeicherte Variabeln lˆschen}
 \begin{itemize}
 	\item Explorer: 2nd / VAR-LINK
-	\item Variable anw√§hlen
-	\item l√∂schen: DEL
-	\item L√∂schen Best√§tigen: ENTER
+	\item Variable anw‰hlen
+	\item lˆschen: DEL
+	\item Lˆschen Best‰tigen: ENTER
 \end{itemize}
 
 \section{Glossary}
