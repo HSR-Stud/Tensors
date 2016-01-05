@@ -1,5 +1,5 @@
 \usepackage[T1]{fontenc}
-\usepackage[latin1]{inputenc}
+\usepackage[UTF8]{inputenc}
 
 % Mathematik-Pakete
 \usepackage{amsmath}
@@ -18,39 +18,47 @@
 \usepackage{siunitx}
 
 
+	%title
+	\makeatletter         
+	
+	\def\@maketitle{   % custom maketitle 
+		
 
+		\centering{\LARGE \bf \textsf{\@title}} 
+		\smallskip \\
+		\centering{\large \bf \textsf{\@subtitle}} 
+		\smallskip \\
+		\centering{ \bf \textsf {\@author}}
+		\medskip \\
+		\centering{\bf \textsf{ \@date }}
+		\smallskip \\
+		\noindent\rule{\textwidth}{0.5pt}
+		\smallskip
+	}
+	\makeatother
 
-
-%title
-\makeatletter         
-\def\@maketitle{   % custom maketitle 
-	\centering{\LARGE \bf \textsf{\@title}} 
-	\smallskip \\
-	\centering{\large \bf \textsf{\@subtitle}} 
-	\smallskip \\
-	\centering{ \bf \textsf {\@author}}
-	\medskip \\
-	\centering{\bf \textsf{ \@date }}
-	\smallskip \\
-	\noindent\rule{\textwidth}{0.5pt}
-	\smallskip
-}
-\makeatother
-
-
-%si units
-\sisetup{sticky-per=true,per-mode=symbol}
-
-%header footer
 \usepackage[automark]{scrlayer-scrpage}
+\clearscrheadings
+\clearscrplain
+%header footer
+
 \pagestyle{scrheadings}
 \lohead{\pagemark \hspace{0.3cm }  \textcolor{gray}{\rule{0.25cm}{0.25cm}} \hspace{0.3cm } \leftmark }
 \cohead{}
 \rohead{}
+\setheadsepline[1.3\textwidth]{0.02cm} 
 
 \rofoot{}
 \cofoot{}
 \lofoot{}
+
+
+
+
+
+
+%si units
+\sisetup{sticky-per=true,per-mode=symbol}
 
 
 %geometry
@@ -65,7 +73,7 @@
 
 	
 	
-	
+
 	
 	
 	

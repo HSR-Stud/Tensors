@@ -1,0 +1,179 @@
+
+		\subsection{General Remarks}		
+		\textcolor{blue}{\textbf{Gradient}}: 
+
+		\textbf{Direction, Angle}: points to the steepest ascent.
+		
+		\textbf{Absolute Value}: is the greater, the stronger a value changes at a position.
+		
+		\textbf{scalar field}$\Rightarrow$ \textbf{vector field}
+				
+		\textcolor{blue}{\textbf{Divergence}}:
+		
+		Gives the tendencie of a vector field, to flow away from a point.
+		
+		$\operatorname{div}\vec F(\vec r) = q(\vec r) \begin{cases}
+			> 0, & \text{source, quelle}\\
+			= 0, & \text{source free}\\
+			< 0, & \text{sink, senke}
+		\end{cases}$
+		
+		\textbf{Vector field} $\Rightarrow$ \textbf{scalare field}
+		
+		\textcolor{blue}{\textbf{Curl, Rotation}}
+		
+		Tendency to rotate around a point. 
+		
+		The rotation of a vector field is a vector field of pseudo vectors. 
+		
+		Describes the local curl density of a vector field.		
+		
+		\textbf{vector field}$\Rightarrow$ \textbf{vector field}
+
+		\textcolor{blue}{\textbf{signs and notation}}: 
+		
+		\begin{tabularx}{\linewidth}{l|X}
+		$\text{Nabla operator:}\quad \nabla \: \mathrm{oder} \: \vec \nabla = \left (\dfrac\partial{\partial
+			x_1},\ldots, \dfrac\partial{\partial x_n}\right) $ 
+		&
+		$\text{Laplace operator:}\quad \laplace \: \mathrm{oder} \: \vec \laplace = \left (\frac{\partial^2}{\partial
+			x_1^2},\ldots, \frac{\partial^2}{\partial x_n^2}\right)$
+		\\
+		\hline
+		$\text{Scalar function:}\quad f = f(x,y,z)$
+		&
+		$\text{vector field:}	\quad \vec F = \begin{pmatrix} F_1 \\ F_2 \\ F_3 \end{pmatrix}$
+		\\
+		\hline
+		\multicolumn{2}{l}{
+		$
+		\text{Vector product in cartesian coordinates:}\quad\vec{a}\times\vec{b} = \begin{vmatrix}
+		\textbf{i} & \textbf{j} & \textbf{k} \\ a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3\\ \end{vmatrix} =
+		\begin{pmatrix}a_1 \\ a_2 \\ a_3\end{pmatrix} \times
+		\begin{pmatrix}b_1 \\ b_2 \\ b_3 \end{pmatrix} = \begin{pmatrix} a_2b_3 - a_3b_2
+		\\ a_3b_1 - a_1b_3 \\ a_1b_2 - a_2b_1 \end{pmatrix}$}\\
+	\hline 
+	\end{tabularx}
+			
+\renewcommand{\arraystretch}{2}		
+		\begin{tabularx}{\linewidth}{lllllX}
+			\hline
+			Function & &Nabla & &Differential form & Note \\
+			\hline
+			$\operatorname{grad}(f)$ &=& 
+			$\nabla f$ &=&
+			 $\dfrac{{\partial f}}{{\partial x}} +
+			\dfrac{{\partial f}}{{\partial y}} + \dfrac{{\partial f}}{{\partial z}} = 
+			\begin{pmatrix} \dfrac{\partial f}{\partial x}, \quad\dfrac{\partial f}{\partial
+				y}, \quad \dfrac{\partial f}{\partial z} \end{pmatrix}$&\\	
+			\hline 
+			$\operatorname{div}\vec F$ &=& 
+			$\nabla \cdot \vec F$&=&
+			$\dfrac{\partial}{\partial x_1}F_1 + \dfrac{\partial}{\partial x_2}F_2+ \dfrac{\partial}{\partial x_3}F_3$&
+			$\operatorname{div}\vec F = \dfrac{\sum_i I_i}{V}$\\
+			\hline
+			$\mathbf{\operatorname{rot}}\,\vec F$ &=& 
+			$\nabla\times \vec F$ &=& 
+			$\begin{pmatrix} \dfrac{\partial}{\partial x} \\ \dfrac{\partial}{\partial y} \\
+				\dfrac{\partial}{\partial z} \end{pmatrix} \times \begin{pmatrix} F_x\\ F_y\\ F_z
+			\end{pmatrix} = \begin{pmatrix} \dfrac{\partial F_z}{\partial y} - \dfrac{\partial
+				F_y}{\partial z} \\ \dfrac{\partial F_x}{\partial z} - \dfrac{\partial
+				F_z}{\partial x} \\ \dfrac{\partial F_y}{\partial x} - \dfrac{\partial
+				F_x}{\partial y} \end{pmatrix}$&
+			$\mathbf{\wedge = \times} \newline$\\ 
+			&&
+			&=&
+			$ \left (\dfrac{\partial F_y}{\partial x} - \dfrac{\partial F_x}{\partial y}\right )\vec e_z$ & 2 Dimensional\\
+			\hline
+		\end{tabularx}
+
+\renewcommand{\arraystretch}{1}				
+
+
+	
+	\subsection{Calculation rules (Bronstein p.731)}
+	Vector filds : $\vec F$, $\vec G$  $\qquad$ 
+	Scalar fields: $U$, $V$	           $\qquad$ 
+	constant, constant field: $c, \vec{c}$
+	
+{\rowcolors{3}{lightgray}{white}	
+\renewcommand{\arraystretch}{1.2}					
+	\begin{tabularx}{\textwidth}{|X|X|}
+		\hline
+		$\operatorname{grad}\,c=\vec{0}$ & $\operatorname{grad}\,(c\cdot u)=c\cdot\operatorname{grad}\,U$    \\
+
+		$\operatorname{grad}\,(U+V)=\operatorname{grad}\,U+\operatorname{grad}\,V$ &
+		$\operatorname{grad}\,(U\,V) = U\ \operatorname{grad}\,V + V\ \operatorname{grad}\,U$\\
+
+		$\label{eqn:ProduktregelEinesGradientMitPotenzen}
+		\operatorname{grad}\,(U^n) = n\, U^{n-1}\ \operatorname{grad}\,U \text{ für } n\neq 0$&
+		$\operatorname{rot}(\operatorname{grad}U)=\nabla \times (\nabla U) = 0$ \\
+		\hline\hline
+		$\operatorname{div}\,\vec{c}=\vec{0}$&
+		$\operatorname{div}\,(c\cdot \vec{F})=c\cdot\operatorname{div}\,\vec{F}$ \\
+		
+		$\operatorname{div}\,(\vec{F}+\vec{G})=\operatorname{div}\,\vec{F}+\operatorname{div}\,\vec{G}$ &
+		$\operatorname{div}\,(U\,\vec{F}) = U\ \operatorname{div}\,\vec{F} + \vec{F}\cdot \operatorname{grad}\,U$\\		
+
+		$\operatorname{div}\,(\vec{F} \times\vec{G})=\vec{G}\cdot \operatorname{rot}\,\vec{F} - \vec{F}\operatorname{rot}\,\vec{G}$ &
+		$\operatorname{div}(\operatorname{rot}\vec{F}) = \nabla \cdot (\nabla \times\vec F) = 0$\\
+		\hline\hline
+		
+		$\operatorname{rot}\,(\vec{F}+\vec{G})=\operatorname{rot}\,\vec{F}+\operatorname{rot}\,\vec{G}$ &
+		$\operatorname{rot}\,(c \vec{F})=c\operatorname{rot}\,\vec{F}$ \\
+
+		$\operatorname{rot}\,(U\,\vec{F}) = U\ \operatorname{rot}\,\vec{F} + \operatorname{grad}\,U \times \vec{F}$&
+		$\operatorname{rot}\,(\vec{F} \times\vec{G}) =\newline (\vec{G}\cdot \operatorname{grad})\,\vec{F} - (\vec{F}\cdot \operatorname{grad})\,\vec{G} + \vec{F}\operatorname{div}\vec{G} - \vec{G}\operatorname{div}\,\vec{F}$
+		\\
+		\hline\hline
+		$	\operatorname{rot}(\operatorname{rot}\vec{F}) = \operatorname{grad}(\operatorname{div}\vec{F}) -\Delta \vec{F}$&\\
+
+		$\operatorname{grad}(UV)=U\operatorname{grad}V+V\operatorname{grad}U $ &
+		$\operatorname{grad}(\vec{F}\cdot \vec{G}) = (\operatorname{grad}\vec{F})^{\operatorname t}\vec{G} + (\operatorname{grad}\vec{G})^{\operatorname t}\vec{F} $ \\
+
+		$	\operatorname{div}(U\vec{F})=U\operatorname{div}\vec{F}+\vec{F}\cdot\operatorname{grad}U $&
+		$\operatorname{div}(\vec{F}\times \vec{G})= \vec{G} \cdot\operatorname{rot}\vec{F} -\vec{F}\cdot\operatorname{rot}\vec{G} $ \\				
+
+		$\operatorname{rot}(U\vec{F})= U\operatorname{rot}\vec{F}-\vec{F}\times\operatorname{grad}U\ $& 
+		$\operatorname{grad}\,\varphi(U) = \dfrac{d\varphi}{dU}\operatorname{grad}\,U$
+		\\
+		\hline
+	
+		
+	\end{tabularx}
+}
+\renewcommand{\arraystretch}{1.2}		
+
+	\paragraph{Potential Field}
+		If a vector field is path independant it is called conservative. This vector field is the gradient of a potential function $\phi$
+		
+		\begin{multicols}{3}
+			$$ -\int\limits_a^b \vec F\cdot d\vec x = \phi(\vec b) - \phi(\vec a) $$ \vfill\columnbreak
+			$$ \oint \vec F\cdot d\vec x = 0 $$ 
+			$$ \nabla \times \vec F = 0  $$ \vfill\columnbreak
+			$$ F = \operatorname{grad}\phi $$
+		\end{multicols}
+		
+		
+		
+	
+
+	\subsection{Integral theorems}
+	
+		
+		\textcolor{blue}{\textbf{Divergence Theorem of Gauss}}: Volume integral: Divergence of a Vectorfield $\Rightarrow$ Surface integral: Vectorfield\\
+		
+		$$\int_V \operatorname{div} \vec{F} \; \mathrm dV = 
+				\int_V \nabla\cdot \vec{F} \; \mathrm dV =
+				\oint_{S} \vec F \cdot\vec n\; \mathrm dA
+		$$
+
+	\textcolor{blue}{\textbf{Stoke's Theorem}}: Surface integral: rotation of a vector field $\Rightarrow$ line integral along the surface: vector field  
+	
+	$$\int_{F} \operatorname{rot} \vec F \cdot d \vec A =
+		\int_{F} \nabla \times \vec F \cdot d \vec A =
+		\oint_{\partial F} \vec F \cdot d \vec r $$
+	
+
+
+	

@@ -1,0 +1,172 @@
+	\subsection{Basics}
+		All tensor rules are only valid in cartesian coordinate systems
+		
+		\begin{tabularx}{\columnwidth}{lX}
+			\multicolumn{2}{c}{\textbf{Einsteins notation}}\\
+			$w_i=\sum\limits_{j=1}^{3}A_{ij}v_j=A_{ij}v_j$ &	Whenever a \textbf{repeated} index appears on one side of a formula, a summation is silently implied!\\			
+			\textbf{Vector definition}& Vectors are physical quantities whose  coefficients transform under rotations of the coordinate system\\
+			\textbf{Rank of a tensor} & The rank of a tensor is given through the number of its indices\\
+			\textbf{Delta tensor} & $\delta_{ij} = \begin{cases} 0 & i\neq j\\ 1 & i = j \end{cases}$\\
+			\textbf{Orthogonal matrices} & $R^{-1} = R^T \quad RR^t = E \quad R^TR=E \qquad \sum\limits_{i=1}^3 d_{ji}d_{ki} = \delta_{kj} \qquad \sum\limits_{i=1}^3 d_{ik}d_{ij} = \delta_{ij}$\\
+			\textbf{notes to eigenvalues} & the trace is the sum of the eigenvalues: $\operatorname{tr}\mathbf{A} = \sum \operatorname{eig}\mathbf{A}$ \newline 
+			                                the determinant is the product of the eigenvalues: $\operatorname{det}\mathbf{A} = \prod \operatorname{eig}\mathbf{A}$  \\
+		\end{tabularx}
+	
+
+
+	\subsection{Special Tensor}
+	\paragraph{2nd Rank} Tensor of 2nd rank behave like matrices. Every Tensor can be divided into a symmetric and an antisimmetric part.
+			$$\mathbf{T}=\mathbf{T}^{sym}+\mathbf{T}^{asym} = \frac{1}{2}\left(\mathbf{T}+\mathbf{T}^T\right) + \frac{1}{2}\left(\mathbf{T}-\mathbf{T}^T\right)$$
+			
+			$$	\mathbf{T}^{sym}=\frac{1}{2}\left(\mathbf{T}+\mathbf{T}^T\right) \qquad t_{ij} = t_{ji}$$
+			$$	\mathbf{T}^{asym}=\frac{1}{2}\left(\mathbf{T}-\mathbf{T}^T\right) \qquad t_{ij} = -t_{ji} \qquad t_{11} = t_{22} = t_{33} = 0$$
+
+		A Symetric 2nd order tensor can be brought into a System of Principal Axis. Eigenvalues can be calculated with the well known formula: $|\mathbf{T}-\lambda \mathbf{I}| = 0$
+		
+		$$ \mathbf{T}^{sym} = \mathbf{R}^T \mathbf{T} \mathbf{R} \qquad \mathbf{R}\text{: columns are Eigenvectors of \textbf{T}}$$ 		
+		
+		$$ \mathbf{T}^{sym} = \begin{pmatrix}
+		t_{11} & 0 & 0 \\ 0 & t_{22} & 0 \\ 0 & 0 & t_{33} \\
+		\end{pmatrix}$$
+
+		
+		
+	\paragraph{Invariant tensors} Invariant tensors have the same components in every coordinate systems. Transformation doesn't change the Invariant tensor.
+	
+	\begin{tabularx}{\columnwidth}{lXX}
+		\hline
+		2nd rank unit tensor & $I_{ij} = \delta_{ij}$ &\\
+		trace of 2nd rank & $\operatorname{tr} \mathbf{E} = E_{ii} = \sum\limits_{i=1}^3 E_{ii}$ &\\
+		4th rank unit tensor & $\mathbb{I} = I_{ijkl} = \frac{1}{2}(\delta_{ik}\delta_{jl} + \delta_{il}\delta_{jk}) $ & both of the 4th rank tensors are isotropic\\
+						 & $\mathbb{E} = E_{ijkl} =  \delta_{ij}\delta_{kl}$ &\\
+						 
+		$ \mathbb{I}^{eng}=
+		\begin{pmatrix}
+			1 & 0 & 0 & 0 & 0 & 0 \\ 
+			0 & 1 & 0 & 0 & 0 & 0 \\ 
+			0 & 0 & 1 & 0 & 0 & 0 \\ 
+			0 & 0 & 0 & \frac{1}{2} & 0 & 0 \\ 
+			0 & 0 & 0 & 0 & \frac{1}{2} & 0 \\ 
+			0 & 0 & 0 & 0 & 0 & \frac{1}{2}
+		\end{pmatrix}$& 
+		
+		$
+		\mathbb{E}^{eng}=
+		\begin{pmatrix}
+		1 & 1 & 1 & 0 & 0 & 0 \\ 
+		1 & 1 & 1 & 0 & 0 & 0 \\ 
+		1 & 1 & 1 & 0 & 0 & 0 \\ 
+		0 & 0 & 0 & 0 & 0 & 0 \\ 
+		0 & 0 & 0 & 0 & 0 & 0 \\ 
+		0 & 0 & 0 & 0 & 0 & 0
+		\end{pmatrix} 
+		$	&
+		$ \mathbb{I_{\text{bischsil}}}^{eng}=
+		\begin{pmatrix}
+		1 & 0 & 0 & 0 & 0 & 0 \\ 
+		0 & 1 & 0 & 0 & 0 & 0 \\ 
+		0 & 0 & 1 & 0 & 0 & 0 \\ 
+		0 & 0 & 0 & 1 & 0 & 0 \\ 
+		0 & 0 & 0 & 0 & 1 & 0 \\ 
+		0 & 0 & 0 & 0 & 0 & 1
+		\end{pmatrix}$
+			\\
+							 
+   	   \hline
+	\end{tabularx}
+	
+	\subsection{Transformations and changes of coordinate systems}
+	
+	\begin{tabularx}{\columnwidth}{p{4.8cm}Xp{4.8cm}}	
+		\hline 
+		\multicolumn{2}{p{8cm}}{\textbf{Passive rotation}: rotation of the coordinate system (basis vectors)} & \textbf{Active rotation}: rotation of the vector  \\
+		\hline
+		1st rank (vector) & Tensor notation: $v_j' = R_{ji}v_i$  \newline matrix notation: $v' =  \textbf{R}v$ & $v_i$: vector (could be basis $e_i$)\newline $R$: orthogonal transformation matrix\\
+		\hline 
+		2nd rank (matrice) & Tensor notation: $M_{ij}' = R_{im}R_{jn}M_{mn}$  \newline matrix notation: $M' =  \textbf{R}M\textbf{R}^T$ & $M_{ij}$: 2nd rank tensor \newline $R$: orthogonal transformation matrix\\
+		\hline 
+		higher rank & $F_{ijkl}' = R_{im}R_{jn}R_{ko}R_{lp}F_{mnop}$  \newline & $F_{ijkl}$: 4th rank tensor \newline $R$: orthogonal transformation matrix\\					
+		\hline
+					
+		$R_x(\alpha) = \begin{pmatrix} 
+		1 &   0         & 0           \\
+		0 & \cos \alpha & -\sin \alpha \\
+		0 & \sin \alpha &  \cos \alpha
+		\end{pmatrix} $ &
+		$R_y(\alpha) = \begin{pmatrix} 
+		\cos \alpha  & 0 & \sin \alpha \\
+		0         & 1 &  0          \\
+		-\sin \alpha & 0 & \cos \alpha
+		\end{pmatrix} $ &
+		$R_z(\alpha) = \begin{pmatrix} 
+		\cos \alpha & -\sin \alpha & 0 \\
+		\sin \alpha &  \cos \alpha & 0 \\            
+		0        &  0           & 1
+		\end{pmatrix}$\\
+					
+	\hline 
+	\end{tabularx}
+	
+
+	\subsection{Tensor Algebra}
+	\begin{tabularx}{\columnwidth}{p{3cm}lXX}
+		\hline 
+		Operator & General & Tensor algebra & notes\\ 
+		\hline 
+		Addition & $C=A+B$ & $C_{ij}=A_{ij}+B_{ij}$  & valid for each rank\\ 
+		
+		Multiplication with a scalare& $B=\alpha A$ & $B_{ij}=\alpha A_{ij}$ & valid for each rank\\ 
+		
+		Tensor multiplication &  $C=AB$ & $C_{ij}=A_{ik}B_{kj}$ & 2nd $\cdot$ 2nd = 2nd rank\newline corresponds to matrix-matrix multiplication\\
+		 &$w=Av$ & $w_i=A_{ij}v_{j}$ & 2nd $\cdot$ 1st = 1st rank\newline corresponds to matrix-vector multiplication \\
+		
+		Dyadic product & $\textbf{M} = a \otimes b $ & $M_{ij} = a_i b_j$  & forming 2nd rank tensor\\ 
+				  	   & $\mathbb{C} = A \otimes B $ & $C_{ijkl} = A_{ij} B_{kl}$ & forming 4th rank tensor\\
+		 
+		Gradient    & $g = \nabla T$ & $g_i = \dfrac{\partial T}{\partial x_i} $ & \\
+		
+		Contraction\newline Tensorverjüngung &  $c=ab = a:b$ & $c=a_{i}B_{i}$ & 1nd : 1nd = 0th rank  \\
+									  		 &  $c=A:B$ & $c=A_{ij}B_{ij}$ & 2nd : 2nd = 1st rank \\
+											 & $B=\mathbb{D}:A$ & $B_{kl}=D_{klij}A_{ij}$  & 4th : 2nd = 2nd rank\\
+
+		Transposition & $\mathbf{A}^T$ & $A^T_{ij} = A_{ij}$ & only for second rank\\
+		\hline 
+	\end{tabularx} 
+
+
+	\subsection{Engineering notation}
+	Engineering notation for special tensors of 2nd rank
+	$$ \mathbb{I}^{eng}=(1,1,1,0,0,0) $$
+	$$\sigma^{eng} = (\sigma_{11},\sigma_{22},\sigma_{33},\sigma_{23},\sigma_{13},\sigma_{12} )^T$$
+	
+	$$\epsilon^{eng} = (\epsilon_{11},\epsilon_{22},\epsilon_{33},2\epsilon_{23},2\epsilon_{13},2\epsilon_{12} )^T$$	
+	
+	A symmetric tensor of 4th rank can be written as $C_{ijkl} = C_{jikl} = C_{ijlk} = C_{klij} $
+	
+	$$\mathbb{C}^{eng}= \begin{pmatrix}
+			C_{11}&C_{12}&C_{13}&C_{14}&C_{15}&C_{16}\\
+			C_{21}&C_{22}&C_{23}&C_{24}&C_{25}&C_{26}\\
+			C_{31}&C_{32}&C_{33}&C_{34}&C_{35}&C_{36}\\
+			C_{41}&C_{42}&C_{43}&C_{44}&C_{45}&C_{46}\\
+			C_{51}&C_{52}&C_{53}&C_{54}&C_{55}&C_{56}\\
+			C_{61}&C_{62}&C_{63}&C_{64}&C_{65}&C_{66}
+		\end{pmatrix}$$
+	
+		$$\begin{pmatrix}
+			1&2&3&4&5&6\\
+			\updownarrow&\updownarrow&\updownarrow&\updownarrow&\updownarrow&\updownarrow\\
+			11&22&33&23&13&12
+		\end{pmatrix}$$
+	
+	following is valid and justify the engineering notation because it is a matrix vector multiplication
+	
+	$$\sigma = \mathbb{C} : \epsilon \Rightarrow \sigma^{eng} = \mathbb{C}^{eng}\epsilon^{eng}$$
+
+	Engineering notation of a 3th rank thensor $\mathcal{D}$, the first index corresponds to the tensor index, the second tensor index can be read out of the table above
+	
+	$$\mathcal{D}^{eng}= \begin{pmatrix}
+		D_{11}&D_{12}&D_{13}&D_{14}&D_{15}&D_{16}\\
+		D_{21}&D_{22}&D_{23}&D_{24}&D_{25}&D_{26}\\
+		D_{31}&D_{32}&D_{33}&D_{34}&D_{35}&D_{36}\\
+	\end{pmatrix}$$
+		
