@@ -26,7 +26,7 @@
 		$\mathbf{F}(\textcolor{red}{\mathbf{r}}) = \dfrac{Q}{ 4\pi\varepsilon_0}\int\rho(\textcolor{darkgreen}{\mathbf{r'}}) \dfrac{\textcolor{red}{\mathbf{r}} - \textcolor{darkgreen}{\mathbf{r'}}}{|\textcolor{red}{\mathbf{r}} - \textcolor{darkgreen}{\mathbf{r'}}|^3} dV$ \\
 		\hline
 		Electrical Field&
-		 $ \mathbf{E} = \dfrac{\mathbf{F}}{Q} = \sum\limits_i\dfrac{q_i}{4\pi\epsilon_0}\dfrac{\mathbf{r_i}}{r_i^3}$ &
+		 $ \mathbf{E} = \dfrac{\mathbf{F}}{Q} = \sum\limits_i\dfrac{q_i}{4\pi\epsilon_0}\dfrac{\mathbf{r - r_i}}{|r-r_i|^3}$ &
 		 $ \mathbf{E}(\textcolor{red}{\mathbf{r}}) =  \dfrac{1}{4\pi\varepsilon_0} \int \rho(\textcolor{darkgreen}{\mathbf{r'}}) \dfrac{\textcolor{red}{\mathbf{r}} - \textcolor{darkgreen}{\mathbf{r'}}}{|\textcolor{red}{\mathbf{r}} - \textcolor{darkgreen}{\mathbf{r'}}|^3}dV$ \\
 		 & &  $\nabla\times\mathbf{E} = 0 \Rightarrow$ potential field $\mathbf{E}=-\nabla \varphi$\\
 		\hline 
@@ -57,6 +57,7 @@
 		\end{tabularx}
 
 	\subsection{Energy in the electrical field}
+		{\def \arraystretch{2}	
 	\begin{tabularx}{\columnwidth}{lllXX}
 		&capacity & charge & work&energy density\\
 		General & $C = \dfrac{Q}{U}$ & $Q = \oint\mathbf{E}d\sigma$ & $W = \int U dQ$& $w_{el} = \dfrac{W}{V}$\\
@@ -73,18 +74,25 @@
 		$$ 
 
 		\subsection{Magnetostatics}
-		
+
 		\begin{tabularx}{\columnwidth}{p{3cm}X}
+		Strom       & $I = \dfrac{dQ}{dt} = \iint\limits_\epsilon \bm j d\bm A \qquad $ Stromdichte $j = \dfrac{I}{A}$\\
 			
-		Biot Savart & $\dfrac{\mu_0}{4\pi}\cdot I \int \dfrac{ds\times \mathbf{r}}{r^3} = \dfrac{\mu_0}{4\pi} \int \dfrac{\mathbf{j}\times \mathbf{r}}{r^3}dV$ \\
-					& $\nabla\cdot \mathbf{B} = 0$\\
-					& $\nabla\times \mathbf{B} = \mu_0 \mathbf{j}$\\
-		Lorentz force on point charge & $\mathbf{F}_{elmag} = q(\mathbf{E+v\times B})	$
- 		\end{tabularx}
+		Biot Savart & $\vec B = \dfrac{\mu_0}{4\pi}\cdot I \int \dfrac{ds\times \mathbf{r}}{r^3} = $
+		$\dfrac{\mu_0}{4\pi}\iiint \bm j(\bm r') \times \dfrac{\bm r - \bm r'}{|\bm r - \bm r'|^3}dV$ \\
+		flux conservation & $\nabla\cdot \mathbf{B} = 0$ all  magnetic field lines are closed\\
+		Ampère law	& $\nabla\times \mathbf{B} = \mu_0 \mathbf{j}$\\
+		Ohm's law			&$\bm j = \sigma \bm E\qquad \bm E =  \rho \bm j$\\
+					 
+		Lorentz force: point charge & $\mathbf{F} = q(\mathbf{E+v\times B})	$\\
+		Lorentz force: wire  & $\bm F = I\cdot \bm l \times \bm B$\\
 		
+		Magnetic Moment& $\bm M = \bm m  \times \bm B \qquad  M = m  B \cdot \sin\alpha \qquad m = I A\cdot \bm n$\\
+ 		\end{tabularx}
+	}
 		\subsection{Magnetic field in Matter}
 		\begin{tabularx}{\columnwidth}{lX}
-			Magnetized Field$\mathbf{B} = \mu_0(1+ \chi_m)\mathbf{H} =  \mu_0\mu_r\mathbf{H}$			
+			Magnetized Field & $  \mathbf{B} = \mu_0(1+ \chi_m)\mathbf{H} =  \mu_0\mu_r\mathbf{H}$	\\
 		\end{tabularx}
 		
 		\subsection{Energy in magnetic field}

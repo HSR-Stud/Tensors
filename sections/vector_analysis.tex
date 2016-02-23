@@ -62,10 +62,9 @@
 			\hline
 			$\operatorname{grad}(f)$ &=& 
 			$\nabla f$ &=&
-			 $\dfrac{{\partial f}}{{\partial x}} +
-			\dfrac{{\partial f}}{{\partial y}} + \dfrac{{\partial f}}{{\partial z}} = 
+			 $ 
 			\begin{pmatrix} \dfrac{\partial f}{\partial x}, \quad\dfrac{\partial f}{\partial
-				y}, \quad \dfrac{\partial f}{\partial z} \end{pmatrix}$&\\	
+				y}, \quad \dfrac{\partial f}{\partial z} \end{pmatrix}^T$&\\	
 			\hline 
 			$\operatorname{div}\vec F$ &=& 
 			$\nabla \cdot \vec F$&=&
@@ -92,13 +91,16 @@
 
 	
 	\subsection{Calculation rules (Bronstein p.731)}
-	Vector filds : $\vec F$, $\vec G$  $\qquad$ 
-	Scalar fields: $U$, $V$	           $\qquad$ 
-	constant, constant field: $c, \vec{c}$
 	
 {\rowcolors{3}{lightgray}{white}	
 \renewcommand{\arraystretch}{1.2}					
 	\begin{tabularx}{\textwidth}{|X|X|}
+		\hline 
+		\multicolumn{2}{|l|}{
+		Vector filds : $\vec F$, $\vec G$  $\qquad$ 
+		Scalar fields: $U$, $V$	           $\qquad$ 
+		constant, constant field: $c, \vec{c}$}\\			
+		
 		\hline
 		$\operatorname{grad}\,c=\vec{0}$ & $\operatorname{grad}\,(c\cdot u)=c\cdot\operatorname{grad}\,U$    \\
 
@@ -155,8 +157,31 @@
 		\end{multicols}
 		
 		
-		
+	\paragraph{Line integral}~\\
+	\begin{tabularx}{\columnwidth}{lp{2.5cm}p{4cm}X}
+	\hline 
+		\multicolumn{4}{c}{receipt to Line integrals in a vector field}\\
+	\hline 
+		1& Partition & Divide the curve into pieces & $I = \int\limits_C\bm fd\bm r = \int\limits_{C_1}\bm fd\bm r_1 + \int\limits_{C_2}\bm fd\bm r_2+\dots = \sum\limits_i \int\limits_{C_i}\bm fd\bm r_i$\\
+		2& Line vector& 
+		 Describe the curve $C_i$ as a function of t & $\bm r_i(t) = \left(x_i(t), y_i(t), z_i(t)\right)^T\quad t\in[a,b]$\\
+		3& Derivative & take the derivative of $\bm r_i(t)$ & $\bm r_i'(t) = \left(x_i'(t), y_i'(t), z_i'(t)\right)^T \quad d\bm r_i = \bm r_i'(t) dt $\\
+		4& parametrize the field  & put $\bm r_i(t)$ into the vector field function & $\bm f(x,y,z) = \bm f(\bm r_i(t) ) = \bm f(x_i(t), y_i(t), z_i(t))$\\
+		5& integrals & calculate the integrals & $I_i = \int\limits_{C_i} = \bm f(\bm r_i(t))\cdot \bm r_i'(t)dt$\\
+		6& sum up & summarize the pieces & $I = \sum\limits_i I_i$\\
+		\hline 
+	\end{tabularx}
+	scalar field $$I = \int\limits_C f d \bm r = \int\limits_{a}^b f(\bm r(t))\; |\bm r'(t)| dt$$
 	
+	vector field $$I = \int\limits_C \bm f d\bm r = \int\limits_{a}^b \bm f(\bm r(t))\; \cdot \bm r'(t) dt$$
+		
+	\paragraph{special vectors}  
+	$\bm r = \begin{pmatrix} x\\y\\z\end{pmatrix} \qquad |\bm r| = r = \dfrac{1}{\sqrt{x^2+y^2+z^2}}$
+	
+	$\nabla\left(\dfrac{1}{r}\right) = -\dfrac{\bm r}{r^3}\qquad
+	\nabla\left(\dfrac{1}{r^2}\right) = -\dfrac{2\bm r}{r^4}\qquad
+	\nabla\left(\dfrac{1}{r^3}\right) = -\dfrac{3\bm r}{r^5}\qquad
+	\nabla (\bm r \bm F) = \bm F$
 
 	\subsection{Integral theorems}
 	

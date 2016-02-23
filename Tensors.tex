@@ -19,7 +19,8 @@
 \newcommand{\qed}{\begin{flushright}
 		$\blacksquare \dagger$ \end{flushright}}
 
-
+\newcommand{\bme}{\bm e}
+\newcommand{\bmx}{\bm x}
 \begin{document}
 	\maketitle 
 
@@ -31,36 +32,33 @@
 	\smallskip 
 	\rule{\textwidth}{0.5pt}
 	\smallskip
-	
 
-%%rowcolor
-
+	%\keepXColumns %ltablex
 
 
 	\section{Description of Physical Phenomena}
-	%	\input{sections/units}	
-	%	\input{sections/balance_equations}
-	
+		\input{sections/units}	
+		\input{sections/balance_equations}
+		\newpage
 	\section{Vector Analysis and Integral theorems}
-	%	\input{sections/vector_analysis}
-
+		\input{sections/vector_analysis}
 	\section{Mathematical Basics of Tensors}
-	%\input{sections/tensor_basics}
-	
+	\input{sections/tensor_basics}
+	\newpage
 	\section{Transport Phonomena}
-	%\input{sections/transport_phenomena}
-
-			
+	\input{sections/transport_phenomena}
+	\newpage
 	\section{Electrodynamics}
-	%	\input{sections/electrodynamics}
-
+		\input{sections/electrodynamics}
+		\newpage
 	\section{Elasticity}
-    		\input{sections/elasticity}
+   		\input{sections/elasticity}
 
 	\section{Examples}
-	%	\input{sections/examples}
+%	\input{sections/examples}
 	\section{Anhang}
-	%	\input{sections/anhang}
+	
+		\input{sections/anhang}
 
 
 

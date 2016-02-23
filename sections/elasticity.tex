@@ -1,22 +1,26 @@
 \subsection{Elasticity in 1D}
-\renewcommand{\arraystretch}{2}
-	\begin{tabularx}{ \columnwidth} {lXXX}
-		Law & formula &&\\
-		Hook's Law & $F = k\cdot \Delta x$ &
+\renewcommand{\arraystretch}{2.2}
+	\begin{tabularx}{ \columnwidth} {p{3cm}XlX}
+		\hline 
+		\multicolumn{4}{p{\columnwidth}}{Stored momentum sets an object into motion. If the object doesn't move, but a momentum is applied, the object deforms.}\\
+		Hook's Law & $F = k\cdot \Delta u$ &
 		momentum   & $p = m\cdot v$\\
 		
 		momentum flux & $J_p = \dfrac{\partial p}{\partial t}$&
 		momentum flux density & $j_p = \dfrac{J_p}{A}$\\
 		
-		mechanical stress & $\sigma_{11} = -j_p = \frac{-J_p}{A} $ &
-		cutting force & $F = \int_A \sigma_{11} dA$\\
-		&&&\\
-		
+		mechanical stress (Spannung) & $\sigma_{11} = -j_p = \frac{-J_p}{A} $ &
+		cutting force, flux of momentum & $F = \int_A \sigma_{11} dA$\\
+		mechanical strain (Elastizität) &$\varepsilon_{11} = \dfrac{\partial u(x)}{\partial x}$&
+		Youngs Modulus (Eleastizitätsmodul) &  $E = \dfrac{\sigma_{11}}{\varepsilon_{11}} $\\		
+		Young Modulus & $F = \dfrac{EA_0\Delta L}{L_0}$&&\\
+		\hline 
 		\textbf{Momentum Balance equation} & $\dfrac{\partial \sigma_{11}}{\partial x} + \rho g= 0$ &
-		boundary cond. & $\sigma_{11}(L) = \dfrac{F}{A} \newline u(0) = 0$\\
+		boundary cond. & $\sigma_{11}(0) = \dfrac{F}{A} \newline  \sigma_{11}(L) = 0$ \\
 		
-		Displacement Field & $u(x) = \Delta u \cdot \dfrac{x}{l}$ & 
-		Material Law & $\epsilon_{11} = \dfrac{\partial u(x)}{\partial x} $\newline $ \sigma_{11} = E\cdot \epsilon_{11}$\\ 
+		Displacement Field & $u(x) = \Delta u \cdot \dfrac{x}{L}$ & 
+		$u(L) = \Delta x$ &  u(0) = 0 \\
+		Material Law & $\varepsilon_{11}$\newline $ E $\\ 
 		
 	\end{tabularx}
 \renewcommand{\arraystretch}{1.2}	
@@ -28,8 +32,33 @@
 %		\includegraphics[scale=.3]{images/}				
 
 
+\begin{tabularx}{\columnwidth}{p{3cm}XX}
+	\hline 
+	\multicolumn{3}{c}{Elasticity in a hanging rope}\\
+	\hline 
+	\multicolumn{3}{l}{The Rope is hanging from the ceiling in the gravitational Field of the earth}\\
+	
+	measured values& $L, A,\rho, E, g$ & \\
+	mechanical stress & $\dfrac{\partial \sigma}{\partial x}  + \rho g = 0 \qquad \sigma(x) = -\rho g x + C$ & $\sigma(0) = \dfrac{F}{A} = \dfrac{mg}{A} = \dfrac{mgL}{AL} = L\rho g$\\
+	&$\sigma(0) =\rho g L \qquad \sigma(x)  = \rho g(L-x)$ &
+	$\sigma(x) = \varepsilon(x) E = \dfrac{\partial u(x)}{\partial x}E = \rho g(L-x)$\\
+	strain & $\varepsilon(x)= \dfrac{\rho g}{E}(L-x)$ & $u(x) = \int \varepsilon(x)dx = \dfrac{\rho g}{E}(Lx-\dfrac{x^2}{2}+C)$\\
+	Displacement Field& $u(0) = 0 \quad u(x) =\dfrac{\rho g}{E}(Lx-\dfrac{x^2}{2})$ & \\
+	maximal stress & $\sigma_{max} = \rho g L$ \hspace{1.3cm}maximal elongation&  $\dfrac{\partial u}{\partial x} = 0 \Rightarrow  x_{max} = L \quad u_{max} = \dfrac{\rho g}{2E}L^2$\\
+
+	\hline 
+	\multicolumn{3}{c}{calculating a spring constant}\\
+	\hline 
+	measured values & $L, A, E$&\\
+	& $\sigma = \dfrac{F}{A} = \text{const} \quad u(x) = \dfrac{F}{AE}x$ & elongation for $x=L \quad \Delta u = \dfrac{FL}{AE}$\\
+	spring const. & $F = k\cdot \Delta u$ & $k = \dfrac{AE}{L}$\\
+	\hline 
+	
+\end{tabularx}
+\newpage
+
 \subsection{Elasticity in 3D}
-	electrodyamics: scalar charge $q$ $\Rightarrow$ vectorial flux $j$ (0nd rank tensor $\Rightarrow$ 1st rank tensor)
+	electrodyamics: scalar charge $q$ $\Rightarrow$ vectorial flux $j$ (0 rank tensor $\Rightarrow$ 1st rank tensor)
 	
 	mechanics: vector momentum $\mathbf{p}$ $\Rightarrow$ tensorial flux density $\mathbf{\sigma}$ (1st rank tensor $\Rightarrow$ 2nd rank tensor)
 
@@ -40,200 +69,140 @@
 %	\sigma_{31} & \sigma_{32} & \sigma_{33} 
 %	\end{pmatrix}
 %	$$
-\begin{tabularx}{ \columnwidth} {lXX}
+
+\begin{tabularx}{ \columnwidth} {p{4cm}lX}
+	\hline 
 	General momentum balance equation &  $\dfrac{\partial \sigma_{ik}}{\partial x_k} + \rho g_i = 0$ & $\sigma_{ij}$: stress tensor of 2nd rank, characterizes material symmetry: $\sigma_{ij} = \sigma_{ji}$\\
-	Cutting Force & $F_i^\alpha = \sigma_{ik} nA^\alpha_k \cdot A^\alpha$ & $\mathbf{n}^\alpha$: normal vector pointing outside of the cuboide\newline $A^\alpha$: face area \\
-	Angular Momentum & $\mathbf{M} = 0 $ & \\
+	Cutting Force & $F_i^\alpha = \sigma_{ik} nA^\alpha_k \cdot A^\alpha$ & $\mathbf{n}^\alpha$: normal vector pointing outside of the cuboide\newline $A^\alpha$: face area 
+	\\
 	
+	Angular Momentum &
+	$\mathbf{M} = 0 $ &
+	\\
+	Stress Decomposition &  $\sigma^{iso}=\frac{\operatorname{tr} \sigma}{3} \cdot \mathbb{I} \equiv \frac{1}{3} \mathbb{E} : \varepsilon$ 
+	&$\sigma^{shear}= \left(\mathbb{I}- \frac{1}{3}\mathbb{E} \right) : \varepsilon\qquad $ 
+	$\sigma^{shear} = \sigma -\sigma^{iso}$\\ 
+	
+	$\begin{pmatrix}
+	x\to x & x\to y & x\to z \\
+	y\to x & y\to y & y\to z \\
+	z\to x & z\to y & z\to z \\		
+	\end{pmatrix}$&
+	\multicolumn{2}{l}{\vspace{0cm}\includegraphics[scale=.15]{images/3Dcuttingforces} \includegraphics[scale=.15]{images/3Dangularmomentum}}	\\
+	\hline 
 \end{tabularx}
 	\renewcommand{\arraystretch}{2}
 \subsection{Special Stress States (Mechanische Spannung $\sigma = F/A$)}
-	\begin{tabularx}{\columnwidth}{llXX}
+	\begin{tabularx}{\columnwidth}{p{2cm}p{2cm}XX}
+		\hline 
 		Stress State & Tensor law & matrix notation & \\ 
-		Isotropic Stress State & $\sigma_{ij} = -P\delta_{ik}$&	$ \sigma = \begin{pmatrix} -P & 0 & 0\\ 0 & -P & 0\\ 0 & 0 & -P \end{pmatrix}$ &\vspace*{-1.5cm}\includegraphics[scale=.2]{images/3Dcfisotropic}\\
-		Uniaxial Stress State & & 		$ \sigma = \begin{pmatrix} \sigma_{11} & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & 0\\ \end{pmatrix}$ &		\includegraphics[scale=.3]{images/3Dcfuniaxial}				\\
-		Plane Stress State && $ \sigma = \begin{pmatrix} \sigma_{11} & \sigma_{12} & 0\\ \sigma_{21} & \sigma_{22} & 0\\ 0 & 0 & 0\\ \end{pmatrix}$&		\includegraphics[scale=.3]{images/3Dcfplanestress}				 \\
+		\hline 
+		Isotropic Stress State & $\sigma_{ij} = -P\delta_{ik}$&	$ \sigma = \begin{pmatrix} -P & 0 & 0\\ 0 & -P & 0\\ 0 & 0 & -P \end{pmatrix}$ &\vspace*{-1.2cm}\includegraphics[scale=.11]{images/3Dcfisotropic}\\
+		\hline 
+		Uniaxial Stress State & & 		$ \sigma = \begin{pmatrix} \sigma_{11} & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & 0\\ \end{pmatrix}$ &		\vspace*{-1.2cm}\includegraphics[scale=.12]{images/3Dcfuniaxial}\\
+		\hline 
+		Plane Stress State && $ \sigma = \begin{pmatrix} \sigma_{11} & \sigma_{12} & 0\\ \sigma_{21} & \sigma_{22} & 0\\ 0 & 0 & 0\\ \end{pmatrix}$&	\vspace*{-1.0cm}	\includegraphics[scale=.12]{images/3Dcfplanestress}\\
+		\hline 
 		Principal Axis Decompensation &&$ \sigma = \begin{pmatrix} \sigma_{11} &  0& 0\\ 0 & \sigma_{22} & 0\\ 0 & 0 & \sigma_{33}\\ \end{pmatrix}$&\\
-		Pure Shear Stress State &$\operatorname{tr}\sigma = 0$&$ \sigma = \begin{pmatrix} S &  0& 0\\ 0 & -s & 0\\ 0 & 0 & 0\\ \end{pmatrix}$&		\includegraphics[scale=.3]{images/3Dcfpureshear}				\\
+		\hline 
+		Pure Shear Stress State &$\operatorname{tr}\sigma = 0$&$ \sigma = \begin{pmatrix} 0 &  -s& 0\\ -s & 0 & 0\\ 0 & 0 & 0\\ \end{pmatrix}$&		\vspace*{-1.2cm}\includegraphics[scale=.12]{images/3Dcfpureshear}\includegraphics[scale=.12]{images/3Dcfpureshear2}\\
+		\hline 
 	\end{tabularx}
 	\renewcommand{\arraystretch}{1.2}
 
-	\subsubsection{Stress Decomposition (Zerlegung isotropic/shear)}
-	\label{stressdecomposition}
+\subsection{Strain Tensor in 3D}
+	Vector of 2nd rank. Gradient of Deformation $u(x)$ \hspace{1cm}$\bm x' = \bm x + \bm u(\bm x)$
 	
-	$\sigma$ kann in zwei verschiedene Teile zerlegt werden (Tensorverjüngung!!!):
-	
-	\begin{align}
-		\sigma^{iso}=\frac{\operatorname{tr} \sigma}{3} \cdot \mathbf{I} \equiv
-		\frac{1}{3} \mathbb{E} : \epsilon
-	\end{align}
-	
-	und
-	
-	\begin{align}
-		\sigma^{shear}= \left(\mathbb{I}- \frac{1}{3}\mathbb{E} \right) : \epsilon
-	\end{align}
-	
-	\textbf{Hint}:
-	\begin{align}
-		\sigma^{shear} = \sigma -\sigma^{iso}
-	\end{align}
-	
-	
-	
-	
-	
-	
-	\subsection{Strain Tensors $\epsilon$ (Deformation, Dehnung, Verschiebung)}
-	Strain, Dehnung: $\frac{\Delta L}{L}$ (Wirkung die Auftritt durch Stress
-	Tensor (Spannung $\frac{F}{A}$) $\sigma$)\\
-	Gradient der Deformation: $e = \begin{pmatrix}
-	\frac{\partial u_1}{\partial x_1} & \frac{\partial u_1}{\partial x_2} &
-	\frac{\partial u_1}{\partial x_3}\\
-	\frac{\partial u_2}{\partial x_1} & \frac{\partial u_2}{\partial x_2} &
-	\frac{\partial u_2}{\partial x_3}\\
-	\frac{\partial u_3}{\partial x_1} & \frac{\partial u_3}{\partial x_2} &
-	\frac{\partial u_3}{\partial x_3}\\
-	\end{pmatrix}$\\
-	Tensor aufteilen (symmetrisch und antisymmetrisch): $e = e^{sym} + e^{anti}$\\
-	mechanical strain Tensor: $\epsilon \equiv e^{sym} = \frac{1}{2} (e + e^T) =
-	\frac{1}{2} (\frac{\partial u_i}{\partial x_j} + \frac{\partial
-		u_j}{\partial x_i})$\\
-	Rotational deformation (infinitesimal): $\gamma \equiv e^{anti} = \frac{1}{2} (e
-	- e^T)$\\
-	Anwendung siehe: Beispiel \ref{9.3} (Seite \pageref{9.3})
-	
-	\subsubsection{Volume Change of a Deformation}
-	$\frac{\Delta V}{V} = tr \epsilon $
-	
-	\subsubsection{Isotropic Strain (Gestalterhaltend)}
-	$\epsilon_{ij} = \epsilon \cdot \delta_{ij} $
-	
-	\subsubsection{Pure Shear Strain}
-	$e_{ij}$ with $trace \epsilon = 0$, Volumen bleibt gleich!
-	
-	\subsubsection{Strain Decomposition (Zerlegung isotropic/shear)}
-	\label{straindecomposition}
-	Volumenändernd, isotropic: $\epsilon^{iso} = \frac{tr \epsilon}{3} \cdot \mathbf{I}
-	\equiv \frac{1}{3} \mathbb{E} : \epsilon$\\
-	
-	Volumenerhaltend, shape changing (Formverändernd): $\epsilon^{shear} =
-	(\mathbb{I} - \frac{1}{3} \mathbb{E} ) : \epsilon $\\
-	\textbf{Hint}: $\epsilon = \epsilon^{iso} + \epsilon^{shear}$ $\rightarrow$
-	$\epsilon^{shear} = \epsilon -\epsilon^{iso}$\\
-	Wobei (Achtung in Engineering
-	Notation siehe Kapitel \ref{tensor4th} auf Seite \pageref{tensor4th}):\\ $ \mathbb{I}^{eng}=
-	\begin{pmatrix}
-	1 & 0 & 0 & 0 & 0 & 0 \\ 
-	0 & 1 & 0 & 0 & 0 & 0 \\ 
-	0 & 0 & 1 & 0 & 0 & 0 \\ 
-	0 & 0 & 0 & \frac{1}{2} & 0 & 0 \\ 
-	0 & 0 & 0 & 0 & \frac{1}{2} & 0 \\ 
-	0 & 0 & 0 & 0 & 0 & \frac{1}{2}
-	\end{pmatrix} 
-	$ und 
-	$ \mathbb{E}^{eng}=
-	\begin{pmatrix}
-	1 & 1 & 1 & 0 & 0 & 0 \\ 
-	1 & 1 & 1 & 0 & 0 & 0 \\ 
-	1 & 1 & 1 & 0 & 0 & 0 \\ 
-	0 & 0 & 0 & 0 & 0 & 0 \\ 
-	0 & 0 & 0 & 0 & 0 & 0 \\ 
-	0 & 0 & 0 & 0 & 0 & 0
-	\end{pmatrix} 
-	$
-	
-	\subsubsection{Plane Strain}
-	Plain strain: $\epsilon_{33} = \epsilon_{13} = \epsilon_{23}= 0$ => $\epsilon =
-	\begin{pmatrix}
-	* & * & 0\\
-	* & * & 0\\
-	* & * & 0\\
-	\end{pmatrix} $\\
-	\begin{itemize}
-		\item Keine Deformation in z-Achse
-		\item Beispiel: Druckstaudamm in Schweizer Alpen (large extension along
-		z-axis)
-	\end{itemize}
-	
-	\subsection{Elasticity Tensor E and $\nu$}
-	\begin{align}
-		\mathbb{C}^{eng} = \frac{E}{1 + \nu} \cdot \begin{pmatrix}
-			\frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & 0 & 0 & 0\\
-			\frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & 0 & 0 & 0\\
-			\frac{\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu} & 0 & 0 & 0\\
-			0 & 0 & 0 & \frac{1}{2} & 0 & 0\\
-			0 & 0 & 0 & 0 & \frac{1}{2} & 0\\
-			0 & 0 & 0 & 0 & 0 & \frac{1}{2}\\
-		\end{pmatrix}
-	\end{align}
-	Vereinfacht (wohl ohne Scherung):
-	\begin{align}\label{eq:elasticity}
-		\mathbf{C} = \frac{E}{1 + \nu} \cdot \begin{pmatrix}
-			\frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & \frac{\nu}{1-2\nu}\\
-			\frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu}\\
-			\frac{\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu}
-		\end{pmatrix}
-	\end{align}
-	
-	E-module (Young's modulus): $E$\\
-	Poisson's ratio: $\nu$\\
-	
-	\textbf{Elasticity Tensor in Plane Strain $\epsilon$}\\
-	$\mathbb{C}^{eng} = \frac{E}{1 + \nu} \cdot \begin{pmatrix}
-	\frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & 0\\
-	\frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu} & 0\\
-	0 & 0 & \frac{1}{2}
-	\end{pmatrix}$\\
-	
-	\textbf{Elasticity Tensor in Plane Stress $\sigma$}\\
-	$\mathbb{C}^{eng} = \frac{E}{1 + \nu} \cdot \begin{pmatrix}
-	\frac{1}{1-\nu} & \frac{\nu}{1-\nu} & 0\\
-	\frac{\nu}{1-\nu} & \frac{1}{1-\nu} & 0\\
-	0 & 0 & \frac{1}{2}
-	\end{pmatrix}$\\
-	
-	\subsection{Kompressionsmodul K / Schermodul G}
-	
-	Kompressionsmodul (bulk modulus) $K$\\
-	
-	Schermodul (shear modulus) $G$\\
-	
-	\textbf{Isotropic Mechanical Material Laws (Skript 8.2)}\\
-	
-	
-	\begin{align}\label{eq:materiallaw}
-		\mathbb{C}^{iso} = K \cdot \mathbb{E} + 2G \cdot (\mathbb{I} - \frac{1}{3}
-		\mathbb{E})
-	\end{align}
-	etwas umgeformt:
-	\begin{align}
-		\mathbb{C}^{iso} = (K - \frac{2}{3} G) \cdot \mathbb{E} + 2G \cdot \mathbb{I}
-	\end{align}
-	
-	Formel \ref{eq:materiallaw} in Voigt's Notation:
-	\begin{align}
-		\mathbb{C}^{eng} = K \cdot \begin{pmatrix}
-			1 & 1 & 1 & 0 & 0 & 0\\
-			1 & 1 & 1 & 0 & 0 & 0\\
-			1 & 1 & 1 & 0 & 0 & 0\\
-			0 & 0 & 0 & 0 & 0 & 0\\
-			0 & 0 & 0 & 0 & 0 & 0\\
-			0 & 0 & 0 & 0 & 0 & 0\\
-		\end{pmatrix}
-		+ 2 G \cdot \begin{pmatrix}
-			\frac{2}{3} & -\frac{1}{3} & -\frac{1}{3} & 0 & 0 & 0\\
-			-\frac{1}{3} & \frac{2}{3} & -\frac{1}{3} & 0 & 0 & 0\\
-			-\frac{1}{3} & -\frac{1}{3} & \frac{2}{3} & 0 & 0 & 0\\
-			0 & 0 & 0 & \frac{1}{2} & 0 & 0\\
-			0 & 0 & 0 & 0 & \frac{1}{2} & 0\\
-			0 & 0 & 0 & 0 & 0 & \frac{1}{2}\\
-		\end{pmatrix}
-	\end{align}
-	
-	\textbf{Deformation under Uniaxial Stress}\\
-	\begin{align}
-		\begin{pmatrix}
+	\begin{tabularx}{\columnwidth}{p{2cm}XX}
+		\hline 
+		   $e_{ij} = \dfrac{\partial u_i}{\partial x_j}$&
+			$e = \begin{pmatrix}
+			\frac{\partial u_1}{\partial x_1} & \frac{\partial u_1}{\partial x_2} &
+			\frac{\partial u_1}{\partial x_3}\\
+			\frac{\partial u_2}{\partial x_1} & \frac{\partial u_2}{\partial x_2} &
+			\frac{\partial u_2}{\partial x_3}\\
+			\frac{\partial u_3}{\partial x_1} & \frac{\partial u_3}{\partial x_2} &
+			\frac{\partial u_3}{\partial x_3}\\
+			\end{pmatrix}$ &
+			\vspace*{-.5cm}\includegraphics[scale=.2]{images/2Ddeformation}\\
+			
+			&
+			\multicolumn{2}{l}{$\bme = \bme^{sym} + \bme^{anti} = \frac{1}{2}(\bme+\bme^T) + \frac{1}{2}(\bme - \bme^t)$ }\\
+
+			strain tensor & $\varepsilon = \bme^{sym} = \frac{1}{2}(\bme+\bme^T)= \frac{1}{2} (\frac{\partial u_i}{\partial x_j} + \frac{\partial
+				u_j}{\partial x_i})$  &\\
+			\multicolumn{2}{l}{rotational deformation} & $\gamma = \bme^{anti} = \frac{1}{2}(\bme-\bme^T)$ \\
+			\hline
+			\multicolumn{3}{c}{\textbf{Rigid body transformation (rigid = starr)}}\\
+			\multicolumn{3}{c}{Rigid body transformations do not mechanically deform the body. }\\
+			rigid transformation &   
+			$x' = x + u(x) \quad u_i(x) = (R_{ij} - \delta_{ij})x_j$ & $R_{ij}$: rotation matrix\\
+			&  $\bme \approx \begin{pmatrix} 0 & -\phi &0 \\ \phi &  0& 0 \\  0& 0 & 0\\	\end{pmatrix}$ &
+			antimsymmetric deformation tensors correspond to small rotations and don't produce stress within the body\\
+
+			\hline 
+			\multicolumn{3}{c}{\textbf{Examples of Strain States}}\\			
+			Volume Change of a Deformation & $\dfrac{\Delta V}{V} = \operatorname{tr} \varepsilon$ &
+			\vspace*{-.5cm} \includegraphics[scale=.2]{images/deformvolume}\\
+			\hline 
+			pure shear strain & $\operatorname{tr}\varepsilon = 0$ & no volume change\newline only shape chanign\\
+			\hline 
+			Isotropic Strain &$\varepsilon_{11}=\varepsilon_{22}=\varepsilon_{33}\quad$
+			$\varepsilon_{ij} = \varepsilon \cdot \delta_{ij} \qquad \dfrac{\Delta V}{V} = 3\varepsilon_{11}$ & volume changing\newline form of the body stays the same\\
+			\hline 
+			Plain strain &  $\varepsilon_{33} = \varepsilon_{13} = \varepsilon_{23}= 0$ => $\varepsilon =
+				\begin{pmatrix}
+				* & * & 0\\
+				* & * & 0\\
+				* & * & 0\\
+				\end{pmatrix} $ &
+				No deformation in z axis\\
+			\hline 
+			Strain Decomposition &   $\varepsilon^{iso}=\frac{\operatorname{tr} \varepsilon}{3} \cdot \mathbb{I} \equiv \frac{1}{3} \mathbb{E} : \varepsilon$&
+			$\varepsilon^{shear} = (\mathbb{I} - \frac{1}{3}\mathbb{E}): \varepsilon$\\
+			&
+			$\varepsilon = \varepsilon^{iso} + \varepsilon^{shear}$ &
+			\\
+			\hline 
+
+	\end{tabularx}
+\newpage
+\subsection{Isotropic Mechanical Material Laws}
+	\begin{tabularx}{\columnwidth}{p{3cm}XX}
+		\hline 
+		 \multicolumn{2}{p{10cm}}{$\mathbb{C}^{iso} = K \cdot \mathbb{E} + 2G \cdot (\mathbb{I} - \frac{1}{3}
+		 \mathbb{E}) =  (K - \frac{2}{3} G) \cdot \mathbb{E} + 2G \cdot \mathbb{I}$ } &
+		 K: bulk modulus(Kompressionsmodul) \newline G: shear modulus(Schubmodul)\\
+		 &mostly: $K \gg G$ &\\
+		 \hline 
+		 \multicolumn{3}{c}{Elasticity Tensor 
+		 	$\mathbb{C}^{eng} = K \cdot \begin{pmatrix}
+		 		1 & 1 & 1 & 0 & 0 & 0\\
+		 		1 & 1 & 1 & 0 & 0 & 0\\
+		 		1 & 1 & 1 & 0 & 0 & 0\\
+		 		0 & 0 & 0 & 0 & 0 & 0\\
+		 		0 & 0 & 0 & 0 & 0 & 0\\
+		 		0 & 0 & 0 & 0 & 0 & 0\\
+		 	\end{pmatrix}
+		 	+ 2 G \cdot \begin{pmatrix}
+		 		\frac{2}{3} & -\frac{1}{3} & -\frac{1}{3} & 0 & 0 & 0\\
+		 		-\frac{1}{3} & \frac{2}{3} & -\frac{1}{3} & 0 & 0 & 0\\
+		 		-\frac{1}{3} & -\frac{1}{3} & \frac{2}{3} & 0 & 0 & 0\\
+		 		0 & 0 & 0 & \frac{1}{2} & 0 & 0\\
+		 		0 & 0 & 0 & 0 & \frac{1}{2} & 0\\
+		 		0 & 0 & 0 & 0 & 0 & \frac{1}{2}\\
+		 	\end{pmatrix}$}\\
+		 \hline 
+		 
+		Material reaction to pure compression & $\sigma_{ij}^{comp} = C_{ijkl}^{iso}\varepsilon_{kl}^{comp} = -K\kappa\cdot\delta_{ij}$ & K express material reaction to pure compression\\
+		\hline 
+		Material reaction to pure Shear Deformation & 
+		$\varepsilon_{ij}^{shear} = C_{ijkl}^{iso}\varepsilon_{kl}^{shear} = 2G\varepsilon_{ij}^{shear} $&
+		G express material reaction to pure shear compression\\
+		\hline 
+		Uniaxial stress &
+		\multicolumn{2}{p{12cm}}{
+		$\begin{pmatrix}
 			\sigma_{11}\\
 			0\\
 			0
@@ -242,38 +211,56 @@
 			K + \frac{4G}{3} & K - \frac{2G}{3} & K - \frac{2G}{3}\\
 			K - \frac{2G}{3} & K + \frac{4G}{3} & K - \frac{2G}{3}\\
 			K - \frac{2G}{3} & K - \frac{2G}{3} & K + \frac{4G}{3}\\
-		\end{pmatrix} =
+		\end{pmatrix}\cdot
 		\begin{pmatrix}
-			\epsilon_{11}\\
-			- \epsilon_{22}\\
-			- \epsilon_{33}
-		\end{pmatrix}
-	\end{align}
+			\varepsilon_{11}\\
+			- \varepsilon_{22}\\
+			- \varepsilon_{33}
+		\end{pmatrix}\qquad
+		\sigma_{11} = E\cdot \varepsilon_{11}$ } \\
+	\hline 
+	Poisson's ration & $\nu = -\dfrac{\varepsilon_{22}}{\varepsilon_{11}} = -\dfrac{\varepsilon_{33}}{\varepsilon_{11}}=\dfrac12 \cdot \dfrac{3K -2G}{3K+G}$&
+	ratio of dilation and elongation under uniaxial stress\\
+	Young's modulus & $E = \dfrac{\sigma_{11}}{\varepsilon_{11}} = \dfrac{9KG}{3K + G}$&\\
+	\hline 
+	& \multicolumn{2}{l}{
+				$\mathbb{C}^{eng} = \frac{E}{1 + \nu} \cdot \begin{pmatrix}
+					\frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & 0 & 0 & 0\\
+					\frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & 0 & 0 & 0\\
+					\frac{\nu}{1-2\nu} & \frac{\nu}{1-2\nu} & \frac{1-\nu}{1-2\nu} & 0 & 0 & 0\\
+					0 & 0 & 0 & \frac{1}{2} & 0 & 0\\
+					0 & 0 & 0 & 0 & \frac{1}{2} & 0\\
+					0 & 0 & 0 & 0 & 0 & \frac{1}{2}\\
+				\end{pmatrix}$}\\
+		\hline 
+	Plane Strain  	 & $\epsilon_{i3} = 0 $\newline damn is an example of such a state& 
+	strain Tensor $\varepsilon^{eng} = (\varepsilon_{11}, \varepsilon_{22}, 2\varepsilon_{12})^T$\\
+	&$\mathbb{C}^{eng} = \dfrac{E}{1+\nu}\cdot  \begin{pmatrix}
+	\dfrac{1-\nu}{1-2\nu} & \dfrac{\nu}{1-2\nu} & 0\\
+	\dfrac{\nu}{1-2\nu} & \dfrac{1-\nu}{1-2\nu} & 0\\
+	0 & 0 & \dfrac{1}{2}\\
+	\end{pmatrix}$&
+	$\sigma^{eng} = \mathbb C^{iso,eng}\varepsilon = (\sigma_{11},\sigma_{22}, \sigma_{12})^T$
+	\\
+	\hline 
 	
-	Repräsentiert:
-	\begin{align}
-		\sigma_{11} = E \cdot \epsilon_{11}
-	\end{align}
-	Gleichungssystem nach E aufgelöst:
-	\begin{align}
-		E \equiv \frac{9 K G}{3K + G}
-	\end{align}
-	
-\newpage
+	Plane Stresss & 
+	$\sigma_{i3} = 0$ & 
+	\\
+	&
+	$\mathbb{C}^{eng} = \dfrac{E}{1+\nu}\cdot\begin{pmatrix}
+		\dfrac{1}{1-\nu} & \dfrac{\nu}{1-\nu} & 0\\
+		\dfrac{\nu}{1-\nu} & \dfrac{1}{1-\nu} & 0\\
+		0 & 0 & \dfrac{1}{2}\\
+	\end{pmatrix}$
+	&\\
+	\hline 
+	\end{tabularx}
 
 
+%		\includegraphics[scale=.3]{images/deformgrad}
 
-		\includegraphics[scale=.3]{images/3Dmomentum}				
-		\includegraphics[scale=.3]{images/3Dcuttingforces}				
-		\includegraphics[scale=.3]{images/3Dangularmomentum}				
-		\includegraphics[scale=.3]{images/3Dcfisotropic}				
-		\includegraphics[scale=.3]{images/3Dcfuniaxial}				
-		\includegraphics[scale=.3]{images/3Dcfplanestress}				
-		\includegraphics[scale=.3]{images/3Dcfpureshear}				
-		\includegraphics[scale=.3]{images/2Ddeformation}				
-		\includegraphics[scale=.3]{images/deformgrad}
-		\includegraphics[scale=.3]{images/deformvolume}
-		\includegraphics[scale=.3]{images/allstates}
+%		\includegraphics[scale=.3]{images/allstates}
 %		\includegraphics[scale=.3]{images/}
 
 

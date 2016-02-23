@@ -16,26 +16,26 @@
 \usepackage{tabularx}
 \usepackage{booktabs}
 \usepackage{siunitx}
+\usepackage{bm}
+%\usepackage{ltablex} %to combinate longtable and tabularx
+%title
+\makeatletter         
 
-
-	%title
-	\makeatletter         
+\def\@maketitle{   % custom maketitle 
 	
-	\def\@maketitle{   % custom maketitle 
-		
 
-		\centering{\LARGE \bf \textsf{\@title}} 
-		\smallskip \\
-		\centering{\large \bf \textsf{\@subtitle}} 
-		\smallskip \\
-		\centering{ \bf \textsf {\@author}}
-		\medskip \\
-		\centering{\bf \textsf{ \@date }}
-		\smallskip \\
-		\noindent\rule{\textwidth}{0.5pt}
-		\smallskip
-	}
-	\makeatother
+	\centering{\LARGE \bf \textsf{\@title}} 
+	\smallskip \\
+	\centering{\large \bf \textsf{\@subtitle}} 
+	\smallskip \\
+	\centering{ \bf \textsf {\@author}}
+	\medskip \\
+	\centering{\bf \textsf{ \@date }}
+	\smallskip \\
+	\noindent\rule{\textwidth}{0.5pt}
+	\smallskip
+}
+\makeatother
 
 \usepackage[automark]{scrlayer-scrpage}
 \clearscrheadings
@@ -72,8 +72,8 @@
 \usepackage{lmodern}
 
 	
-	
-
+%color
+\definecolor{lightblue}{RGB}{230,230,205}
 	
 	
 	
