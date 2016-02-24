@@ -1,0 +1,58 @@
+\renewcommand{\arraystretch}{2}	
+{\rowcolors{3}{lightgray}{white}
+	\subsection{Begriffe}
+	\begin{multicols}{2}
+		
+	\begin{tabularx}{\linewidth}{lX}
+		\multicolumn{2}{c}{\textbf{Classes of Physical Laws}}\\
+		Basic laws, balance equation & \\
+		Material laws, consecutive laws & \\
+		 
+		\multicolumn{2}{c}{\textbf{Uniform (homogeneous) Systems}}\\
+		spatially constant& \\		
+		intensive quantities& pressure, temperature\\		
+		extensive quantities & substance like, impulse, volume\\
+	\end{tabularx}
+	\vfill\columnbreak
+		\begin{tabularx}{\linewidth}{lX}
+			\multicolumn{2}{c}{\textbf{Balance equation}}\\
+			$\dfrac{dG}{dt} = \sum\limits_{i} I_{i} + Q$ & $ G, I, Q$ : extensive \\
+			\multicolumn{2}{c}{
+				$\dfrac{dG}{dt}$: change rate $\quad$
+				$I$: flux $\quad$
+				$Q$: sourceterm} \\		
+			substance & substace density $ \Rightarrow 1/m^3$\\
+			flux & flux density $  \Rightarrow 1/m^2$\\
+			source & source density $  \Rightarrow 1/m^3$\\
+			\multicolumn{2}{c}{\textbf{material properties}}\\
+			iostropic & independent of spatial direction\\
+			homogeneous & spatially constant\\
+			linear & balance equation always, consecutive not\\
+		\end{tabularx}
+	\end{multicols}
+\renewcommand{\arraystretch}{1.2}			
+	
+	\subsection{Balance equation, Bilanzgleichungen}
+	{
+		\begin{tabularx}{\linewidth}{XXXll}
+			\hline
+			& Stoffliche Grösse & Potential & \multicolumn{2}{c}{Balance Equation} \\
+			& & & uniform & distributed, local \\ \hline
+			Charge Transport & Charge $Q$ & El. Potential $\Phi$ & $\frac{dQ}{dt}=I_Q$ & $ \frac{\partial p_Q}{\partial t}=-\nabla\cdot j_Q$ \\ \hline
+			Heat Transport & Thermal energy \newline $W$ & Temperatur $T$ & $\frac{\partial W}{\partial t}= I_W+Q_W$ & $\frac{\partial w}{\partial t}= -\nabla \cdot j_W+q_W$  \\ \hline
+			Particle Transport & Partical number \newline $N$ & Particle density \newline $c$ & $\frac{dN}{dt}=I_N+Q_N$ & $\frac{dp}{dt}=-\nabla \cdot j_W +q_W$ \\ \hline
+			Mechanics (Momentum Transport) & Momentum $p$ & Velocity $v$  & $\frac{\partial p}{\partial t}=F$ &  $\frac{\partial \sigma_{ik}}{\partial x_k} + \rho g_i$ = 0\\ 
+			\hline
+		\end{tabularx} }
+		
+		\subsection{Constitutive Laws}
+		\begin{tabularx}{\linewidth}{Xp{3cm}p{4.55cm}X}
+			\hline
+			& Storage Laws & Flux Laws & Source Rates and Sourcerate Densities \\ \hline
+			Charge Transport & charge carrier diffusion equation & $j_Q=-\sigma \cdot \nabla\varphi \equiv \sigma \cdot E$ \newline (Microscop. Ohmic law) & $q_+ = - q_-$ \\
+			Heat Transport & $w=c_p \rho T$ & $j_W=-\lambda \cdot \nabla T$  (Fourier's law)& $Q_W = -(\phi_2-\phi_1)I_Q$\newline $q_W = -\nabla\Phi\cdot j_Q$  \\ 
+			Particle Transport (Diffusion) & c=c & $j_N=- D \cdot \nabla c_N$ &  \\ 
+			Mechanics & uniform: $p=mv$,\newline local : $\pi=\rho v$ & $F_{hook} = - k \Delta u$ (Hook's Law)\newline $F_{visc}=-C \eta \cdot v$ (Viscous Drag) & $F_{grav} = M g$\newline $f_{grav}=\rho g$ \\ 
+			\hline
+		\end{tabularx} 
+}%rowcolor	tabularx				

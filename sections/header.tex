@@ -1,0 +1,79 @@
+\usepackage[T1]{fontenc}
+\usepackage[UTF8]{inputenc}
+
+% Mathematik-Pakete
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{paralist}
+\usepackage[pdftex]{graphicx}
+\usepackage{colortbl}
+\usepackage[table]{xcolor}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{bm}
+%\usepackage{ltablex} %to combinate longtable and tabularx
+%title
+\makeatletter         
+
+\def\@maketitle{   % custom maketitle 
+	
+
+	\centering{\LARGE \bf \textsf{\@title}} 
+	\smallskip \\
+	\centering{\large \bf \textsf{\@subtitle}} 
+	\smallskip \\
+	\centering{ \bf \textsf {\@author}}
+	\medskip \\
+	\centering{\bf \textsf{ \@date }}
+	\smallskip \\
+	\noindent\rule{\textwidth}{0.5pt}
+	\smallskip
+}
+\makeatother
+
+\usepackage[automark]{scrlayer-scrpage}
+\clearscrheadings
+\clearscrplain
+%header footer
+
+\pagestyle{scrheadings}
+\lohead{\pagemark \hspace{0.3cm }  \textcolor{gray}{\rule{0.25cm}{0.25cm}} \hspace{0.3cm } \leftmark }
+\cohead{}
+\rohead{}
+\setheadsepline[1.3\textwidth]{0.02cm} 
+
+\rofoot{}
+\cofoot{}
+\lofoot{}
+
+
+
+
+
+
+%si units
+\sisetup{sticky-per=true,per-mode=symbol}
+
+
+%geometry
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=1.5cm,lmargin=2cm,rmargin=2cm,bmargin=3cm}
+
+
+\usepackage[english, ngerman]{babel}
+\setlength{\parindent}{0cm}
+%font
+\usepackage{lmodern}
+
+	
+%color
+\definecolor{lightblue}{RGB}{230,230,205}
+	
+	
+	
